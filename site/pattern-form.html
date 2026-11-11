@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>フォームの組み方 | OKA.L.C Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Outfit:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css?v=247fb91f">
+<link rel="stylesheet" href="../css/base.css?v=247fb91f">
+<link rel="stylesheet" href="../css/components.css?v=247fb91f">
+
+
+<link rel="stylesheet" href="assets/site.css?v=247fb91f">
+</head>
+<body data-page="pattern-form">
+<a class="ds-skip" href="#main">本文へスキップ</a>
+<div class="ds-shell">
+  <header class="ds-header" data-sticky-header>
+    <a class="ds-logo" href="index.html"><span class="ds-logo__mark" aria-hidden="true"></span>OKA.L.C Design System</a>
+    <span class="c-tag c-tag--primary">v0.5</span>
+    <button class="ds-menu-btn c-button c-button--secondary c-button--ghost c-button--icon c-button--md" type="button" aria-controls="ds-nav" aria-expanded="false"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" role="img" aria-label="メニュー"><path d="M177.37-252.28q-17.45 0-29.48-11.97-12.02-11.96-12.02-29.32t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.96 12.02 29.33 0 17.36-12.02 29.53-12.03 12.18-29.48 12.18H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.96-12.02-29.33 0-17.36 12.02-29.53 12.03-12.18 29.48-12.18h605.26q17.45 0 29.48 11.97 12.02 11.96 12.02 29.32t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Z"/></svg></button>
+  </header>
+  <nav class="ds-nav" id="ds-nav" aria-label="サイト内"><p class="ds-nav__group">はじめに</p><ul class="ds-nav__list"><li><a class="ds-nav__link" href="index.html">概要</a></li></ul><details class="ds-nav__fold"><summary class="ds-nav__group">基礎</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="color.html">色</a></li><li><a class="ds-nav__link" href="typography.html">文字</a></li><li><a class="ds-nav__link" href="layout.html">レイアウト</a></li><li><a class="ds-nav__link" href="spacing.html">余白・角丸・影</a></li><li><a class="ds-nav__link" href="motion.html">モーション</a></li><li><a class="ds-nav__link" href="breakpoints.html">ブレークポイント</a></li><li><a class="ds-nav__link" href="icon.html">アイコン</a></li><li><a class="ds-nav__link" href="writing.html">ライティング</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">コンポーネント</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="site-frame.html">ページの骨格</a></li><li><a class="ds-nav__link" href="site-shell.html">共通UI</a></li><li><a class="ds-nav__link" href="button.html">ボタン</a></li><li><a class="ds-nav__link" href="site-text.html">見出しと文章のブロック</a></li><li><a class="ds-nav__link" href="site-box.html">囲み・カード・料金・表</a></li><li><a class="ds-nav__link" href="site-figure.html">画像と2カラム</a></li><li><a class="ds-nav__link" href="site-listing.html">一覧・記事・よくある質問</a></li><li><a class="ds-nav__link" href="form.html">ラベル・入力欄</a></li><li><a class="ds-nav__link" href="choice.html">チェック・ラジオ・スイッチ</a></li><li><a class="ds-nav__link" href="feedback.html">通知・読み込み</a></li><li><a class="ds-nav__link" href="navigation.html">タブ・リンク・ページ送り</a></li><li><a class="ds-nav__link" href="overlay.html">モーダル・ツールチップ</a></li><li><a class="ds-nav__link" href="display.html">空状態・区切り</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">個別最適ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="specific-site.html">公開サイト</a></li><li><a class="ds-nav__link" href="specific-admin.html">管理画面</a></li><li><a class="ds-nav__link" href="specific-tool.html">院内ツール</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="rules-prohibitions.html">禁止パターン</a></li><li><a class="ds-nav__link" href="rules-naming.html">命名規則</a></li><li><a class="ds-nav__link" href="rules-markup-contract.html">マークアップ契約</a></li><li><a class="ds-nav__link" href="rules-structure.html">サイト構成のルール</a></li><li><a class="ds-nav__link" href="rules-design-tokens.html">デザイントークン</a></li></ul></details><details class="ds-nav__fold" open><summary class="ds-nav__group">ハーネス</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="pattern-layout.html">画面の骨組み</a></li><li><a class="ds-nav__link" href="pattern-form.html" aria-current="page">フォームの組み方</a></li><li><a class="ds-nav__link" href="pattern-states.html">画面の状態</a></li><li><a class="ds-nav__link" href="pattern-dodont.html">良い例・悪い例</a></li><li><a class="ds-nav__link" href="pattern-checklist.html">チェックリスト</a></li><li><a class="ds-nav__link" href="pattern-exercises.html">練習課題</a></li></ul></details></nav>
+  <main class="ds-main" id="main">
+<!-- title: フォームの組み方 -->
+<h1>フォームの組み方</h1>
+<p class="ds-lead">項目の並べ方・ボタンの置き方・エラーの出し方の決まりです。下の見本はそのまま動きます（何も入れずに「送信する」を押すとエラー、すべて入れて押すと「送信中」のあと<a href="pattern-form-done.html">完了画面</a>へ移ります）。</p>
+
+<nav class="ds-related" aria-label="関連ページ"><span class="ds-related__label">関連ページ</span><a href="form.html">ラベル・入力欄</a><a href="choice.html">チェック・ラジオ・スイッチ</a><a href="writing.html">ライティング</a></nav>
+<section class="ds-section">
+  <h2>決まり</h2>
+  <div class="ds-table-wrap"><table class="ds-table">
+    <thead><tr><th scope="col">もの</th><th scope="col">決まり</th></tr></thead>
+    <tbody>
+      <tr><td>幅</td><td><code>l-wrap l-wrap--narrow</code>（760px）に入れる。1行に1項目（名前の姓・名など、組になるものだけ横に並べてよい）</td></tr>
+      <tr><td>項目</td><td>1項目 ＝ 1つのラベルセット（<code>c-formset</code>）。<strong>すべての項目にラベルと必須／任意を付ける</strong>。チェックボックス・ラジオは <code>fieldset.c-formset</code> ＋ <code>legend.c-formset__head</code> で、ラベル1つ：選択肢が複数（1:n）（同意のチェックボックス1つでも同じ）。項目どうしの間は 24px（<code>--form-field-gap</code>）</td></tr>
+      <tr><td>まとまり</td><td>項目が多いときは見出しで分ける（<code>c-form__section</code>）。まとまりどうしの間は 48px（<code>--form-section-gap</code>）</td></tr>
+      <tr><td>ボタン</td><td>最後に右寄せで［前の画面に戻る］［送信する］（<code>c-form__actions</code>）。スマホでは横幅いっぱいにし、上から［前の画面に戻る］［送信する］（見た目とキーボードの順番をそろえる）。primary の solid は送信するの1つだけ。フォームには「やめる」を置かない（何をやめるのか分からない。「やめる」はダイアログで使う）。［前の画面に戻る］は <code>data-back</code> を付ける。押すとブラウザの1つ前のページへ戻る（<code>js/components.js</code>）</td></tr>
+      <tr><td>エラーの時期</td><td>入力中は出さない。欄を離れたときと送信したときに出す。直したらすぐ消す</td></tr>
+      <tr><td>送信時のエラー</td><td>フォームの先頭にエラーのまとめ（<code>c-error-summary</code>）を出してフォーカスを移す。まとめの各行から、その項目へ移動できる。まとめには <code>role="alert"</code> を付けない（フォーカスの移動で読み上げられるので、二重に読まれるのを防ぐ）</td></tr>
+      <tr><td>文字数の上限</td><td>画面（<code>js/components.js</code>）は、絵文字も1文字、改行も1文字として数える。<strong>サーバーでも同じ数え方で確かめる</strong>：送られてきた改行（CRLF）を LF にそろえてから、1文字ずつ数える（PHP なら <code>mb_strlen(str_replace("\r\n", "\n", $text), 'UTF-8')</code>）。画面で上限内なら、サーバーでも上限内になる</td></tr>
+      <tr><td>送信中・完了</td><td><code>form</code> に <code>data-done-url</code>（完了画面の URL）を書くと、<code>js/components.js</code> が送信中の表示・二重送信の防止・送信・完了画面への移動まで行う（送れなかったらエラーのトースト）。送信中はボタンを loading（<code>is-loading</code> ＋ <code>aria-busy</code>）。<strong>送信したら、入力した内容をそのまま画面に残さない。</strong>完了画面へ移る、または前の画面に戻したうえで完了を知らせる（トースト）。完了画面は <code>c-alert--success</code> に「送信しました」と一言添え、次の操作のボタン（secondary outline sm）もアラートの中に置く（<a href="pattern-form-done.html">見本</a>）</td></tr>
+    </tbody>
+  </table></div>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>項目は c-formset（label と入力欄をつなぐ）</li><li>エラーは欄を離れたとき＋送信時に出し、送信時は先頭のエラーのまとめへフォーカスを移す（role=alert は付けない）</li></ul></div></div>
+</section>
+
+<section class="ds-section">
+  <h2>見本（動く）</h2>
+  <div class="ds-demo"><div class="l-wrap l-wrap--narrow" style="margin-inline:0;padding:0">
+  <form class="c-form" data-validate data-done-url="pattern-form-done.html" aria-labelledby="pf-title">
+  <div class="c-alert c-alert--error c-error-summary" tabindex="-1" aria-labelledby="pf-sum-title">
+    <svg class="c-icon c-icon--lg" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm0-160q17 0 28.5-11.5T520-480v-160q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640v160q0 17 11.5 28.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+    <div class="c-alert__body">
+      <p class="c-alert__title" id="pf-sum-title">入力内容を確認してください</p>
+      <ul class="c-error-summary__list"></ul>
+    </div>
+  </div>
+  <fieldset class="c-form__section">
+    <legend class="c-form__section-title" id="pf-title">まとまりA</legend>
+    <div class="c-formset">
+      <div class="c-formset__head"><label class="c-label" for="pf-name">お名前</label><span class="c-req c-req--required">必須</span></div>
+      <div class="c-formset__control"><div class="c-field"><input class="c-field__input" id="pf-name" name="name" type="text" autocomplete="name" required></div></div>
+    </div>
+    <div class="c-formset">
+      <div class="c-formset__head"><label class="c-label" for="pf-mail">メールアドレス</label><span class="c-req c-req--required">必須</span></div>
+      <p class="c-formset__example" id="pf-mail-ex">例：hanako@example.com</p>
+      <div class="c-formset__control"><div class="c-field"><input class="c-field__input" id="pf-mail" name="email" type="email" autocomplete="email" required aria-describedby="pf-mail-ex"></div></div>
+    </div>
+  </fieldset>
+  <fieldset class="c-form__section">
+    <legend class="c-form__section-title">まとまりB</legend>
+    <fieldset class="c-formset">
+      <legend class="c-formset__head"><span class="c-label">ラベルA</span><span class="c-req c-req--required">必須</span></legend>
+      <div class="c-formset__control"><div class="c-choice-group">
+        <label class="c-choice c-choice--radio"><input class="c-choice__input" type="radio" name="kind" id="pf-kind-a" value="a" required><span class="c-choice__mark"></span><span class="c-choice__text">項目A</span></label>
+        <label class="c-choice c-choice--radio"><input class="c-choice__input" type="radio" name="kind" value="b"><span class="c-choice__mark"></span><span class="c-choice__text">項目B</span></label>
+      </div></div>
+    </fieldset>
+    <div class="c-formset">
+      <div class="c-formset__head"><label class="c-label" for="pf-body">ラベルB</label><span class="c-req c-req--required">必須</span></div>
+      <p class="c-formset__help" id="pf-body-help">256文字以内</p>
+      <div class="c-formset__control"><div class="c-textarea-box"><textarea class="c-textarea" id="pf-body" name="body" maxlength="256" required aria-describedby="pf-body-help pf-body-count"></textarea><span class="c-textarea__count" id="pf-body-count">0 / 256</span></div></div>
+    </div>
+    <fieldset class="c-formset">
+      <legend class="c-formset__head"><span class="c-label">項目C</span><span class="c-req c-req--required">必須</span></legend>
+      <div class="c-formset__control"><label class="c-choice"><input class="c-choice__input" type="checkbox" id="pf-agree" name="agree" required data-error-required="項目Cに同意してください"><span class="c-choice__mark"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg></span><span class="c-choice__text">同意する</span></label></div>
+    </fieldset>
+  </fieldset>
+  <div class="c-form__actions">
+    <button class="c-button c-button--secondary c-button--outline" type="button" data-back>前の画面に戻る</button>
+    <button class="c-button c-button--primary" type="submit">送信する</button>
+  </div>
+</form>
+  </div></div>
+  <div class="ds-example"><p class="ds-example__title">フォーム全体（data-validate で検証が動く）</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;form class=&quot;c-form&quot; method=&quot;post&quot; action=&quot;/contact/send&quot; data-validate data-done-url=&quot;/contact/done/&quot; aria-labelledby=&quot;pf-title&quot;&gt;
+  &lt;div class=&quot;c-alert c-alert--error c-error-summary&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;pf-sum-title&quot;&gt;
+    &lt;svg class=&quot;c-icon c-icon--lg&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/error_fill1.svg の path --&gt;&lt;/svg&gt;
+    &lt;div class=&quot;c-alert__body&quot;&gt;
+      &lt;p class=&quot;c-alert__title&quot; id=&quot;pf-sum-title&quot;&gt;入力内容を確認してください&lt;/p&gt;
+      &lt;ul class=&quot;c-error-summary__list&quot;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;fieldset class=&quot;c-form__section&quot;&gt;
+    &lt;legend class=&quot;c-form__section-title&quot; id=&quot;pf-title&quot;&gt;まとまりA&lt;/legend&gt;
+    &lt;div class=&quot;c-formset&quot;&gt;
+      &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;pf-name&quot;&gt;お名前&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-field&quot;&gt;&lt;input class=&quot;c-field__input&quot; id=&quot;pf-name&quot; name=&quot;name&quot; type=&quot;text&quot; autocomplete=&quot;name&quot; required&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c-formset&quot;&gt;
+      &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;pf-mail&quot;&gt;メールアドレス&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+      &lt;p class=&quot;c-formset__example&quot; id=&quot;pf-mail-ex&quot;&gt;例：hanako@example.com&lt;/p&gt;
+      &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-field&quot;&gt;&lt;input class=&quot;c-field__input&quot; id=&quot;pf-mail&quot; name=&quot;email&quot; type=&quot;email&quot; autocomplete=&quot;email&quot; required aria-describedby=&quot;pf-mail-ex&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset class=&quot;c-form__section&quot;&gt;
+    &lt;legend class=&quot;c-form__section-title&quot;&gt;まとまりB&lt;/legend&gt;
+    &lt;fieldset class=&quot;c-formset&quot;&gt;
+      &lt;legend class=&quot;c-formset__head&quot;&gt;&lt;span class=&quot;c-label&quot;&gt;ラベルA&lt;/span&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/legend&gt;
+      &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-choice-group&quot;&gt;
+        &lt;label class=&quot;c-choice c-choice--radio&quot;&gt;&lt;input class=&quot;c-choice__input&quot; type=&quot;radio&quot; name=&quot;kind&quot; id=&quot;pf-kind-a&quot; value=&quot;a&quot; required&gt;&lt;span class=&quot;c-choice__mark&quot;&gt;&lt;/span&gt;&lt;span class=&quot;c-choice__text&quot;&gt;項目A&lt;/span&gt;&lt;/label&gt;
+        &lt;label class=&quot;c-choice c-choice--radio&quot;&gt;&lt;input class=&quot;c-choice__input&quot; type=&quot;radio&quot; name=&quot;kind&quot; value=&quot;b&quot;&gt;&lt;span class=&quot;c-choice__mark&quot;&gt;&lt;/span&gt;&lt;span class=&quot;c-choice__text&quot;&gt;項目B&lt;/span&gt;&lt;/label&gt;
+      &lt;/div&gt;&lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;div class=&quot;c-formset&quot;&gt;
+      &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;pf-body&quot;&gt;ラベルB&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+      &lt;p class=&quot;c-formset__help&quot; id=&quot;pf-body-help&quot;&gt;256文字以内&lt;/p&gt;
+      &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-textarea-box&quot;&gt;&lt;textarea class=&quot;c-textarea&quot; id=&quot;pf-body&quot; name=&quot;body&quot; maxlength=&quot;256&quot; required aria-describedby=&quot;pf-body-help pf-body-count&quot;&gt;&lt;/textarea&gt;&lt;span class=&quot;c-textarea__count&quot; id=&quot;pf-body-count&quot;&gt;0 / 256&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;fieldset class=&quot;c-formset&quot;&gt;
+      &lt;legend class=&quot;c-formset__head&quot;&gt;&lt;span class=&quot;c-label&quot;&gt;項目C&lt;/span&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/legend&gt;
+      &lt;div class=&quot;c-formset__control&quot;&gt;&lt;label class=&quot;c-choice&quot;&gt;&lt;input class=&quot;c-choice__input&quot; type=&quot;checkbox&quot; id=&quot;pf-agree&quot; name=&quot;agree&quot; required data-error-required=&quot;項目Cに同意してください&quot;&gt;&lt;span class=&quot;c-choice__mark&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/check.svg の path --&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class=&quot;c-choice__text&quot;&gt;同意する&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;
+    &lt;/fieldset&gt;
+  &lt;/fieldset&gt;
+  &lt;div class=&quot;c-form__actions&quot;&gt;
+    &lt;button class=&quot;c-button c-button--secondary c-button--outline&quot; type=&quot;button&quot; data-back&gt;前の画面に戻る&lt;/button&gt;
+    &lt;button class=&quot;c-button c-button--primary&quot; type=&quot;submit&quot;&gt;送信する&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre></details></div>
+</section>
+
+<section class="ds-section">
+  <h2>良い例・悪い例</h2>
+  <div class="ds-compare">
+    <div class="ds-compare__col ds-do"><p class="ds-compare__label"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg>良い例</p><div class="ds-compare__view"><div class="c-formset" style="inline-size:100%"><div class="c-formset__head"><label class="c-label" for="cmp-a">メールアドレス</label><span class="c-req c-req--required">必須</span></div><p class="c-formset__example">例：hanako@example.com</p><div class="c-formset__control"><div class="c-field"><input class="c-field__input" id="cmp-a" type="email"></div></div></div></div><p class="ds-compare__note">ラベルはいつも見えていて、例は「例：」で外に出す</p></div>
+    <div class="ds-compare__col ds-dont"><p class="ds-compare__label"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg>悪い例</p><div class="ds-compare__view"><div class="c-field" style="inline-size:100%"><input class="c-field__input" placeholder="メールアドレス（例：hanako@example.com）" aria-label="メールアドレス"></div></div><p class="ds-compare__note">プレースホルダーをラベルの代わりにすると、入力を始めた途端に何の欄か分からなくなる</p><p class="ds-compare__rule">検査：<code>a11y-input-label</code></p></div>
+  </div>
+  <div class="ds-compare">
+    <div class="ds-compare__col ds-do"><p class="ds-compare__label"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg>良い例</p><div class="ds-compare__view"><div class="c-form__actions" style="inline-size:100%"><button class="c-button c-button--secondary c-button--outline" type="button">前の画面に戻る</button><button class="c-button c-button--primary" type="button">送信する</button></div></div><p class="ds-compare__note">primary の solid は1つ。右寄せで［前の画面に戻る］［送信する］</p></div>
+    <div class="ds-compare__col ds-dont"><p class="ds-compare__label"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg>悪い例</p><div class="ds-compare__view"><div class="ds-row"><button class="c-button c-button--primary" type="button">送信する</button><button class="c-button c-button--primary" type="button">前の画面に戻る</button></div></div><p class="ds-compare__note">目立つボタンが2つあると、どちらが大事か分からない。並び順もダイアログと逆</p><p class="ds-compare__rule">検査：<code>primary-count</code></p></div>
+  </div>
+</section>
+
+  </main>
+</div>
+<template id="tpl-icon-close"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-421.35 319.83-261.17Q307.15-248.5 291-249t-28.83-13.17q-12.67-12.68-12.67-29.33t12.67-29.33L421.35-480 261.17-640.17Q248.5-652.85 249-669.5t13.17-29.33q12.68-12.67 29.33-12.67t29.33 12.67L480-538.65l160.17-160.18q12.68-12.67 29.33-12.67t29.33 12.67q12.67 12.68 12.67 29.33t-12.67 29.33L538.65-480l160.18 160.17Q711.5-307.15 711.5-291t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-421.35Z"/></svg></template>
+<template id="tpl-icon-success"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg></template>
+<template id="tpl-icon-error"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<template id="tpl-icon-info"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<script src="../js/components.js?v=247fb91f"></script>
+<script src="assets/site.js?v=247fb91f"></script>
+</body>
+</html>

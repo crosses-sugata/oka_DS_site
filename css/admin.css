@@ -1,0 +1,258 @@
+/* ==========================================================
+   admin.css — 管理画面の部品（a-）
+   読み込む順：tokens/tokens.css → css/base.css → css/components.css → css/admin.css
+   a- は管理画面だけで使う部品。公開サイトと管理画面の両方で使う部品は共通部品（c-）に置き、管理画面でもそれを使う。p- は使わない
+   ========================================================== */
+
+/* 管理画面の指定は .a-shell（画面全体。実装では body に付ける）の中だけに効かせる（一覧表は共通部品の c-data-table。components.css）。
+   公開サイトの部品（c-）や、まとめサイトのほかの部分を崩さないため */
+.a-shell { color: var(--ink); background: var(--bg); font-family: var(--sans); }
+
+/* 見出し。公開サイト（base.css）は h1〜h4 を明朝にしているが、管理画面は一覧をすばやく
+   走査する画面のためゴシックにする。サイズもブラウザ既定（30 / 22.5 / 17.6px）
+   のままだったので明示する。 */
+:where(.a-shell) :is(h1, h2, h3, h4) { font-family: var(--sans); }
+:where(.a-shell) h1 { font-size: var(--font-xl); }
+:where(.a-shell) h2 { font-size: var(--font-md); }
+:where(.a-shell) h3 { font-size: var(--font-def); }
+:where(.a-shell) a { color: var(--wine-deep); }
+
+
+/* 本文へスキップは共通部品の c-skip-link を使う */
+
+/* ── 骨格 ─────────────────────────────────────────────
+   左に固定幅のサイドメニュー、右に本文。本文の幅は**全画面で共通**にする。
+   ページングやテーブルの中身で幅が変わらないよう、.a-main で1か所に決めている。 */
+/* スクロールバーの有無で本文の幅が変わり、ページを移るたびに横へがたつく。
+   領域を常に確保して幅を一定にする。 */
+html:has(> body.a-shell) { scrollbar-gutter: stable; }   /* 管理画面（body.a-shell）のときだけ。スクロールバーの有無で幅が変わらないようにする */
+
+/* ⚠️ `1fr` ではなく `minmax(0, 1fr)`。`1fr` の最小値は auto（＝中身の min-content）で、
+   横スクロールさせたい表（`.c-data-table table` の min-width）がそのまま列幅を押し広げ、
+   **ページ全体が画面より横に広がる**（375pxで674pxになっていた）。 */
+.a-shell { display: grid; grid-template-columns: var(--admin-side-w) minmax(0, 1fr); min-height: 100vh; margin: 0; }
+
+.a-side {
+  display: flex; flex-direction: column; gap: var(--gap-8);
+  padding: var(--p-6) var(--p-4); background: var(--panel);
+  border-right: 1px solid var(--line);
+  position: sticky; top: 0; height: 100vh;
+}
+.a-side__brand { display: block; padding: 0 var(--p-2); }
+.a-side__brand img { display: block; width: auto; height: 44px; }
+.a-side__nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--gap-1); }
+.a-side__link {
+  display: block; padding: var(--p-3) var(--p-4); border-radius: var(--radius-sm);
+  color: var(--ink); text-decoration: none; font-weight: 700;
+  transition: background var(--duration-def), color var(--duration-def);
+}
+.a-side__link:hover { background: var(--wine-tint); color: var(--wine-deep); }
+/* 現在地。左のバーはフロントの見出し（.c-section-block__title::before）と同じ語彙 */
+/* 今いる画面：文字は --primary-solid（--bg-soft の上で 4.82:1）＋ 左の縦線。色だけに頼らない */
+.a-side__link.is-current { background: var(--bg-soft); color: var(--primary-solid); box-shadow: inset 3px 0 0 var(--primary-solid); font-weight: var(--fw-bold); }
+.a-side__foot { margin-top: auto; display: grid; gap: var(--gap-3); padding: 0 var(--p-2); }
+.a-side__user { margin: 0; font-size: var(--font-sm); color: var(--ink-soft); }
+.a-side__foot form { margin: 0; }
+.a-side__foot .c-button { width: 100%; }
+
+/* ── ドロワー（タブレット以下）──────────────────────────
+   ≥981px では帯・覆い・閉じるボタンを出さない。サイドメニューは左の列のまま。 */
+.a-topbar, .a-scrim, .a-side__close { display: none; }
+
+/* 本文。**全画面で同じ幅**。画面ごとに幅を変えない。 */
+.a-main { max-width: var(--admin-main-w); margin: 0 auto; padding: var(--p-8); width: 100%; }
+/* 画面名と本文の間隔。全画面で同じにする（以前は一覧だけ詰まっていた）。 */
+.a-title-row { display: flex; align-items: center; justify-content: space-between; gap: var(--gap-4); margin-bottom: var(--m-8); }
+/* タイトル・件数・ボタンを上下中央で揃える。件数はボタンの左に置く（下の .a-title-row__count） */
+.a-title-row > div { display: flex; align-items: center; gap: var(--gap-4); }
+.a-title-row h1, .a-title-row h2, .a-title-row h3 { margin: 0; }
+/* 画面の説明文（画面名の行の下・表やフォームの上）。下の部品との間は 24px（項目どうし）。2026-10-04 追加（ユーザーの指示） */
+.a-lead { margin-block-end: var(--m-6); }
+.a-title-row__actions { display: flex; align-items: center; gap: var(--gap-4); }
+.a-title-row__count { margin: 0; font-size: var(--font-sm); color: var(--ink-soft); white-space: nowrap; }
+/* 管理画面の中の素の表（一覧表は共通部品の c-data-table） */
+:where(.a-shell) table { width: 100%; border-collapse: collapse; }
+:where(.a-shell) :is(th, td) { padding: var(--p-3); text-align: left; border-bottom: 1px solid var(--line); }
+/* 状態のチップ。角丸999px（完全なピル）にして**ボタンと見間違えない**ようにする。
+   フロントの .c-card__badge と同じ語彙（押せないものは丸い・押せるものは角丸8px）。
+   高さは**ボタンと揃えない**（タグと分かるように、小さいボタン 32px より低い 24px。共通部品の c-tag と同じ高さと文字の大きさ）。
+   ⚠️ 高さ（block-size）と行の高さ（line-height）を必ず決める。決めないと本文の行の高さ（1.85）を引き継いで
+   36px になり、ボタンより高くなっていた（2026-10-03 ユーザーの指摘で修正） */
+.a-status { display: inline-flex; align-items: center; block-size: var(--p-6); padding: 0 var(--p-2); border: 1px solid; border-radius: var(--radius-full); background: var(--panel); font-size: var(--font-xs); line-height: var(--lh-none); white-space: nowrap; }
+/* 状態は**色でも**見分けられるようにする（仕様の決まり）。
+   ⚠️ 以前は3種とも文字が `--ink-soft`／`--ink` で、違いは枠線の実線・破線と
+   `--mute-line`（白地に1.2:1でほぼ見えない）だけだった。
+   ⚠️ **バッジの地は白のまま。** 塗ると文字とのコントラストが取れない。
+   形（実線・破線）も残す。色だけに頼らないため（色覚特性への配慮）。 */
+.a-status--draft { color: var(--state-draft); border-color: var(--state-draft); border-style: dotted; }
+.a-status--scheduled { color: var(--state-scheduled); border-color: var(--state-scheduled); border-style: dashed; }
+.a-status--published { color: var(--state-published); border-color: var(--state-published); }
+
+
+
+
+/* 何も無い状態は共通部品の c-empty を使う（管理画面では中にボタンを置かない） */
+
+
+.a-editor { background: var(--panel); border: 1px solid var(--ink-soft); border-radius: var(--radius-sm); }
+/* 本文が長いとツールバーが画面外へ流れ、見出しやリンクを付けられなくなる。
+   編集中は常に手が届くよう、画面上部に貼り付ける。
+   ⚠️ 親（.a-editor）に overflow が付くと sticky が効かなくなるので付けないこと。 */
+.a-editor__toolbar {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; flex-wrap: wrap; gap: var(--gap-1); padding: var(--p-2);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+/* ⚠️ font-family/size を指定しないと <button> はブラウザ既定の13.3pxになる。
+   ツールバーは項目数が多いので本文16pxではなく14pxを使う。 */
+.a-editor__button { display: inline-flex; gap: var(--gap-1); align-items: center; padding: var(--p-2); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm); font-family: inherit; font-size: var(--font-sm); cursor: pointer; white-space: nowrap; }
+.a-editor__button.is-active { background: var(--bg-soft); }
+.a-editor__content { min-height: 260px; padding: var(--p-4); }
+.a-editor__content .ProseMirror { min-height: 230px; outline: none; }
+/* 本文欄はフォーカスの枠を消しているので、代わりに編集ツール全体に全体の決まりと同じ枠を出す */
+.a-editor:has(.ProseMirror:focus-visible, .ProseMirror:focus) { outline: 3px solid var(--wine); outline-offset: 3px; box-shadow: 0 0 0 3px var(--panel); }   /* 全体の決まりと同じ内側の白い線 */
+/* 本文が空などの誤り：入力欄（c-field）と同じ赤い枠。本文欄（ProseMirror）に aria-invalid="true" が付いたとき（2026-10-03 ユーザーの選択） */
+.a-editor:has(.ProseMirror[aria-invalid="true"]) { border-color: var(--tone-error-icon); box-shadow: inset 0 0 0 1px var(--tone-error-icon); }
+/* 620px 以下：ツールバーは1段にし、入りきらないボタンは横にずらして見る（折り返すと3段・157px になり、本文を書く場所が狭くなるため。ユーザーの選択）
+   ⚠️ 編集ツール自体の最小幅を 0 にする。しないと、1段のツールバーの幅（約680px）に引っ張られて編集ツールが画面より広がる */
+@media (max-width: 620px) {
+  .a-editor { min-inline-size: 0; max-inline-size: 100%; }
+  .a-editor__toolbar { flex-wrap: nowrap; overflow-x: auto; }
+}
+/* 編集中の見た目を公開ページに寄せる。base.css の `ul, ol { list-style: none }` が
+   効いているので、指定しないと箇条書きを押しても**見た目が何も変わらない**
+   点と番号の出し方は公開サイトの記事本文（components.css）と同じ。 */
+.a-editor__content ul, .a-editor__content ol { margin: 1em 0; display: grid; gap: var(--gap-2); }
+.a-editor__content li { position: relative; padding-left: var(--p-5); line-height: var(--lh-body); }
+.a-editor__content ul > li::before {
+  content: ""; position: absolute; left: 4px; top: .78em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--blush);
+}
+.a-editor__content ol { counter-reset: okalc-ol; }
+.a-editor__content ol > li { counter-increment: okalc-ol; }
+.a-editor__content ol > li::before {
+  content: counter(okalc-ol) "."; position: absolute; left: 0; top: 0;
+  color: var(--wine-deep); font-weight: 700;
+}
+.a-editor__content li > p { margin: 0; }
+.a-editor__content picture { display: block; max-width: 100%; }
+.a-editor__content img { display: block; max-width: 100%; height: auto; }
+/* 編集ツールの読み込み中。解決するまで保存ボタンは無効 */
+.a-editor__loading { margin: 0; padding: var(--p-6) var(--p-4); color: var(--ink-soft); font-size: var(--font-sm); text-align: center; }
+
+
+/* 確認・入力・お知らせのダイアログは共通部品のモーダル（c-modal）を使う（js/admin.js の OkaDialog が <dialog class="c-modal"> で出す） */
+
+
+/* ── 狭い画面（タブレット以下）─────────────────────────
+   ≤980px はサイドメニューを**ハンバーガーに格納したドロワー**にする。
+   上の帯に並べていた頃は、メニューが幅しだいで1〜3段に変わり、
+   画面ごとに本文の開始位置が動いていた。
+   帯にはハンバーガーとロゴだけを置き、高さを一定にする。 */
+@media (max-width: 980px) {
+  /* ⚠️ `grid-template-rows` を書かないと、帯の高さが中身より大きくなる。
+     `.a-shell` は `min-height: 100vh` のグリッドで、`align-content` の既定は stretch。
+     **中身が画面より短いと余った高さが各行へ均等配分され**、帯が62px → 187px に
+     膨らんでいた。帯は中身ぶん、残りは本文に渡す。 */
+  .a-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; }
+  .a-topbar {
+    display: flex; align-items: center; gap: var(--gap-3);
+    position: sticky; top: 0; z-index: var(--z-sticky);
+    padding: var(--p-2) var(--p-4); background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  /* 本文の編集ツールのツールバーは、上の帯（上下 8px ＋ ボタン 44px ＋ 線 1px）の下に貼り付ける。top: 0 だと帯の裏に隠れる */
+  .a-editor__toolbar { top: calc(var(--p-2) * 2 + 44px + 1px); }
+  .a-topbar__toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; padding: 0;
+    border: 1px solid var(--ink-soft); border-radius: var(--radius-sm);
+    background: var(--panel); color: var(--ink); cursor: pointer;
+  }
+  .a-topbar__toggle:hover { background: var(--wine-tint); border-color: var(--blush); color: var(--wine-deep); }
+  .a-topbar__brand { display: block; }
+  .a-topbar__brand img { display: block; width: auto; height: 32px; }
+  /* ドロワー本体。閉じているあいだは visibility: hidden にして
+     タブ移動でも触れないようにする（transform だけだと隠れていても focus できる） */
+  .a-side {
+    position: fixed; top: 0; left: 0; z-index: var(--z-modal);
+    width: var(--admin-drawer-w); max-width: 84vw; height: 100%;
+    gap: var(--gap-6); padding: var(--p-4);
+    border-right: 1px solid var(--line);
+    transform: translateX(-100%); visibility: hidden;
+    transition: transform var(--duration-slow) ease, visibility var(--duration-slow);
+    overflow-y: auto;
+  }
+  .a-side.is-open { transform: none; visibility: visible; }
+  .a-side__brand img { height: 36px; }
+  /* 閉じるボタンはロゴの右上。ロゴの行に重ねる */
+  .a-side__close {
+    display: inline-flex; align-items: center; justify-content: center;
+    position: absolute; top: 16px; right: 16px;
+    width: 40px; height: 40px; padding: 0;
+    border: 1px solid var(--line); border-radius: var(--radius-sm);
+    background: var(--panel); color: var(--ink); cursor: pointer;
+  }
+  .a-side__close:hover { background: var(--wine-tint); border-color: var(--blush); color: var(--wine-deep); }
+  /* 背景の覆い。押すと閉じる */
+  .a-scrim {
+    display: block; position: fixed; inset: 0; z-index: var(--z-overlay);
+    background: var(--scrim);
+  }
+  /* ドロワーを開いているあいだは背面をスクロールさせない */
+  .a-shell.has-drawer { overflow: hidden; }
+  /* 画面名の行は横に並べきれなくなったら折り返す。
+     ⚠️ **折り返しを許さないと見出しのほうが潰れる。** flex 項目の最小幅は
+     min-content で、日本語は1文字まで縮むため「ダッシ／ュボー／ド」と割れる。
+     `.a-title-row__count` の nowrap も解除しないと、長い注記1行がページを押し広げる */
+  .a-title-row { flex-wrap: wrap; align-items: flex-start; }
+  .a-title-row > div { flex-wrap: wrap; }
+  .a-title-row__count { white-space: normal; }
+}
+@media (max-width: 620px) {
+  .a-main { padding: var(--p-4); }
+
+
+}
+
+
+
+
+/* 結果の知らせ（トースト）は共通部品の c-toast を使う（js/admin.js の OkaToast は OKALC.toast を呼ぶ） */
+
+/* 画面上部に残す知らせは共通部品の c-alert を使う */
+
+/* 管理画面のフォームの幅だけを持つ。中の項目は共通部品（c-formset・c-field・c-textarea-box・c-choice） */
+.a-form { max-width: var(--admin-form-w); }
+
+
+
+
+/* ⚠️ td に直接当てないこと。行の組み立てが壊れる。中の div に当てる */
+.a-ops { display: flex; gap: var(--gap-2); align-items: center; }
+/* よくある質問の一覧の狭い画面：状態（上段）の下で、削除を右に寄せる（c-data-table__ops-status のある表だけ） */
+@media (max-width: 620px) {
+  .c-data-table:has(.c-data-table__ops-status) .a-ops { justify-content: flex-end; }
+}
+
+/* ======================= ログイン画面（a-login） =======================
+   ログイン画面だけで使う器。公開サイトのヘッダー・フッターを出さず、画面の中央にカードを1枚置く（Admin2 のログイン画面と同じ並び）。
+   上から ロゴ → 見出し → カード（入力欄とボタン）→ 下のリンク。見出しの下に説明文は置かない（2026-10-04 ユーザーの指示）。
+   カードの中の入力欄・ボタン・知らせは共通部品（c-formset・c-field・c-choice・c-button・c-alert）。2026-10-04 追加（ユーザーの決定） */
+.a-login { min-block-size: 100vh; display: grid; place-items: center; padding: var(--p-10) var(--p-4); background: var(--bg); }
+.a-login__inner { inline-size: 100%; max-inline-size: var(--admin-login-w); display: grid; gap: var(--gap-6); }
+.a-login__head { display: grid; justify-items: center; gap: var(--gap-2); text-align: center; }
+.a-login__brand { display: block; }
+.a-login__brand img { display: block; }
+/* 管理画面の見出しはゴシック（明朝にしない） */
+.a-login__title { margin: 0; font-family: var(--sans); font-size: var(--font-xl); font-weight: var(--fw-bold); line-height: var(--lh-heading); }
+.a-login__card { padding: var(--p-8); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+/* カードの先頭の知らせ（ログインできなかった・ログアウトした）と、下の入力欄の間をあける */
+.a-login__card > .c-alert { margin-block-end: var(--m-6); }
+.a-login__foot { margin: 0; font-size: var(--font-sm); text-align: center; }
+@media (max-width: 620px) {
+  .a-login { padding-block: var(--p-6); }
+  .a-login__card { padding: var(--p-6); }
+}

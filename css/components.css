@@ -1,0 +1,1972 @@
+/* ==========================================================
+   components.css — 部品（クラスは c- で始める）
+   状態クラス：.is-hover / .is-focus / .is-active / .is-loading / .is-disabled / .is-error / .is-readonly / .is-checked / .is-open
+   （サイトで状態を常に見せるためのクラス。実装では :hover 等と aria 属性が同じ見た目を出す）
+   決まり：テキストボックスやボタン類の大きさが変わる動き（scale）は NG
+   ========================================================== */
+
+/* ======================= Button（c-button） =======================
+   角型（既定）：画面の操作に使うボタン。c-button だけで primary / solid / lg。
+     色 = --primary（省略可）/ --secondary / --negative / --danger / --success
+     形 = solid（既定）/ --outline / --subtle / --ghost
+     大きさ = --xl / --lg（既定）/ --md / --sm、--icon（アイコンだけ・正方形）、--block（横幅いっぱい）
+   ピル型：c-button--pill。公開サイトの導線（予約など）に使うイレギュラーなボタン。
+     塗り = c-button--pill（--wine の塗り・hover で 2px 浮く）、枠線 = c-button--pill c-button--ghost
+     高さは約56px。入力欄と横に並べない（並べるのは角型） */
+.c-button {
+  /* variant ごとの色（初期値 = primary）。6色で solid / outline / subtle / ghost を作る */
+  --_solid: var(--primary-solid);
+  --_solid-hover: var(--primary-solid-hover);
+  --_solid-active: var(--primary-solid-active);
+  --_tint: var(--primary-tint);
+  --_tint-hover: var(--primary-tint-hover);
+  --_tint-active: var(--primary-tint-active);
+  /* サイズ（初期値 = lg） */
+  --_h: var(--btn-lg-h);
+  --_px: var(--btn-lg-px);
+  --_font: var(--btn-lg-font);
+  --_icon: var(--btn-lg-icon);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--btn-gap);
+  block-size: var(--_h);
+  min-inline-size: var(--_h);
+  padding-inline: var(--_px);
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  font-size: var(--_font);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-none);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  /* solid が既定 */
+  background: var(--_solid);
+  color: var(--on-fill);
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+.c-button .c-icon { inline-size: var(--_icon); block-size: var(--_icon); }
+.c-button .c-spinner { --_s: var(--_icon); }
+
+/* サイズ（xl / lg / md / sm） */
+.c-button--xl { --_h: var(--btn-xl-h); --_px: var(--btn-xl-px); --_font: var(--btn-xl-font); --_icon: var(--btn-xl-icon); }
+.c-button--lg { --_h: var(--btn-lg-h); --_px: var(--btn-lg-px); --_font: var(--btn-lg-font); --_icon: var(--btn-lg-icon); }
+.c-button--md { --_h: var(--btn-md-h); --_px: var(--btn-md-px); --_font: var(--btn-md-font); --_icon: var(--btn-md-icon); }
+.c-button--sm { --_h: var(--btn-sm-h); --_px: var(--btn-sm-px); --_font: var(--btn-sm-font); --_icon: var(--btn-sm-icon); }
+/* アイコンのみ：正方形 */
+.c-button--icon { padding-inline: 0; inline-size: var(--_h); }
+/* 横幅いっぱい */
+.c-button--block { display: flex; inline-size: 100%; }
+
+/* variant（primary は既定と同じ。書いてもよい） */
+.c-button--primary {
+  --_solid: var(--primary-solid); --_solid-hover: var(--primary-solid-hover); --_solid-active: var(--primary-solid-active);
+  --_tint: var(--primary-tint); --_tint-hover: var(--primary-tint-hover); --_tint-active: var(--primary-tint-active);
+}
+.c-button--secondary {
+  --_solid: var(--secondary-solid); --_solid-hover: var(--secondary-solid-hover); --_solid-active: var(--secondary-solid-active);
+  --_tint: var(--secondary-tint); --_tint-hover: var(--secondary-tint-hover); --_tint-active: var(--secondary-tint-active);
+}
+.c-button--negative {
+  --_solid: var(--negative-solid); --_solid-hover: var(--negative-solid-hover); --_solid-active: var(--negative-solid-active);
+  --_tint: var(--negative-tint); --_tint-hover: var(--negative-tint-hover); --_tint-active: var(--negative-tint-active);
+}
+.c-button--danger {
+  --_solid: var(--danger-solid); --_solid-hover: var(--danger-solid-hover); --_solid-active: var(--danger-solid-active);
+  --_tint: var(--danger-tint); --_tint-hover: var(--danger-tint-hover); --_tint-active: var(--danger-tint-active);
+}
+.c-button--success {
+  --_solid: var(--success-solid); --_solid-hover: var(--success-solid-hover); --_solid-active: var(--success-solid-active);
+  --_tint: var(--success-tint); --_tint-hover: var(--success-tint-hover); --_tint-active: var(--success-tint-active);
+}
+
+/* style：solid（既定）。押下は大きさを変えず、色をもう一段濃くする */
+.c-button:where(:hover, .is-hover):not(:disabled, .is-disabled, .is-loading) { background: var(--_solid-hover); }
+.c-button:where(:active, .is-active):not(:disabled, .is-disabled, .is-loading) { background: var(--_solid-active); }
+
+/* style：outline（文字と線 = solid、hover で面 = tint） */
+.c-button--outline { background: transparent; border-color: var(--_solid); color: var(--_solid); }
+.c-button--outline:where(:hover, .is-hover):not(:disabled, .is-disabled, .is-loading) { background: var(--_tint); border-color: var(--_solid-hover); color: var(--_solid-hover); }
+.c-button--outline:where(:active, .is-active):not(:disabled, .is-disabled, .is-loading) { background: var(--_tint-hover); }
+
+/* style：subtle（面 = tint、文字 = solid-hover） */
+.c-button--subtle { background: var(--_tint); color: var(--_solid-hover); }
+.c-button--subtle:where(:hover, .is-hover):not(:disabled, .is-disabled, .is-loading) { background: var(--_tint-hover); }
+.c-button--subtle:where(:active, .is-active):not(:disabled, .is-disabled, .is-loading) { background: var(--_tint-active); }
+
+/* style：ghost（文字 = solid、hover で面 = tint） */
+.c-button--ghost { background: transparent; color: var(--_solid); }
+.c-button--ghost:where(:hover, .is-hover):not(:disabled, .is-disabled, .is-loading) { background: var(--_tint); color: var(--_solid-hover); }
+.c-button--ghost:where(:active, .is-active):not(:disabled, .is-disabled, .is-loading) { background: var(--_tint-hover); }
+
+/* 状態：loading / disabled */
+.c-button.is-loading { cursor: progress; }
+.c-button:disabled, .c-button.is-disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── ピル型（c-button--pill）：公開サイトの導線。値は公開サイトのボタン（primary / ghost）と同じ ── */
+.c-button.c-button--pill {
+  block-size: auto; min-inline-size: 0;
+  gap: var(--gap-2); padding: var(--p-3) var(--p-8); border-radius: var(--radius-full);
+  font-family: var(--sans); font-size: var(--font-def); font-weight: 700; line-height: var(--lh-body);
+  background: var(--wine); border-color: transparent; color: var(--on-fill); box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-def), box-shadow var(--duration-def), background var(--duration-def);
+}
+.c-button.c-button--pill:where(:hover, .is-hover):not(:disabled, .is-disabled, .is-loading) { background: var(--wine-deep); transform: translateY(-2px); }
+.c-button.c-button--pill.c-button--ghost { background: transparent; border-color: var(--wine); color: var(--wine-deep); box-shadow: none; }
+.c-button.c-button--pill.c-button--ghost:where(:hover, .is-hover):not(:disabled, .is-disabled, .is-loading) { background: var(--wine-tint); transform: translateY(-2px); }
+
+/* ======================= ラベルセット =======================
+   ラベル ＋ 必須/任意タグ ＋ 補足説明 ＋ 入力例 ＋ フォームパーツ ＋ エラーテキスト
+   余白：文字どうし 4px（--gap-1）／ 文字とフォームパーツの間 8px（4px + --m-1）／ フォームパーツとエラーの間 4px */
+.c-formset { display: grid; align-content: start; gap: var(--gap-1); min-inline-size: 0; border: 0; padding: 0; }
+.c-formset__head { display: flex; align-items: center; flex-wrap: wrap; gap: var(--gap-2); padding: 0; }
+/* fieldset の legend は並びの外に出るため、下に 4px を足して他と同じ余白にする */
+legend.c-formset__head { margin-block-end: var(--m-1); }
+.c-formset__control { margin-block-start: var(--m-1); min-inline-size: 0; }
+.c-label { font-size: var(--font-def); font-weight: var(--fw-bold); line-height: var(--lh-tight); color: var(--ink); }
+.c-label--sm { font-size: var(--font-sm); }
+.c-req {
+  display: inline-flex; align-items: center;
+  block-size: var(--p-5);
+  padding-inline: var(--p-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-none);
+}
+.c-req--required { background: var(--primary-solid); color: var(--on-fill); }
+.c-req--optional { background: var(--mute-fill); color: var(--ink); box-shadow: inset 0 0 0 1px var(--mute-line); }
+/* 補足テキスト・入力例・エラーテキストは 14（--font-sm） */
+.c-formset__help { font-size: var(--font-sm); color: var(--ink-soft); }
+.c-formset__example { font-size: var(--font-sm); color: var(--ink-soft); }
+.c-formset__error {
+  display: flex; align-items: flex-start; gap: var(--gap-1);
+  font-size: var(--font-sm); font-weight: var(--fw-medium);
+  color: var(--tone-error-fg);
+  animation: c-fade-in var(--duration-def) var(--ease-enter);
+}
+.c-formset__error .c-icon { color: var(--tone-error-icon); inline-size: var(--icon-md); block-size: var(--icon-md); }
+
+/* ======================= 入力欄の共通：枠 =======================
+   hover 時は枠を 2px に見せる。box-shadow（内側）で1px足すので、大きさや周りの部品は動かない */
+.c-field, .c-textarea-box, .c-choice {
+  --_line: var(--field-line);
+  --_line-extra: transparent;
+  border: 1px solid var(--_line);
+  box-shadow: inset 0 0 0 1px var(--_line-extra);
+}
+
+/* ======================= テキストフィールド =======================
+   箱の中の前後に「固定の文字（affix）」「アイコン」「ボタン（action）」を置ける。既定の高さ 48px */
+.c-field {
+  --_h: var(--field-h);
+  --_field-h: var(--_h); /* 中に置くボタンの高さ計算用 */
+  display: flex;
+  align-items: center;
+  gap: var(--gap-2);
+  block-size: var(--_h);
+  padding-inline: var(--p-3);
+  background: var(--panel);
+  border-radius: var(--radius-control);
+  color: var(--ink);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
+}
+.c-field--xl { --_h: var(--field-xl-h); }
+.c-field--lg { --_h: var(--field-lg-h); }
+.c-field--md { --_h: var(--field-md-h); }
+.c-field--sm { --_h: var(--field-sm-h); font-size: var(--font-sm); }
+.c-field__input {
+  flex: 1;
+  min-inline-size: 0;
+  block-size: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  outline: none;
+  font-size: inherit;
+  text-align: start;
+}
+.c-field__input::placeholder { color: var(--ink-soft); }
+.c-field__affix { flex-shrink: 0; font-size: var(--font-def); color: var(--ink-soft); white-space: nowrap; }
+.c-field__icon { flex-shrink: 0; color: var(--ink-soft); }
+.c-field__action { flex-shrink: 0; }
+/* 中のボタンは箱の内側に収める：箱より 8px 低くし、端の余白を詰める */
+.c-field__action.c-button { --_h: calc(var(--_field-h) - var(--p-2)); }
+.c-field:has(> .c-field__action:last-child) { padding-inline-end: var(--p-1); }
+.c-field:has(> .c-field__action:first-child) { padding-inline-start: var(--p-1); }
+/* 消去ボタンを置いた検索欄では、ブラウザ自身の×を出さない（×が二重になる。2026-11-04） */
+.c-field:has(> .c-field__action) .c-field__input::-webkit-search-cancel-button { display: none; }
+
+/* 状態（枠の色は --_line、hover の太さは --_line-extra で切り替える） */
+:is(.c-field, .c-textarea-box):where(:hover, .is-hover):not(.is-disabled, .is-readonly, :has(:disabled), :has([readonly])) { --_line: var(--field-line-hover); --_line-extra: var(--field-line-hover); }
+:is(.c-field, .c-textarea-box):focus-within, :is(.c-field, .c-textarea-box).is-focus { outline: 3px solid var(--wine); outline-offset: 3px; }
+:is(.c-field, .c-textarea-box):is(.is-error, [aria-invalid="true"], :has([aria-invalid="true"])) { --_line: var(--tone-error-icon); }   /* セレクトは開くボタン自体が c-field */
+:is(.c-field, .c-textarea-box):is(.is-error, [aria-invalid="true"], :has([aria-invalid="true"])):where(:hover, .is-hover) { --_line-extra: var(--tone-error-icon); }
+:is(.c-field, .c-textarea-box):is(.is-readonly, :has([readonly])) { --_line: var(--mute-line); background: var(--bg); }
+:is(.c-field, .c-textarea-box):is(.is-disabled, :has(:disabled)) { --_line: var(--mute-line); background: var(--mute-fill); color: var(--ink-disabled); cursor: not-allowed; }
+.c-field.is-disabled .c-field__input, .c-field__input:disabled { cursor: not-allowed; }
+
+/* ======================= 複数行（テキストエリア） =======================
+   既定の高さは3行分。入力に合わせて高さが伸びる（autogrow）。
+   最大文字数（maxlength）があるときだけ、箱の中の右下に「0 / 256」を出す */
+.c-textarea-box {
+  position: relative;
+  display: grid;
+  background: var(--panel);
+  border-radius: var(--radius-control);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+.c-textarea {
+  display: block;
+  inline-size: 100%;
+  min-block-size: calc(3lh + var(--p-3) * 2);
+  padding: var(--p-3);
+  border: 0;
+  background: transparent;
+  line-height: var(--lh-def);
+  resize: none;
+  outline: none;
+  field-sizing: content;   /* 対応ブラウザは CSS だけで伸びる。未対応は JS で高さを合わせる */
+  overflow: hidden;
+}
+.c-textarea::placeholder { color: var(--ink-soft); }
+.c-textarea-box:has(.c-textarea__count) .c-textarea { padding-block-end: calc(var(--p-3) + var(--font-xs) * 1.6); }
+.c-textarea__count {
+  position: absolute;
+  inset-block-end: var(--p-2);
+  inset-inline-end: var(--p-3);
+  font-size: var(--font-xs);
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+.c-textarea__count.is-over { color: var(--tone-error-fg); font-weight: var(--fw-bold); }
+.c-textarea-box:not(:has([maxlength], [data-maxlength])) .c-textarea__count { display: none; }
+/* 上限を超えた文字の目印。JS が textarea の裏に同じ文字の写し（__mirror）を重ね、超えたぶんだけ背景を赤くする。
+   写しの文字は透明で、見えるのは textarea の文字。文字の位置がずれないよう、余白・行間・折り返しを textarea とそろえる */
+.c-textarea, .c-textarea__mirror { grid-area: 1 / 1; }
+.c-textarea { position: relative; }
+.c-textarea__mirror {
+  padding: var(--p-3);
+  line-height: var(--lh-def);
+  letter-spacing: normal;   /* textarea は親の字間を引き継がないので、写しもそろえる */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  color: transparent;
+  overflow: hidden;
+  pointer-events: none;
+}
+.c-textarea-box:has(.c-textarea__count) .c-textarea__mirror { padding-block-end: calc(var(--p-3) + var(--font-xs) * 1.6); }
+.c-textarea__over { background: var(--tone-error-bg); color: transparent; border-radius: 2px; }
+
+/* ======================= セレクト（自前の一覧 = hug メニュー） =======================
+   ボタン（role="combobox"）＋ 一覧（role="listbox"）。一覧の幅は中身に合わせ、1行の高さは 40px */
+.c-select { position: relative; display: block; }
+.c-select__trigger { inline-size: 100%; cursor: pointer; }
+/* 送る値を入れる hidden の入力欄（js/components.js が選んだ値を入れる）。見た目は無い */
+.c-select__input { display: none; }
+.c-select__value { flex: 1; min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: start; }
+.c-select__value.is-placeholder { color: var(--ink-soft); }
+.c-select__chevron { flex-shrink: 0; color: var(--ink-soft); transition: transform var(--duration-def) var(--ease-standard); }
+.c-select.is-open .c-select__chevron { transform: rotate(180deg); }
+.c-menu {
+  position: absolute;
+  inset-block-start: calc(100% + var(--p-1));
+  inset-inline-start: 0;
+  z-index: var(--z-dropdown);
+  inline-size: max-content;
+  max-inline-size: min(calc(100vw - var(--p-8)), calc(var(--p-16) * 6)); /* 最大 384px。超える項目は折り返す */
+  max-block-size: calc(var(--menu-item-h) * 6 + var(--p-2) + 2px); /* 1行の項目なら6行分 ＋ 上下の余白 ＋ 枠 */
+  overflow-y: auto;
+  margin: 0;
+  padding: var(--p-1);
+  list-style: none;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-dropdown);
+  animation: c-fade-in var(--duration-fast) var(--ease-enter);
+}
+.c-select:not(.is-open) .c-menu { display: none; }
+/* 開いたときは画面上の位置で表示する（表やカードなど、はみ出しを隠す枠の中でも切れない）。位置は JS が決める */
+.c-menu.is-floating { position: fixed; inset: auto; z-index: var(--z-tooltip); }   /* body の直下に出すので、モーダルより上に重ねる */
+.c-menu[hidden] { display: none; }
+.c-menu--static { position: static; }
+.c-menu__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  min-block-size: var(--menu-item-h);   /* 1行のときは 40px。入り切らないときは折り返して伸びる */
+  padding: calc((var(--menu-item-h) - var(--font-def) * var(--lh-tight)) / 2) var(--p-4) calc((var(--menu-item-h) - var(--font-def) * var(--lh-tight)) / 2) var(--p-3);
+  border-radius: var(--radius-xs);
+  color: var(--ink);
+  line-height: var(--lh-tight);
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+.c-menu__check { flex-shrink: 0; inline-size: var(--icon-md); block-size: var(--icon-md); margin-block-start: calc((var(--font-def) * var(--lh-tight) - var(--icon-md)) / 2); color: var(--wine-deep); visibility: hidden; }
+.c-menu__item[aria-selected="true"] { color: var(--wine-deep); font-weight: var(--fw-bold); }
+.c-menu__item[aria-selected="true"] .c-menu__check { visibility: visible; }
+.c-menu__item:where(:hover, .is-hover, .is-active) { background: var(--primary-tint); }
+.c-menu__item[aria-disabled="true"] { color: var(--ink-disabled); cursor: not-allowed; background: transparent; }
+/* グループ分け。見出し（__group-label）は選べない。2つ目からのグループの上に線を引く */
+.c-menu__group-list { margin: 0; padding: 0; list-style: none; }
+.c-menu__group + .c-menu__group { margin-block-start: var(--m-1); padding-block-start: var(--p-1); border-block-start: 1px solid var(--line); }
+.c-menu__group-label { display: block; padding: var(--p-2) var(--p-4) var(--p-1) var(--p-3); font-size: var(--font-xs); font-weight: var(--fw-bold); color: var(--ink-soft); cursor: default; }
+
+/* ======================= チェックボックス・ラジオ =======================
+   既定は「線で囲んだボタン風」。input は見えなくするがキーボード・読み上げでは使える。
+   印は1行目の文字の高さに合わせて上揃え。説明文は項目名の下にそろう（印の下には回り込まない） */
+.c-choice-group { display: flex; flex-wrap: wrap; gap: var(--gap-2); }
+.c-choice-group--stack { flex-direction: column; align-items: stretch; }
+.c-choice-group--plain { gap: var(--gap-4) var(--gap-6); }
+.c-choice {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  min-block-size: var(--field-h);
+  padding: var(--p-3) var(--p-4) var(--p-3) var(--p-3);
+  background: var(--panel);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+.c-choice__input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: inherit; }
+.c-choice__mark {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  inline-size: var(--icon-md);
+  block-size: var(--icon-md);
+  margin-block-start: calc((var(--font-def) * var(--lh-tight) - var(--icon-md)) / 2);
+  border: 2px solid var(--field-line);
+  border-radius: var(--radius-xs);
+  background: var(--panel);
+  color: var(--on-fill);
+  transition: background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+}
+.c-choice__mark .c-icon { inline-size: var(--icon-sm); block-size: var(--icon-sm); opacity: 0; }
+.c-choice--radio .c-choice__mark { border-radius: var(--radius-full); }
+.c-choice--radio .c-choice__mark::after {
+  content: "";
+  inline-size: var(--p-2);
+  block-size: var(--p-2);
+  border-radius: var(--radius-full);
+  background: var(--on-fill);
+  opacity: 0;
+  transition: opacity var(--duration-def) var(--ease-enter);
+}
+.c-choice__text { line-height: var(--lh-tight); }
+.c-choice__desc { display: block; margin-block-start: var(--m-1); font-size: var(--font-def); line-height: var(--lh-def); color: var(--ink-soft); }
+
+/* 状態 */
+.c-choice:where(:hover, .is-hover):not(.is-disabled, :has(:disabled)) { --_line: var(--field-line-hover); --_line-extra: var(--field-line-hover); background: var(--primary-tint); }
+.c-choice:has(:focus-visible), .c-choice.is-focus { outline: 3px solid var(--wine); outline-offset: 3px; }
+.c-choice:is(:has(:checked), .is-checked) { --_line: var(--primary-solid); --_line-extra: var(--primary-solid); background: var(--primary-tint); }
+.c-choice:is(:has(:checked), .is-checked) .c-choice__mark { background: var(--primary-solid); border-color: var(--primary-solid); }
+.c-choice:is(:has(:checked), .is-checked) .c-choice__mark .c-icon { opacity: 1; animation: c-fade-in var(--duration-def) var(--ease-enter); }
+.c-choice--radio:is(:has(:checked), .is-checked) .c-choice__mark::after { opacity: 1; }
+.c-choice:is(.is-error, :has([aria-invalid="true"])) { --_line: var(--tone-error-icon); }
+.c-choice:is(.is-disabled, :has(:disabled)) { opacity: 0.4; cursor: not-allowed; }
+
+/* 線なし（生成：一覧の中など、ボタン風だと重いとき用）。項目の間は --c-choice-group--plain で広めにとる */
+.c-choice--plain { min-block-size: var(--btn-sm-h); padding: var(--p-1) 0; border-color: transparent; background: transparent; }
+.c-choice--plain:where(:hover, .is-hover):not(.is-disabled, :has(:disabled)) { --_line: transparent; --_line-extra: transparent; background: transparent; }
+.c-choice--plain:where(:hover, .is-hover):not(.is-disabled, :has(:disabled)) .c-choice__mark { border-color: var(--field-line-hover); }
+.c-choice--plain:is(:has(:checked), .is-checked) { --_line: transparent; --_line-extra: transparent; background: transparent; }
+
+/* ======================= スイッチ ======================= */
+.c-switch { position: relative; display: inline-flex; align-items: center; gap: var(--gap-3); min-block-size: var(--field-h); cursor: pointer; }
+.c-switch__input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: inherit; }
+.c-switch__track {
+  position: relative;
+  flex-shrink: 0;
+  inline-size: calc(var(--p-10) + var(--p-1));
+  block-size: var(--p-6);
+  margin-inline: var(--m-1);   /* フォーカスの枠が周りと重ならないよう左右に余白 */
+  border-radius: var(--radius-full);
+  background: var(--field-line);
+  transition: background-color var(--duration-def) var(--ease-standard);
+}
+.c-switch__thumb {
+  position: absolute;
+  inset-block-start: var(--p-0\.5);
+  inset-inline-start: var(--p-0\.5);
+  inline-size: var(--p-5);
+  block-size: var(--p-5);
+  border-radius: var(--radius-full);
+  background: var(--panel);
+  box-shadow: var(--shadow-dropdown);
+  transition: transform var(--duration-def) var(--ease-standard);
+}
+.c-switch:where(:hover, .is-hover) .c-switch__track { background: var(--field-line-hover); }
+.c-switch:is(:has(:checked), .is-checked) .c-switch__track { background: var(--primary-solid); }
+.c-switch:is(:has(:checked), .is-checked):where(:hover, .is-hover) .c-switch__track { background: var(--primary-solid-hover); }
+.c-switch:is(:has(:checked), .is-checked) .c-switch__thumb { transform: translateX(var(--p-5)); }
+.c-switch:has(:focus-visible) .c-switch__track, .c-switch.is-focus .c-switch__track { outline: 3px solid var(--wine); outline-offset: 3px; }
+.c-switch:is(:has(:disabled), .is-disabled) { opacity: 0.4; cursor: not-allowed; }
+
+/* ======================= 通知（Alert）：面はスケールの200 ======================= */
+.c-alert {
+  --_bg: var(--tone-info-bg); --_line: var(--tone-info-line);
+  --_fg: var(--tone-info-fg); --_icon: var(--tone-info-icon);
+  display: flex;
+  gap: var(--gap-3);
+  padding: var(--p-4);
+  background: var(--_bg);
+  border: 1px solid var(--_line);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+}
+.c-alert > .c-icon { color: var(--_icon); inline-size: var(--icon-lg); block-size: var(--icon-lg); }
+.c-alert__body { flex: 1; display: grid; gap: var(--gap-1); }
+.c-alert__title { font-weight: var(--fw-bold); color: var(--_fg); line-height: var(--lh-tight); }
+.c-alert__text { font-size: var(--font-def); } /* タイトル（16 bold）と同じ大きさの regular */
+.c-alert--warning { --_bg: var(--tone-warning-bg); --_line: var(--tone-warning-line); --_fg: var(--tone-warning-fg); --_icon: var(--tone-warning-icon); }
+.c-alert--error { --_bg: var(--tone-error-bg); --_line: var(--tone-error-line); --_fg: var(--tone-error-fg); --_icon: var(--tone-error-icon); }
+.c-alert--success { --_bg: var(--tone-success-bg); --_line: var(--tone-success-line); --_fg: var(--tone-success-fg); --_icon: var(--tone-success-icon); }
+
+/* ======================= トースト ======================= */
+.c-toast {
+  --_bg: var(--ink);
+  display: flex;
+  align-items: flex-start;   /* 複数行でもアイコンと閉じるボタンは1行目にそろえる */
+  gap: var(--gap-3);
+  inline-size: min(100%, calc(var(--p-16) * 6));
+  line-height: var(--lh-def);
+  padding: var(--p-3) var(--p-4);
+  background: var(--_bg);
+  color: var(--on-fill);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-toast);
+  font-size: var(--font-def);
+  animation: c-slide-up var(--duration-slow) var(--ease-enter);
+}
+.c-toast__text { flex: 1; }
+.c-toast > .c-icon { margin-block: calc((1lh - var(--icon-md)) / 2); }
+.c-toast__close { margin-block: calc((1lh - var(--btn-md-h)) / 2); }
+.c-toast:has(.c-toast__close) { padding-inline-end: var(--p-2); } /* 閉じるボタンがあるときはボタンの余白で右端をとる */
+.c-toast__close {
+  display: grid; place-items: center;
+  inline-size: var(--btn-md-h); block-size: var(--btn-md-h);
+  border: 0; border-radius: var(--radius-sm);
+  background: transparent; color: inherit;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+.c-toast__close:hover { background: rgba(var(--bg-rgb), 0.16); }
+.c-toast--success > .c-icon { color: var(--tone-success-line); }
+/* エラー（通信エラー等）は赤系の面 */
+.c-toast--error { --_bg: var(--negative-solid); }
+.c-toast.is-leaving { animation: c-fade-out var(--duration-def) var(--ease-exit) forwards; }
+.c-toast-region { position: fixed; inset-block-end: var(--p-6); inset-inline: var(--p-4); display: grid; justify-items: center; gap: var(--gap-2); z-index: var(--z-toast); pointer-events: none; }
+.c-toast-region > * { pointer-events: auto; }
+
+/* ======================= タグ・バッジ ======================= */
+.c-tag {
+  --_bg: var(--mute-fill); --_fg: var(--ink-soft); --_line: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-1);
+  block-size: var(--p-6);
+  padding-inline: var(--p-2);
+  border-radius: var(--radius-sm);
+  background: var(--_bg);
+  color: var(--_fg);
+  box-shadow: inset 0 0 0 1px var(--_line);
+  font-size: var(--font-xs);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-none);
+  white-space: nowrap;
+}
+.c-tag .c-icon { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
+.c-tag--primary { --_bg: var(--primary-tint); --_fg: var(--primary-solid-hover); }
+.c-tag--info { --_bg: var(--tone-info-bg); --_fg: var(--tone-info-fg); --_line: var(--tone-info-line); }
+.c-tag--warning { --_bg: var(--tone-warning-bg); --_fg: var(--tone-warning-fg); --_line: var(--tone-warning-line); }
+.c-tag--error { --_bg: var(--tone-error-bg); --_fg: var(--tone-error-fg); --_line: var(--tone-error-line); }
+.c-tag--success { --_bg: var(--tone-success-bg); --_fg: var(--tone-success-fg); --_line: var(--tone-success-line); }
+.c-tag--lg { block-size: var(--p-8); padding-inline: var(--p-3); font-size: var(--font-sm); }
+
+.c-badge {
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: var(--p-5);
+  block-size: var(--p-5);
+  padding-inline: var(--p-1);
+  border-radius: var(--radius-full);
+  background: var(--primary-solid);
+  color: var(--on-fill);
+  font-size: var(--font-xs);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-none);
+}
+.c-badge--dot { min-inline-size: var(--p-2); block-size: var(--p-2); padding: 0; }
+
+/* ======================= 読み込み =======================
+   ブロック：9個の四角が斜めに順番に縮んで戻る（loading.dev の Blocks を CSS で再現、1周 1.3 秒）
+   ※四角の拡大・縮小は読み込み表示の動きで、部品の大きさは変わらない */
+.c-spinner {
+  --_s: var(--icon-lg);
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--_s) / 12);
+  inline-size: var(--_s);
+  block-size: var(--_s);
+  flex-shrink: 0;
+  color: inherit;
+}
+.c-spinner--sm { --_s: var(--icon-sm); }
+.c-spinner--md { --_s: var(--icon-md); }
+.c-spinner--lg { --_s: var(--icon-lg); }
+.c-spinner--xl { --_s: var(--icon-xl); }
+.c-spinner--brand { color: var(--wine); }
+.c-spinner > i {
+  display: block;
+  background: currentColor;
+  border-radius: 1px;
+  animation: c-blocks 1.3s var(--ease-standard) infinite;
+}
+.c-spinner > i:nth-child(1) { animation-delay: 0s; }
+.c-spinner > i:nth-child(2), .c-spinner > i:nth-child(4) { animation-delay: 0.1s; }
+.c-spinner > i:nth-child(3), .c-spinner > i:nth-child(5), .c-spinner > i:nth-child(7) { animation-delay: 0.2s; }
+.c-spinner > i:nth-child(6), .c-spinner > i:nth-child(8) { animation-delay: 0.3s; }
+.c-spinner > i:nth-child(9) { animation-delay: 0.4s; }
+
+.c-skeleton {
+  display: block;
+  block-size: var(--font-def);
+  border-radius: var(--radius-xs);
+  background: linear-gradient(90deg, var(--mute-fill) 25%, var(--bg-soft) 50%, var(--mute-fill) 75%);
+  background-size: 200% 100%;
+  animation: c-shimmer 1.5s var(--ease-linear) infinite;
+}
+.c-skeleton--title { block-size: var(--font-xl); inline-size: 60%; }
+.c-skeleton--circle { inline-size: var(--p-12); block-size: var(--p-12); border-radius: var(--radius-full); }
+.c-progress { display: block; inline-size: 100%; block-size: var(--p-1); border-radius: var(--radius-full); background: var(--mute-fill); overflow: hidden; }
+.c-progress__bar { display: block; block-size: 100%; background: var(--wine); border-radius: inherit; transition: inline-size var(--duration-slow) var(--ease-standard); }
+
+/* ======================= タブ ======================= */
+/* 下の線は影で描く（border だとタブを -1px 重ねる必要があり、その 1px のはみ出しで縦のスクロールバーが出ていた） */
+.c-tabs { display: flex; gap: var(--gap-1); box-shadow: inset 0 -1px 0 var(--line); overflow-x: auto; }
+.c-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-1);
+  block-size: var(--btn-lg-h);
+  padding-inline: var(--p-4);
+  border: 0;
+  border-block-end: 2px solid transparent;
+  background: transparent;
+  color: var(--ink-soft);
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-standard), border-color var(--duration-def) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard);
+}
+.c-tab:where(:hover, .is-hover) { color: var(--ink); background: var(--primary-tint); }
+.c-tab[aria-selected="true"] { color: var(--primary-solid); border-block-end-color: var(--primary-solid); }
+.c-tab:focus-visible, .c-tab.is-focus { outline-offset: -2px; }
+.c-tab:disabled, .c-tab.is-disabled { opacity: 0.4; }
+.c-tabpanel { padding-block: var(--p-6); animation: c-fade-in var(--duration-def) var(--ease-enter); }
+
+/* ======================= リンク ======================= */
+.c-link {
+  display: inline-flex; align-items: center; gap: var(--gap-1);
+  color: var(--wine-deep);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color var(--duration-fast) var(--ease-standard), text-decoration-thickness var(--duration-fast) var(--ease-standard);
+}
+.c-link:where(:hover, .is-hover) { text-decoration-thickness: 2px; }
+.c-link .c-icon { inline-size: var(--icon-sm); block-size: var(--icon-sm); }
+
+/* ======================= ページ送り ======================= */
+.c-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-3); }
+/* 組み合わせの余白：同じまとまりの中の部品どうしは 24px（余白の決め方）。画面ごとに余白を書かなくてよいように部品側で持つ */
+.c-data-table + .c-pagination,
+.c-alert + .c-tabs { margin-block-start: var(--m-6); }
+.c-pagination ul { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-1); padding: 0; list-style: none; }
+.c-page {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--gap-1);
+  min-inline-size: var(--btn-md-h); block-size: var(--btn-md-h);
+  padding-inline: var(--p-2);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+.c-page:where(:hover, .is-hover) { background: var(--primary-tint); }
+.c-page[aria-current="page"] { background: var(--primary-solid); color: var(--on-fill); }
+.c-page[aria-disabled="true"] { opacity: 0.4; pointer-events: none; }
+.c-page--gap { min-inline-size: var(--p-6); padding: 0; color: var(--ink-soft); pointer-events: none; }
+.c-page--text { padding-inline: var(--p-3); }
+.c-pagination__summary { font-size: var(--font-sm); color: var(--ink-soft); }
+.c-pagination__status { min-inline-size: calc(var(--p-16) + var(--p-4)); text-align: center; font-weight: var(--fw-medium); }
+
+/* ======================= モーダル ======================= */
+.c-modal-backdrop {
+  position: fixed; inset: 0;
+  display: grid; place-items: center;
+  padding: var(--p-4);
+  background: var(--scrim);
+  z-index: var(--z-modal);
+  animation: c-fade-in var(--duration-slow) var(--ease-enter);
+}
+.c-modal {
+  display: grid;
+  gap: var(--gap-4);
+  inline-size: min(100%, calc(var(--p-16) * 9));
+  max-block-size: calc(100dvh - var(--p-8));
+  overflow: auto;
+  padding: var(--p-6);
+  background: var(--panel);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  animation: c-slide-up var(--duration-slow) var(--ease-enter);
+}
+.c-modal__head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--gap-4); }
+.c-modal__title { font-size: var(--font-lg); font-weight: var(--fw-bold); line-height: var(--lh-tight); }
+.c-modal__foot { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--gap-2); }
+/* <dialog> で出すとき（管理画面の OkaDialog）。中央に置き、背面は --scrim。form は中身を c-modal の並びにそのまま入れる */
+dialog.c-modal { margin: auto; border: 0; color: var(--ink); }
+/* 閉じている <dialog> は出さない。上の display: grid がブラウザ既定の「閉じたら隠す」を打ち消すため。
+   開くときに作る OkaDialog では起きないが、HTML に前もって置いた <dialog class="c-modal">（院内ツール）で表に出た（2026-11-03） */
+dialog.c-modal:not([open]) { display: none; }
+dialog.c-modal::backdrop { background: var(--scrim); }
+.c-modal__form { display: contents; }
+/* 取り消し系の追加ボタン（例：リンクを外す）は決定ボタンから離して左端に置く */
+.c-modal__extra { margin-inline-end: auto; }
+@media (max-width: 620px) {
+  /* 指で押せる大きさを保つため、狭いときはボタンを縦に積む。上が「やめる」、下が実行（見た目の順と Tab の順をそろえる。フォームと同じ） */
+  .c-modal__foot { flex-direction: column; align-items: stretch; }
+  .c-modal__extra { margin-inline-end: 0; }
+}
+.c-modal-backdrop.is-leaving { animation: c-fade-out var(--duration-def) var(--ease-exit) forwards; }
+.c-modal-backdrop[hidden] { display: none; }
+/* サイト表示用：position を外して枠の中に置く */
+.c-modal-backdrop--inline { position: relative; inset: auto; min-block-size: calc(var(--p-16) * 5); border-radius: var(--radius-md); z-index: var(--z-base); }
+
+/* ======================= ツールチップ =======================
+   使う場面：①アイコンだけのボタンの名前 ②表や一覧で文字が入り切らず「…」で省略したときの全文 */
+.c-tooltip-wrap { position: relative; display: inline-flex; max-inline-size: 100%; }
+.c-tooltip {
+  position: absolute;
+  inset-block-end: calc(100% + var(--p-2));
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  inline-size: max-content;
+  max-inline-size: calc(var(--p-16) * 4);
+  padding: var(--p-1) var(--p-2);
+  background: var(--ink);
+  color: var(--on-fill);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-dropdown);
+  font-size: var(--font-xs);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-def);
+  white-space: normal;
+  z-index: var(--z-tooltip);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration-fast) var(--ease-standard), visibility var(--duration-fast);
+}
+/* 部品とツールチップの間のすき間を埋め、ポインターをツールチップに移しても消えないようにする（WCAG 1.4.13） */
+.c-tooltip::before { content: ""; position: absolute; inset-inline: 0; inset-block-start: 100%; block-size: var(--p-2); }
+.c-tooltip--floating::before { display: none; }
+/* 部品に付くツールチップも画面上の位置で表示する（枠で切れない）。すき間の橋渡しは残す */
+.c-tooltip--start { inset-inline-start: 0; translate: none; }
+.c-tooltip-wrap:hover .c-tooltip:not(.c-tooltip--done),
+.c-tooltip-wrap:focus-within .c-tooltip:not(.c-tooltip--done) { opacity: 1; visibility: visible; transition-delay: 300ms; }
+/* Esc で閉じたあとは、ポインターが離れるまで出さない */
+.c-tooltip.is-open { opacity: 1; visibility: visible; transition-delay: 0ms; }
+/* 操作の結果を知らせるツールチップ（例：「コピーしました」）。押したときだけ出す */
+.c-tooltip--done { display: inline-flex; align-items: center; gap: var(--gap-1); }
+/* 表などのスクロール枠の中でも切れないよう、ページの一番上の層に出す版（位置は JS で決める） */
+.c-tooltip--floating { position: fixed; inset: auto; translate: none; }
+/* 省略表示：1行に収まらない文字を「…」にする。省略されたときだけ JS がツールチップを付ける */
+.c-truncate { display: block; min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.c-truncate:focus-visible { outline-offset: 0; }
+
+/* ======================= 空状態 ======================= */
+.c-empty {
+  display: grid;
+  justify-items: center;
+  gap: var(--gap-3);
+  padding: var(--p-12) var(--p-6);
+  text-align: center;
+}
+.c-empty__icon {
+  display: grid; place-items: center;
+  inline-size: calc(var(--icon-xl) * 2); block-size: calc(var(--icon-xl) * 2);
+  border-radius: var(--radius-full);
+  background: var(--wine-tint);
+  color: var(--wine-deep);
+}
+.c-empty__title { font-size: var(--font-lg); font-weight: var(--fw-bold); }
+.c-empty__text { max-inline-size: 36em; font-size: var(--font-def); color: var(--ink-soft); }
+.c-empty__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap-2); margin-block-start: var(--m-2); }
+
+/* ======================= 区切り ======================= */
+.c-divider { border: 0; border-block-start: 1px solid var(--line); }
+
+/* ==========================================================
+   画面を組み立てる部品（デザインハーネス）
+   ========================================================== */
+
+/* ── グリッド（カードを並べる） ── */
+.c-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--p-16) * 4.5)), 1fr)); gap: var(--gap-6); }
+
+/* ── フォーム：項目の間 24px・まとまりの間 48px・ボタンは右寄せ［やめる］［送信する］ ── */
+.c-form { display: grid; gap: var(--form-section-gap); }
+.c-form__section { display: grid; gap: var(--form-field-gap); min-inline-size: 0; margin: 0; padding: 0; border: 0; }
+.c-form__section-title { padding: 0; font-size: var(--font-xl); font-weight: var(--fw-bold); line-height: var(--lh-tight); }
+/* legend は並びの外に出るため、項目の間と同じ 24px を下に足す */
+legend.c-form__section-title { margin-block-end: var(--form-field-gap); }
+.c-form__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--gap-3); }
+@media (max-width: 620px) /* --bp-sm 以下：横幅いっぱい。見た目とキーボードの順番をそろえる（やめるが上、送信するが下） */ {
+  .c-form__actions { flex-direction: column; }
+  .c-form__actions > .c-button { inline-size: 100%; }
+}
+
+/* ── エラーのまとめ：送信時にフォームの先頭へ出し、各項目へ移動できるリンクを並べる ── */
+.c-error-summary { display: none; }
+.c-error-summary.is-shown { display: flex; }
+.c-error-summary:focus-visible { outline: 3px solid var(--wine); outline-offset: 3px; }
+.c-error-summary__list { display: grid; gap: var(--gap-1); margin: 0; padding-inline-start: var(--p-5); font-size: var(--font-def); }
+.c-error-summary__list a { color: var(--tone-error-fg); text-decoration: underline; text-underline-offset: 0.2em; }
+
+/* ── ツールバー：一覧の上の検索・絞り込み・件数 ── */
+.c-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-3); margin-block-end: var(--m-4); }
+.c-toolbar__grow { flex: 1 1 calc(var(--p-16) * 4); min-inline-size: 0; }
+.c-toolbar__count { font-size: var(--font-sm); color: var(--ink-soft); }
+
+/* ==========================================================
+   公開サイトの部品
+   c- 共通コンポーネント / l- レイアウト / p- ページ固有（トップ） / u- ユーティリティ
+   ブレークポイントは 980・760・620px の3つ（いま使っているのは 980px と 620px）
+   ＋ヘッダーだけの段 1100px（--bp-header。ナビをハンバーガーにするだけに使う）
+   ========================================================== */
+.l-wrap { max-width: var(--container-lg); margin: 0 auto; padding: 0 var(--p-8); }
+
+
+/* Skip link */
+/* ⚠️ 塗りは --wine ではなく --wine-deep。**この要素だけは例外扱いにしない。**
+   支援技術のために存在する機能なので、それ自体が読めないのは本末転倒。
+   ブランドの見せ場でもないため、深い方の色を使う（rose-550・白文字 4.15:1）。 */
+.c-skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: var(--z-skip-link);
+  background: var(--wine-deep); color: var(--on-fill);
+  padding: var(--p-3) var(--p-5); border-radius: 0 0 var(--radius-sm) 0;
+  font-weight: 700; font-size: var(--font-def);
+}
+.c-skip-link:focus { left: 0; }
+
+.l-section { padding: var(--p-24) 0; }
+.l-section__head { margin-bottom: var(--m-12); }
+.l-section__head h2 { font-size: clamp(var(--font-xl), 2.6vw, var(--font-3xl)); font-weight: 700; margin-top: var(--m-3); }
+
+
+
+/* Reveal */
+/* js/site.js が動いたとき（html に is-reveal-ready が付いたとき）だけ隠す。
+   site.js が読めなくても本文が消えないようにするため */
+.is-reveal-ready .u-reveal { opacity: 0; transform: translateY(18px); transition: opacity var(--duration-reveal), transform var(--duration-reveal); }
+.is-reveal-ready .u-reveal.is-in { opacity: 1; transform: translateY(0); }
+
+
+/* ============================================================
+   ヘッダー
+   ============================================================ */
+.c-header {
+  position: sticky; top: 0; z-index: var(--z-sticky);
+  background: rgba(var(--bg-rgb),.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow var(--duration-slow);
+}
+.c-header.is-scrolled { box-shadow: var(--shadow-sm); }
+.c-header__inner {
+  display: flex; align-items: center; gap: var(--gap-8);
+  height: var(--header-h);
+}
+.c-brand { display: inline-flex; align-items: center; gap: var(--gap-3); }
+.c-brand__logo { display: block; width: auto; height: 44px; flex-shrink: 0; }
+.c-brand__name { font-family: var(--serif); font-weight: 700; font-size: var(--font-md); color: var(--ink); line-height: var(--lh-tight); white-space: nowrap; }
+.c-brand__name small { display: block; font-family: var(--num); font-size: var(--font-xs); font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
+
+.c-nav { margin-left: auto; }
+.c-nav ul { display: flex; gap: var(--gap-6); } /* 5項目でブランド名とぶつからない間（2026-10-18） */
+.c-nav a {
+  position: relative; display: inline-block; padding: var(--p-2) 0;
+  font-size: var(--font-def); font-weight: 500; color: var(--ink);
+  white-space: nowrap;
+}
+.c-nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 2px; background: var(--wine);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--duration-slow);
+}
+.c-nav a:hover::after { transform: scaleX(1); }
+
+.c-header__cta { display: flex; align-items: center; gap: var(--gap-4); }
+.c-header__tel { font-family: var(--num); font-size: var(--font-lg); font-weight: 600; color: var(--wine-deep); white-space: nowrap; }
+.c-header__tel span { display: block; font-family: var(--sans); font-size: var(--font-xs); font-weight: 500; color: var(--ink-soft); letter-spacing: .05em; }
+
+.c-nav__toggle {
+  display: none;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--panel);
+  cursor: pointer; position: relative; z-index: var(--z-overlay);
+}
+.c-nav__toggle span {
+  display: block; width: 18px; height: 2px; background: var(--ink);
+  margin: var(--m-1) auto; border-radius: var(--radius-xs); transition: transform var(--duration-slow), opacity var(--duration-slow);
+}
+.c-nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.c-nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.c-nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.c-nav--mobile {
+  position: fixed; inset: 0; z-index: var(--z-drawer); /* ヘッダー(--z-sticky)より下: ハンバーガーで閉じられるように */
+  background: var(--bg);
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center; gap: var(--gap-2);
+  padding-top: var(--p-16);
+}
+.c-nav--mobile.is-open { display: flex; }
+.c-nav--mobile a { font-family: var(--serif); font-size: var(--font-xl); font-weight: 700; color: var(--ink); padding: var(--p-3) var(--p-5); }
+.c-nav--mobile .c-button { margin-top: var(--m-5); }
+
+
+/* ============================================================
+   ヒーロー
+   ============================================================ */
+.p-hero { padding: var(--p-16) 0 var(--p-24); overflow: hidden; }
+.p-hero__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr; /* テキスト幅を狭め、写真カラムを拡張（写真は枠内で約120%サイズ） */
+  grid-template-areas: "intro visual" "worry visual";
+  column-gap: var(--gap-16); row-gap: 0;
+  align-items: start;
+}
+.p-hero__intro { grid-area: intro; min-width: 0; position: relative; z-index: 5; }
+.p-hero h1 {
+  font-size: clamp(var(--font-2xl), 4vw, var(--font-4xl));
+  font-weight: 700; line-height: var(--lh-compact);
+  margin: var(--m-4) 0 var(--m-5);
+  white-space: nowrap;
+}
+
+/* 下地の白四角ではなく、文字のストロークに沿った白い縁取り（ハイライト）で写真から浮かせる */
+.p-hero h1 .p-hero__hl {
+  text-shadow:
+    0 0 2px var(--on-fill), 0 0 2px var(--on-fill), 0 0 3px var(--on-fill),
+    0 0 4px var(--on-fill), 0 0 6px var(--on-fill), 0 0 10px var(--on-fill);
+}
+.p-hero h1 .p-hero__accent { color: var(--wine-deep); }
+.p-hero h1 .u-nowrap { white-space: nowrap; }
+.u-br-sp { display: none; }
+.p-hero__lead {
+  margin: var(--m-5) 0 var(--m-10); max-width: 100%;
+  color: var(--ink-soft); font-size: var(--font-def); line-height: var(--lh-loose);
+}
+.p-hero__visual { grid-area: visual; align-self: stretch; position: relative; height: 100%; z-index: 1; }
+.p-hero__slider {
+  position: relative; height: calc(100% - 40px); min-height: 380px;
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-sm); background: var(--wine-tint);
+}
+.p-hero__slide {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; transition: opacity var(--duration-fade) ease;
+}
+.p-hero__slide.is-active { opacity: 1; }
+
+
+/* ============================================================
+   お悩みカード
+   ============================================================ */
+.p-news { background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.p-hero__worry-stack {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-4);
+  width: 180%; position: relative; z-index: 1;
+}
+.p-worry {
+  background: var(--panel); /* 白（2026-10-18 ユーザーの指示） */ border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: var(--p-8) var(--p-6);
+  display: flex; flex-direction: column; gap: var(--gap-3);
+  transition: transform var(--duration-slow), box-shadow var(--duration-slow), border-color var(--duration-slow);
+  box-shadow: var(--shadow-sm);
+}
+.p-worry:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--blush); }
+.p-worry__head { display: flex; align-items: center; gap: var(--gap-4); }
+.p-worry__icon {
+  width: 52px; height: 52px; border-radius: var(--radius-md); flex-shrink: 0;
+  background: var(--wine-tint); color: var(--wine-deep);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.p-worry.p-service__card--alt .p-worry__icon { background: var(--sage-tint); color: var(--sage); }
+.p-worry h3 { font-size: var(--font-lg); font-weight: 700; line-height: var(--lh-def); }
+.p-worry p { font-size: var(--font-def); color: var(--ink-soft); }
+.p-worry__link {
+  margin-top: auto; font-size: var(--font-sm); font-weight: 700; color: var(--wine-deep);
+  display: inline-flex; align-items: center; gap: var(--gap-2);
+}
+.p-worry__link .c-icon--arrow { transition: transform var(--duration-slow); }
+.p-worry:hover .p-worry__link .c-icon--arrow { transform: translateX(4px); }
+.p-hero__news { grid-area: worry; margin-top: var(--m-24); position: relative; z-index: 5; }
+.p-hero__news .l-section__head.c-post-list__head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--gap-4);
+  margin-bottom: var(--m-4);
+}
+.p-hero__news .l-section__head h4 {
+  font-family: var(--serif); font-size: var(--font-lg); font-weight: 700;
+}
+.c-post-list__items { border-top: 1px solid var(--line); }
+.c-post-list__items li { border-bottom: 1px solid var(--line); }
+.c-post-list__item {
+  display: flex; gap: var(--gap-6); align-items: baseline;
+  padding: var(--p-3) var(--p-2); color: var(--ink);
+  transition: background var(--duration-def);
+}
+.c-post-list__item:hover { background: var(--wine-tint); }
+.c-post-list__date { font-family: var(--num); font-size: var(--font-sm); font-weight: 500; color: var(--wine-deep); white-space: nowrap; }
+.c-post-list__title { font-size: var(--font-def); }
+.c-post-list__link { display: inline-block; font-size: var(--font-sm); font-weight: 700; white-space: nowrap; }
+.c-post-list__items--wide { max-width: none; }
+
+/* 見出しの右端に「一覧はこちら」を配置 */
+.p-news .l-section__head.c-post-list__head, .p-director__essays .p-news__sub-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--gap-4);
+  margin-bottom: var(--m-4);
+}
+
+/* 見出し下の余白を保ったまま右端にリンクを置く（サービス案内・FAQ） */
+.l-section__head.c-faq__head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--gap-4);
+}
+.p-director__essays .p-news__sub-head h3 { margin-bottom: 0; }
+
+
+/* ============================================================
+   サービス案内
+   ============================================================ */
+.p-service { background: var(--bg-soft); }
+.p-service__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-6); align-items: stretch; }
+.p-service__card { display: flex; flex-direction: column; }
+.p-service__card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: var(--p-8) var(--p-8);
+  box-shadow: var(--shadow-sm);
+}
+.p-service__head { display: flex; align-items: center; gap: var(--gap-4); margin-bottom: var(--m-5); }
+.p-service__icon {
+  width: 46px; height: 46px; border-radius: var(--radius-sm); flex-shrink: 0;
+  background: var(--wine-tint); color: var(--wine-deep);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.p-service__card.p-service__card--sage .p-service__icon { background: var(--sage-tint); color: var(--sage); }
+.p-service__card.p-service__card--ink .p-service__icon { background: var(--ink-icon-bg); color: var(--ink-soft); }
+.p-service__head h3 { font-size: var(--font-lg); font-weight: 700; }
+
+
+/* サービスメニュー: 下層ページへのリンク（旧アコーディオンと同じ行デザイン） */
+.p-service__link {
+  display: flex; align-items: center; gap: var(--gap-3);
+  border-radius: var(--radius-sm); border: 1px solid var(--line);
+  margin-bottom: var(--m-3); background: var(--bg);
+  padding: var(--p-3) var(--p-4); font-size: var(--font-def); font-weight: 700;
+  color: var(--ink);
+  transition: background var(--duration-def), color var(--duration-def), border-color var(--duration-def);
+}
+.p-service__link:hover { background: var(--bg-soft); color: var(--wine-deep); border-color: var(--blush); }
+.p-service__link .c-icon--ext { margin-left: auto; flex-shrink: 0; color: var(--wine-deep); transition: transform var(--duration-def); }
+.p-service__link:hover .c-icon--ext { transform: translateX(3px); }
+
+
+
+/* ============================================================
+   施設について（グループ: 施設について→アクセス→代表者紹介→代表者コラム）
+   ============================================================ */
+/* グループ内の縦余白を詰めて一続きに見せる */
+/* 群の最初（施設について）は下だけ、最後（代表者コラム）は上だけ詰める。ページ固有の ID では指定しない */
+.l-section--group-first { padding-bottom: var(--p-10); }
+.l-section--group { padding-top: var(--p-10); padding-bottom: var(--p-10); }
+.l-section--group-last { padding-top: var(--p-10); padding-bottom: var(--p-24); }
+
+/* 小見出し（略歴/所属学会と同サイズ：serif 19px＋ワインバー） */
+.l-section__group-heading {
+  font-family: var(--serif); font-size: var(--font-lg); font-weight: 700;
+  margin-bottom: var(--m-6); display: flex; align-items: center; gap: var(--gap-3);
+}
+.l-section__group-heading::before { content: ""; width: 18px; height: 2px; background: var(--wine); }
+
+.p-about__heading { font-size: clamp(var(--font-xl), 2.6vw, var(--font-3xl)); font-weight: 700; }
+.p-about .p-about__philosophy { margin-top: var(--m-5); }
+.p-about .p-about__philosophy p + p { margin-top: var(--m-4); }
+.p-about__media {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--gap-8); align-items: start; margin-top: var(--m-8);
+}
+.p-about__photo {
+  border-radius: var(--radius-lg); overflow: hidden;
+  aspect-ratio: 16 / 10; background: var(--wine-tint);
+}
+.p-about__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+
+/* 表のカード。トップページの営業時間と、サービス案内の表で共有する。 */
+.c-table {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.c-table__head {
+  background: var(--bg-soft); padding: var(--p-4) var(--p-6);
+  display: flex; align-items: center; gap: var(--gap-3);
+  font-weight: 700; font-size: var(--font-def);
+}
+.c-table__head svg { color: var(--wine-deep); }
+.c-table__body { overflow-x: auto; padding: var(--p-2) var(--p-4) var(--p-1); }
+.c-table__grid { width: 100%; border-collapse: collapse; }
+.c-table__grid th, .c-table__grid td {
+  padding: var(--p-3) var(--p-2); text-align: center; font-size: var(--font-def);
+  border-bottom: 1px solid var(--line);
+}
+.c-table__grid thead th { font-family: var(--num); font-weight: 500; color: var(--ink-soft); font-size: var(--font-sm); }
+.c-table__grid tbody th { text-align: left; font-weight: 700; white-space: nowrap; font-size: var(--font-sm); }
+.c-table__grid tbody tr:last-child th, .c-table__grid tbody tr:last-child td { border-bottom: none; }
+.c-table__grid .c-table__mark--yes { color: var(--wine-deep); font-weight: 700; }
+.c-table__grid .c-table__mark--maybe { color: var(--wine); font-weight: 700; }
+.c-table__grid .c-table__mark--no { color: var(--table-closed); }
+.c-table__note {
+  display: flex; gap: var(--gap-2); align-items: flex-start;
+  padding: var(--p-4) var(--p-6) var(--p-5); font-size: var(--font-sm); color: var(--ink-soft); line-height: var(--lh-loose);
+}
+.c-table__note svg { flex-shrink: 0; margin-top: var(--m-1); color: var(--wine-deep); }
+
+
+/* トップページの営業時間カードだけの都合（2カラムグリッド内で上寄せ） */
+.p-about__hours { align-self: start; }
+
+
+/* ============================================================
+   代表者紹介
+   ============================================================ */
+.p-director { background: var(--bg); }
+.p-director__card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  padding: clamp(var(--p-8), 4vw, var(--p-12));
+}
+.p-director__profile { display: grid; grid-template-columns: 192px 1fr; gap: var(--gap-10); align-items: start; }
+.p-director__photo {
+  aspect-ratio: 4 / 4.3; border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-sm); background: var(--wine-tint);
+}
+.p-director__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p-director__org { font-size: var(--font-sm); color: var(--ink-soft); line-height: var(--lh-loose); }
+.p-director__name { font-family: var(--serif); font-size: var(--font-xl); font-weight: 700; margin: var(--m-2) 0 var(--m-5); }
+.p-director__name small { font-size: var(--font-def); font-weight: 500; color: var(--ink-soft); }
+
+.p-director__greeting p + p { margin-top: var(--m-4); }
+
+.p-director__detail-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-10) var(--gap-12);
+  margin-top: var(--m-10); padding-top: var(--p-10); border-top: 1px solid var(--line);
+}
+.p-director__detail-grid .p-director__sub { margin-top: 0; }
+.p-director__sub { margin-top: var(--m-12); }
+
+/* カード内・代表者コラム（略歴/所属学会の下にライン） */
+.p-director__essays { margin-top: var(--m-10); padding-top: var(--p-10); border-top: 1px solid var(--line); }
+.p-director__sub h3 { font-family: var(--serif); font-size: var(--font-lg); font-weight: 700; margin-bottom: var(--m-4); display: flex; align-items: center; gap: var(--gap-3); }
+.p-director__sub h3::before { content: ""; width: 18px; height: 2px; background: var(--wine); }
+.p-director__history-wrap { overflow-x: auto; }
+.p-director__history { width: 100%; border-collapse: collapse; font-size: var(--font-def); }
+.p-director__history th, .p-director__history td { padding: var(--p-3) var(--p-3); border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.p-director__history th { font-family: var(--num); font-weight: 500; color: var(--wine-deep); white-space: nowrap; width: 120px; }
+.p-director__societies li {
+  padding: var(--p-2) 0 var(--p-2) var(--p-6); border-bottom: 1px dashed var(--line);
+  font-size: var(--font-def); position: relative;
+}
+.p-director__societies li::before {
+  content: ""; position: absolute; left: 6px; top: 1.05em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--wine);
+}
+.p-director__societies-note { margin-top: var(--m-4); font-size: var(--font-sm); color: var(--ink-soft); }
+
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.c-faq { background: var(--bg-soft); }
+.c-faq__group { margin-bottom: var(--m-16); }
+.c-faq__group:last-child { margin-bottom: 0; }
+/* グループの見出し。見出しの階層に合わせて h2 か h3：よくある質問のページはページの見出し（h1）の下なので h2、
+   トップページの「よくある質問」の節は節の見出し（h2）の下なので h3。回答の中の見出しに効かないよう子だけに当てる
+   （2026-10-04 に h2 だけにしたらトップの h3 に効かなくなった。2026-10-06 に両方に戻した） */
+.c-faq__group > :is(h2, h3) {
+  font-family: var(--serif); font-size: var(--font-xl); font-weight: 700;
+  margin-bottom: var(--m-5); display: flex; align-items: center; gap: var(--gap-3);
+}
+.c-faq__group > :is(h2, h3)::before { content: ""; width: 18px; height: 2px; background: var(--wine); }
+.c-faq__item {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-md); margin-bottom: var(--m-3); overflow: hidden;
+}
+.c-faq__item summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; gap: var(--gap-4);
+  padding: var(--p-5) var(--p-5);
+}
+.c-faq__item summary::-webkit-details-marker { display: none; }
+/* 塗りは --wine ではなく --wine-deep（rose-550・白文字 4.15:1）。
+   通し番号は読ませるための文字であってブランドの見せ場ではないため、
+   --wine の例外には含めない。 */
+.c-faq__q {
+  width: 28px; height: 28px; border-radius: var(--radius-sm); flex-shrink: 0;
+  background: var(--wine-deep); color: var(--on-fill);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--num); font-size: var(--font-sm); font-weight: 600;
+}
+.c-faq__item summary .c-faq__q-text { font-size: var(--font-def); font-weight: 700; line-height: var(--lh-compact); }
+.c-faq__item summary .c-icon--chev { margin-left: auto; flex-shrink: 0; color: var(--wine-deep); transition: transform var(--duration-slow); }
+.c-faq__item[open] summary .c-icon--chev { transform: rotate(180deg); }
+.c-faq__a { padding: 0 var(--p-5) var(--p-5) var(--p-16); font-size: var(--font-def); color: var(--ink-soft); }
+.c-faq__a p + p { margin-top: var(--m-3); }
+
+/* 回答中の画像（対応クレジットカード一覧など）。原寸より大きくしない */
+.c-faq__a img {
+  display: block; margin: var(--m-3) 0; width: 100%; max-width: 320px; height: auto;
+  border-radius: var(--radius-sm);
+}
+.c-faq__a img + p { margin-top: var(--m-3); }
+
+
+/* ============================================================
+   アクセス
+   ============================================================ */
+.p-access__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow); border: 1px solid var(--line);
+  background: var(--panel);
+}
+.p-access__map iframe { display: block; width: 100%; height: 100%; min-height: 360px; border: 0; }
+.p-access__info { padding: var(--p-10) var(--p-10); }
+.p-access__info h3 { font-family: var(--serif); font-size: var(--font-xl); font-weight: 700; margin-bottom: var(--m-3); }
+.p-access__info address { font-style: normal; font-size: var(--font-def); line-height: var(--lh-relaxed); color: var(--ink-soft); }
+.p-access__info .u-num { font-family: var(--num); }
+.p-access__tel { font-family: var(--num); font-size: var(--font-xl); font-weight: 600; }
+
+
+/* 交通アクセスのアコーディオン（fax の直下） */
+.p-route { margin-top: var(--m-6); }
+.p-route__item {
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--bg); overflow: hidden; margin-bottom: var(--m-3);
+}
+.p-route__item summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; gap: var(--gap-3);
+  padding: var(--p-3) var(--p-4); font-size: var(--font-def); font-weight: 700;
+  transition: background var(--duration-def), color var(--duration-def);
+}
+.p-route__item summary::-webkit-details-marker { display: none; }
+.p-route__item summary:hover { background: var(--bg-soft); color: var(--wine-deep); }
+.p-route__item summary svg.p-route__icon { color: var(--wine-deep); flex-shrink: 0; }
+.p-route__item summary .c-icon--chev { margin-left: auto; flex-shrink: 0; transition: transform var(--duration-slow); color: var(--wine-deep); }
+.p-route__item[open] summary { background: var(--bg-soft); color: var(--wine-deep); }
+.p-route__item[open] summary .c-icon--chev { transform: rotate(180deg); }
+.p-route__body { padding: var(--p-1) var(--p-4) var(--p-4); }
+.p-route__body ol { list-style: none; }
+.p-route__body li { font-size: var(--font-sm); color: var(--ink-soft); line-height: var(--lh-loose); padding: var(--p-2) 0; border-bottom: 1px dashed var(--line); }
+.p-route__body li:last-child { border-bottom: none; }
+.p-route__body .p-news__note { font-size: var(--font-sm); color: var(--ink-soft); margin-top: var(--m-2); }
+.p-route__body p { font-size: var(--font-sm); color: var(--ink-soft); line-height: var(--lh-loose); }
+/* height: auto を外さないこと。img の height 属性（元の画像の高さ）が残り、幅だけ縮んで縦長に潰れる（2026-10-06 ユーザーの指摘） */
+.p-route__map { display: block; width: 100%; height: auto; margin-top: var(--m-3); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+
+
+/* ============================================================
+   フッター
+   ============================================================ */
+.c-footer {
+  background: var(--panel); border-top: 1px solid var(--line);
+  padding: var(--p-5) 0 var(--p-8);
+}
+.c-footer__bottom {
+  margin-top: var(--m-12); padding-top: var(--p-6); border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; gap: var(--gap-4); flex-wrap: wrap;
+  font-size: var(--font-xs); color: var(--ink-soft);
+}
+.c-footer__bottom .u-num { font-family: var(--num); }
+.c-footer__bottom--min { justify-content: flex-start; margin-top: 0; border-top: none; text-align: left; }
+
+
+/* ============================================================
+   フローティング CTA
+   ============================================================ */
+.c-floating {
+  position: fixed; right: 24px; bottom: 24px; z-index: var(--z-floating);
+  display: flex; align-items: center; gap: var(--gap-3);
+}
+.c-floating__cta {
+  display: inline-flex; align-items: center; gap: var(--gap-2);
+  background: var(--wine); color: var(--on-fill);
+  padding: var(--p-4) var(--p-6); border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  font-size: var(--font-sm); font-weight: 700;
+  transition: transform var(--duration-def), background var(--duration-def);
+}
+.c-floating__cta:hover { background: var(--wine-deep); transform: translateY(-2px); }
+.c-floating__top {
+  width: 48px; height: 48px; flex-shrink: 0; border-radius: 50%;
+  background: var(--panel); border: 1px solid var(--line); color: var(--wine-deep);
+  display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-def), background var(--duration-def), opacity var(--duration-def);
+}
+.c-floating__top:hover { background: var(--wine-tint); transform: translateY(-2px); }
+
+/* ============================================================
+   ブレークポイント
+   ============================================================ */
+/* --bp-header 以下：ヘッダーだけの段。ロゴ・施設名・ナビ4つ・電話番号が1行に収まらず重なるので、
+   ナビをハンバーガーにする。段組み（1列化）は下の 980px のまま */
+@media (max-width: 1100px) {
+  .c-nav, .c-header__cta .c-button { display: none; }
+  .c-nav__toggle { display: block; margin-left: var(--m-3); }
+  .c-header__inner { gap: var(--gap-3); }
+  .c-brand__logo { height: 38px; }
+  .c-header__cta { margin-left: auto; }
+  .c-header__tel { display: block; text-align: right; }
+
+  /* SP でも文字サイズは PC と同じ（フォントサイズは基本定義を継承）。ラベルは1行表示 */
+.c-header__tel span { display: block; white-space: nowrap; margin-left: auto; }
+}
+@media (max-width: 980px) {
+  .p-hero__grid, .p-access__grid { grid-template-columns: 1fr; }
+  .p-service__grid { grid-template-columns: 1fr; }
+  .p-service__grid { align-items: start; }
+  .p-director__profile { grid-template-columns: 1fr; gap: var(--gap-8); }
+  /* 1カラムになるので写真は左右中央に置く。
+     ⚠️ margin:auto だけだとグリッド項目の幅が中身に合わせて 0 になる。
+        width:100% を併記して、260px を上限に幅を持たせたうえで中央に寄せる */
+  .p-director__photo { width: 100%; max-width: 260px; margin-left: auto; margin-right: auto; }
+  .p-director__detail-grid { grid-template-columns: 1fr; gap: var(--gap-10); }
+  .p-about__media { grid-template-columns: 1fr; gap: var(--gap-6); }
+  .p-about__photo { aspect-ratio: 16 / 10; order: -1; }
+  .p-hero__grid { grid-template-areas: "intro" "visual" "worry"; column-gap: 0; row-gap: var(--gap-10); }
+  .p-hero__slider { aspect-ratio: 4 / 2.8; height: auto; min-height: 0; width: 100%; }
+  .p-hero__visual { align-self: auto; height: auto; }
+  .p-hero__news { margin-top: 0; }
+  .p-hero__worry-stack { width: auto; grid-template-columns: 1fr; }
+  
+  /* SP: 説明テキストの右側にリンクを置いてカード高さを圧縮 */
+.p-worry { display: grid; grid-template-columns: 1fr auto; column-gap: var(--gap-4); align-items: end; }
+  .p-worry__head { grid-column: 1 / -1; }
+  /* 本文が2行になってもリンクの下端を本文の下端に揃える。
+     center だと本文が2行のときリンクが上に浮いて見える */
+  .p-worry__link { margin-top: 0; align-self: end; white-space: nowrap; }
+  /* SP幅でだけ効かせる改行（PC幅では詰めて表示する） */
+  .u-br-sp { display: inline; }
+  .p-hero h1 { white-space: normal; }
+  .p-hero h1 .p-hero__hl { text-shadow: none; }
+  .p-access__map iframe { min-height: 300px; }
+}
+@media (max-width: 620px) {
+  .l-wrap { padding: 0 var(--p-5); }
+  .p-hero { padding: var(--p-10) 0 var(--p-16); }
+  .c-faq__a { padding-left: var(--p-5); }
+  
+  /* ヘッダー: 文字サイズは PC と同一。収めるためブランドは折返し可・副題は非表示 */
+.c-header__inner { gap: var(--gap-2); }
+  .c-nav__toggle { margin-left: var(--m-2); }
+  
+  /* ロゴ＋名称＋電話＋トグルは 375px 幅に同居できないため、ロゴのみ表示（名称は aria-label で担保） */
+.c-brand { gap: var(--gap-2); }
+  .c-brand__logo { height: 36px; }
+  .c-brand__name { display: none; }
+  
+  /* 営業時間テーブル: 横スクロールさせずに収める */
+.c-table__body { padding: var(--p-2) var(--p-2) var(--p-1); }
+  .c-table__grid th, .c-table__grid td { padding: var(--p-2) var(--p-1); font-size: var(--font-xs); }
+  .c-table__grid thead th { font-size: var(--font-xs); }
+  .c-table__grid tbody th { white-space: normal; font-size: var(--font-xs); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  .is-reveal-ready .u-reveal { opacity: 1; transform: none; }
+}
+
+
+/* ============================================================
+   下層ページ（お知らせ／代表者コラム の一覧・詳細）
+   トークン・ヘッダー・フッターはトップページと共通。
+   ============================================================ */
+.l-wrap--narrow { max-width: var(--container-md); }
+
+
+/* パンくず */
+.c-breadcrumb { padding: var(--p-6) 0 0; }
+.c-breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-2); font-size: var(--font-sm); color: var(--ink-soft); }
+.c-breadcrumb li { display: flex; align-items: center; gap: var(--gap-2); }
+.c-breadcrumb li + li::before { content: "/"; color: var(--line); }
+.c-breadcrumb a { color: var(--ink-soft); }
+.c-breadcrumb a:hover { color: var(--wine-deep); }
+.c-breadcrumb [aria-current="page"] {
+  color: var(--ink); font-weight: 500;
+  max-width: 30ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+
+
+/* 一覧 */
+/* 下層ページは本文で終わるため、セクション下の余白（既定84px）を半分に詰める */
+.l-section--post { padding-top: var(--p-10); padding-bottom: var(--p-12); }
+.c-post-list { max-width: none; }
+.c-post-list li[hidden] { display: none; }
+.c-post-list__more-wrap { text-align: center; }
+
+/* 余白はボタン側に持たせる。ボタン非表示（全件表示済み・10件未満）のとき余白を残さないため */
+.c-post-list__more { margin-top: var(--m-8); }
+.c-post-list__more[hidden] { display: none; }
+
+
+/* 詳細 */
+.c-post__head { padding-bottom: var(--p-6); margin-bottom: var(--m-8); border-bottom: 1px solid var(--line); }
+.c-post__meta { display: inline-block; margin-bottom: var(--m-3); font-family: var(--num); font-size: var(--font-sm); font-weight: 600; color: var(--wine-deep); letter-spacing: .04em; }
+.c-post__title { font-family: var(--serif); font-size: var(--font-2xl); font-weight: 700; line-height: var(--lh-heading); color: var(--ink); }
+
+.c-post__body { font-size: var(--font-def); line-height: var(--lh-relaxed); color: var(--ink); }
+.c-post__body p { margin-bottom: 1.5em; }
+.c-post__body p:last-child { margin-bottom: 0; }
+/* 本文の小見出し（h2）：セクション見出し（c-section-block__title）と同じ形。明朝＋左の短い線 */
+.c-post__body h2 { display: flex; align-items: center; gap: var(--gap-3); margin: 1.8em 0 .8em; font-family: var(--serif); font-size: var(--font-xl); font-weight: 700; line-height: var(--lh-heading); color: var(--ink); }
+.c-post__body h2::before { content: ""; width: 20px; height: 2px; background: var(--wine); flex-shrink: 0; }
+.c-post__body > h2:first-child { margin-top: 0; }
+.c-post__body strong { font-weight: 700; }
+.c-post__body mark { background: none; color: var(--wine-deep); font-weight: 700; }
+.c-post__body a { color: var(--wine-deep); text-decoration: underline; text-underline-offset: 3px; }
+.c-post__body a:hover { color: var(--wine); }
+.c-post__body figure { margin: 1.8em 0; }
+.c-post__body img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
+
+.c-post__foot { margin-top: var(--m-12); padding-top: var(--p-8); border-top: 1px solid var(--line); }
+.c-post__back { font-size: var(--font-def); font-weight: 700; color: var(--wine-deep); }
+.c-post__back:hover { color: var(--wine); }
+
+
+/* 前後記事 */
+.c-post-nav { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-4); margin-top: var(--m-8); }
+.c-post-nav__link {
+  display: flex; flex-direction: column; gap: var(--gap-2);
+  padding: var(--p-4) var(--p-5); background: var(--panel);
+  border: 1px solid var(--line); border-radius: var(--radius-md);
+  transition: border-color var(--duration-slow), background var(--duration-slow);
+}
+.c-post-nav__link:hover { background: var(--wine-tint); border-color: var(--blush); }
+.c-post-nav__link--next { grid-column: 2; text-align: right; }
+.c-post-nav__cap { font-size: var(--font-xs); font-weight: 700; letter-spacing: .1em; color: var(--ink-soft); }
+.c-post-nav__meta { font-family: var(--num); font-size: var(--font-sm); font-weight: 600; letter-spacing: .04em; color: var(--wine-deep); }
+.c-post-nav__title { font-size: var(--font-sm); line-height: var(--lh-def); color: var(--ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+@media (max-width: 620px) {
+  .c-post__title { font-size: var(--font-xl); }
+  .c-post__body { font-size: var(--font-def); line-height: var(--lh-loose); }
+  .c-post-nav { grid-template-columns: 1fr; }
+  .c-post-nav__link--next { grid-column: 1; text-align: left; }
+  .c-breadcrumb [aria-current="page"] { max-width: 18ch; }
+}
+
+
+
+/* よくある質問 一覧ページ */
+/* 直下の .c-faq が --bg-soft のため、パンくずも同色にして境目をなくす */
+.c-breadcrumb--soft { background: var(--bg-soft); }
+
+/* カテゴリのジャンプリンクはサービス案内と同じ .c-toc を使う。
+   このページは地の色が --bg-soft なので、目次の背景もそちらに合わせる */
+.c-faq { --toc-bg: var(--bg-soft); }
+.c-faq__group + .c-faq__group { margin-top: var(--m-10); }
+
+/* 固定ヘッダー＋固定された目次に隠れない位置で止める（サービス案内と同じ計算式） */
+.c-faq__group[id], .c-faq__item[id] { scroll-margin-top: calc(var(--toc-h, 20px) + 8px); }
+
+
+/* ============================================================
+   サービス案内 下層ページ
+   ============================================================ */
+.c-page-head { padding-bottom: var(--p-8); margin-bottom: var(--m-8); border-bottom: 1px solid var(--line); }
+
+/* 直後が目次のときは、目次の上罫線と二重線になるため見出しの下罫線は引かない */
+.c-page-head:has(+ .c-toc) { padding-bottom: var(--p-1); margin-bottom: var(--m-8); border-bottom: 0; }
+.c-page-head__category { font-size: var(--font-sm); font-weight: 700; color: var(--wine-deep); letter-spacing: .06em; margin-bottom: var(--m-2); }
+.c-page-head__title { font-family: var(--serif); font-size: clamp(var(--font-xl), 3.2vw, var(--font-3xl)); font-weight: 700; line-height: var(--lh-heading); }
+.c-page-head__lead { margin-top: var(--m-4); font-size: var(--font-def); line-height: var(--lh-loose); color: var(--ink-soft); }
+
+
+/* ============================================================
+   目次（ページ内リンク）— サービス案内と よくある質問 で共有
+   ============================================================
+   スクロール中はヘッダー直下に固定。カード（.c-card / .c-linkcard）や
+   料金表示と取り違えられないよう、角丸・枠線・塗りつぶしを持たない
+   「ナビゲーションバー」として独立した見た目にする。
+   項目は連番＋下線インジケーターで表す。
+   背景色はページによって地の色が違うため --toc-bg で差し替える。 */
+.c-toc {
+  position: sticky; top: var(--header-h); z-index: var(--z-dropdown);
+  display: flex; align-items: center; flex-wrap: wrap; gap: var(--gap-1) var(--gap-3);
+  padding: var(--p-3) 0; margin-bottom: var(--m-10);
+  transition: padding var(--duration-slow);
+}
+
+/* 背景と罫線は疑似要素が担う。固定時のみ画面幅いっぱいに広がり、ヘッダーと地続きのバーになる。
+   背景は地の色と同じ不透明色。JS無効でも本文が透けないようにするため常に敷いておく */
+.c-toc::before {
+  content: ""; position: absolute; z-index: -1;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: var(--toc-bg, var(--bg));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background var(--duration-slow), border-color var(--duration-slow), box-shadow var(--duration-slow);
+}
+.c-toc.is-stuck {
+  /* 固定時は縦を詰める。角丸・枠線は付けない */
+  padding-top: var(--p-2); padding-bottom: var(--p-2);
+}
+.c-toc.is-stuck::before {
+  left: calc((var(--vw, 100vw) - 100%) / -2);
+  right: calc((var(--vw, 100vw) - 100%) / -2);
+  background: rgba(var(--bg-rgb), .92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* 「このページの内容」の文字は出さない。読み上げには残す */
+.c-toc__title {
+  position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+
+/* 送りボタン: 項目が画面幅に収まらないときだけJSが生成して表示する（主にSP）。
+   押すと1画面分ずつ右へ送り、右端まで来たら先頭へ戻る */
+.c-toc__more {
+  flex-shrink: 0; width: 28px; height: 28px; padding: 0; border: 1px solid var(--line);
+  border-radius: 50%; background: var(--panel); color: var(--wine-deep);
+  display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+  transition: background var(--duration-def), border-color var(--duration-def);
+}
+.c-toc__more[hidden] { display: none; }
+.c-toc__more:hover { background: var(--wine-tint); border-color: var(--blush); }
+.c-toc__more svg { transition: transform var(--duration-slow); }
+.c-toc__more.is-end svg { transform: rotate(180deg); }
+
+/* まだ続きがあることが分かるよう、右端の文字をフェードさせる */
+.c-toc.has-more:not(.is-at-end) ul {
+  -webkit-mask-image: linear-gradient(to right, var(--mask-solid) calc(100% - 24px), transparent);
+  mask-image: linear-gradient(to right, var(--mask-solid) calc(100% - 24px), transparent);
+}
+
+.c-toc ul {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--gap-1);
+  counter-reset: page-toc;
+}
+.c-toc li { counter-increment: page-toc; }
+.c-toc a {
+  position: relative; display: inline-flex; align-items: center; gap: var(--gap-2);
+  padding: var(--p-2) var(--p-3); border-radius: 0; background: none;
+  font-size: var(--font-sm); font-weight: 700; line-height: var(--lh-heading); color: var(--ink-soft);
+  transition: color var(--duration-def);
+}
+
+/* 連番（01, 02 …）— 目次特有の記号として料金・タグと区別する */
+.c-toc a::before {
+  content: counter(page-toc, decimal-leading-zero);
+  font-family: var(--num); font-size: var(--font-xs); font-weight: 600;
+  letter-spacing: .04em; color: var(--blush);
+  transition: color var(--duration-def);
+}
+
+/* 下線インジケーター */
+.c-toc a::after {
+  content: ""; position: absolute; left: 10px; right: 10px; bottom: 1px;
+  height: 2px; background: var(--wine);
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform var(--duration-slow);
+}
+.c-toc a:hover, .c-toc a.is-current { color: var(--wine-deep); }
+.c-toc a:hover::before, .c-toc a.is-current::before { color: var(--wine); }
+.c-toc a:hover::after, .c-toc a.is-current::after { transform: scaleX(1); }
+
+
+/* セクション: ヘッダー + 固定された目次に隠れない位置で止める（--toc-h は site.js が実測して設定） */
+.c-section-block { scroll-margin-top: calc(var(--toc-h, 20px) + 8px); }
+.c-section-block + .c-section-block { margin-top: var(--m-12); }
+.c-section-block__title {
+  display: flex; align-items: center; flex-wrap: wrap; gap: var(--gap-1) var(--gap-3);
+  font-family: var(--serif); font-size: var(--font-xl); font-weight: 700; color: var(--ink);
+  margin-bottom: var(--m-6);
+}
+
+/* 見出し・ブロック見出しに添える補足。見出し自体は短いままにして、
+   条件や但し書きだけをこちらに逃がす（目次には出さない）。 */
+.c-subtitle__note {
+  font-family: var(--sans); font-size: var(--font-def); font-weight: 400; color: var(--ink-soft);
+}
+
+
+/* 「※」で始まる文は、2行目以降を1文字分下げて頭を揃える */
+.c-text--hang { padding-left: 1.6em; text-indent: -1.6em; }
+
+
+/* 段落を太字にする（注釈の囲みをやめて、本文の1行目として立てる場合） */
+.c-text--strong { font-weight: 700; }
+
+/* 本文の中で必ず目に留めてほしい一文（濃いピンク）。太字の c-text--strong と組み合わせて使う（2026-10-18 ユーザーの決定） */
+.c-text--accent, .c-text .c-text--accent { color: var(--primary-solid); } /* .c-text p（本文の色）に負けないよう器の中も指定 */
+.c-section-block__title::before { content: ""; width: 20px; height: 2px; background: var(--wine); flex-shrink: 0; }
+.c-subtitle { font-size: var(--font-lg); font-weight: 700; color: var(--ink); margin: var(--m-8) 0 var(--m-4); }
+.c-text { font-size: var(--font-def); line-height: var(--lh-loose); }
+.c-text > * + * { margin-top: var(--m-4); }
+.c-text p { color: var(--ink); }
+.c-lead { font-size: var(--font-md); font-weight: 500; color: var(--ink) !important; }
+
+
+/* ブロックの上に置く小見出し。チェックリスト／箇条書き／料金表で共通。
+   以前は .svc-box-title / .svc-list-title / .svc-price-title の3つに分かれていたが、
+   役割が同じで違いは下マージンだけだったため統合した。 */
+.c-block-title { font-size: var(--font-md); font-weight: 700; color: var(--ink); margin-bottom: var(--m-4); }
+
+
+/* チェックリスト（こんなお悩みはありませんか）
+   以前はピンクの塗り（--wine-tint）だったが、白い囲みに統一した。
+   囲みの装飾は下の共通ルール、中の箇条書きは .c-list をそのまま使う。 */
+.c-note--box { margin-top: var(--m-4); font-size: var(--font-def); color: var(--ink-soft); line-height: var(--lh-body); }
+
+
+/* 箇条書き */
+.c-list { display: grid; gap: var(--gap-2); }
+.c-list li { position: relative; padding-left: var(--p-5); font-size: var(--font-def); line-height: var(--lh-body); }
+.c-list li::before {
+  content: ""; position: absolute; left: 4px; top: .78em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--blush);
+}
+
+/* 箇条書きの点は全種類ピンクの丸で統一した。
+   以前はチェックマーク（.svc-list--check / .c-checklist）とグレーの点（.svc-list--caution）が
+   併存していたが、同じページに混在して不揃いだったため variant ごと廃止している。 */
+.c-list--grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+
+
+/* 白い囲みの共通装飾。チェックリスト／選択肢カード／相談窓口／他ページ導線で共有する。
+   以前は別々に書かれていて、枠線の色と余白が微妙に違っていた。
+   チェックリストもピンクの塗りをやめてこちらへ合流した。
+   残る塗りは料金表（.c-price）と、左線だけの注記（.c-note）のみ。 */
+.c-checklist, .c-card, .c-contact, .c-linkcard {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-md); padding: var(--p-5) var(--p-6);
+}
+
+
+/* 選択肢カード */
+.c-cards { display: grid; gap: var(--gap-4); }
+
+/* .svc-cards--compact は一部の概要カードだけで使っていたが、
+   そのカード自体を削除したため撤去した。 */
+.c-card__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--gap-1) var(--gap-3); }
+.c-card__name { font-size: var(--font-md); font-weight: 700; color: var(--ink); }
+.c-card__sub { font-size: var(--font-sm); color: var(--ink-soft); }
+.c-card__price {
+  margin-top: var(--m-2); font-family: var(--num); font-size: var(--font-md); font-weight: 600; color: var(--wine-deep);
+}
+.c-card__price-note {
+  display: block; margin-top: var(--m-1);
+  font-family: var(--sans); font-size: var(--font-sm); font-weight: 400; color: var(--ink-soft); line-height: var(--lh-compact);
+}
+.c-card__desc { margin-top: var(--m-3); font-size: var(--font-def); line-height: var(--lh-body); color: var(--ink); }
+.c-card__meta { margin-top: var(--m-3); display: grid; gap: var(--gap-2); }
+.c-card__meta li {
+  position: relative; padding-left: var(--p-4); font-size: var(--font-sm); line-height: var(--lh-compact); color: var(--ink-soft);
+}
+.c-card__meta li::before { content: "※"; position: absolute; left: 0; }
+
+
+/* 料金を含むカードは料金表と同じ塗りにする。ページをまたいで
+   「色が付いている＝料金の情報がある」で揃えるため。
+   方法と料金を別々の枠に分けると同じ名前が2度出るので、料金はカード側に集約している。 */
+.c-card--priced { background: var(--bg-soft); border-color: transparent; }
+
+
+/* 当施設で実施していない方法。選べる方法と同じ見た目だと誤解を招くため区別する。
+   面は白のまま。バッジの文字が意味を伝えるので、地の色まで変えなくてよい。
+   輪郭を破線＋無彩色にして「選べるカード」との差だけ残している。
+   名称も --ink のまま — 読みにくくするのが目的ではない。 */
+.c-card--unavailable { border-style: dashed; border-color: var(--mute-line); }
+.c-card__badge {
+  margin-left: auto; padding: var(--p-1) var(--p-3); border-radius: var(--radius-full);
+  background: var(--panel); border: 1px solid var(--mute-line);
+  font-size: var(--font-xs); font-weight: 700; color: var(--ink-soft); white-space: nowrap;
+}
+
+
+/* 料金 */
+.c-price { background: var(--bg-soft); border-radius: var(--radius-md); padding: var(--p-6) var(--p-6); }
+.c-price__row {
+  /* 左＝文、右＝料金の2列。文が長いときは文の列の中で折り返し、料金は右に残す（2026-10-18 ユーザーの指示） */
+  display: flex; flex-wrap: nowrap; align-items: baseline; justify-content: space-between; gap: var(--gap-2) var(--gap-5);
+  padding: var(--p-3) 0; border-bottom: 1px solid var(--blush);
+}
+
+/* 先頭行の上と最終行の下は詰める。囲みの余白だけが効くようにして、
+   1行だけの料金カードで上下がちぐはぐにならないようにする */
+.c-price__row:first-of-type { padding-top: 0; }
+.c-price__row:last-of-type { border-bottom: none; padding-bottom: 0; }
+.c-price__label { flex: 1 1 auto; min-width: 0; font-size: var(--font-def); font-weight: 500; }
+.c-price__note { display: block; margin-top: var(--m-1); font-size: var(--font-sm); font-weight: 400; color: var(--ink-soft); }
+.c-price__value {
+  font-family: var(--num); font-size: var(--font-md); font-weight: 600; color: var(--wine-deep); white-space: nowrap;
+}
+
+/* 行の中に条件を並べるとき（例: 加算の対象となる方） */
+.c-price__items { margin-top: var(--m-2); display: grid; gap: var(--gap-1); }
+.c-price__items li {
+  position: relative; padding-left: var(--p-4); font-size: var(--font-sm); font-weight: 400;
+  line-height: var(--lh-compact); color: var(--ink-soft);
+}
+.c-price__items li::before {
+  content: ""; position: absolute; left: 2px; top: .72em;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--blush);
+}
+
+/* 表全体にかかる但し書き。タイトルの直下・行の前 */
+.c-price__intro { margin: -4px 0 var(--m-3); font-size: var(--font-def); color: var(--ink-soft); line-height: var(--lh-body); }
+
+/* 末尾の注記は直前の1行ではなく表全体にかかるため、罫線で切り離す */
+.c-price > .c-note--box { margin-top: var(--m-4); padding-top: var(--p-4); border-top: 1px solid var(--blush); }
+.c-price--plain > .c-note--box { border-top-color: var(--line); }
+
+/* 料金ではないラベルと値の対比（例: 項目Aと項目Bの比較）。
+   塗りは料金だけに使うと決めたため、こちらは白い囲みに合わせる。 */
+.c-price--plain {
+  background: var(--panel); border: 1px solid var(--line); padding: var(--p-5) var(--p-6);
+}
+.c-price--plain .c-price__row { border-bottom-color: var(--line); }
+
+
+/* 注記 */
+.c-note {
+  padding: var(--p-4) var(--p-5); border-left: 3px solid var(--blush); background: var(--panel);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: var(--font-def); line-height: var(--lh-body); color: var(--ink-soft);
+}
+
+
+/* 画像 */
+.c-figure { margin: var(--m-2) 0; }
+.c-figure img { width: 100%; height: auto; border-radius: var(--radius-md); }
+.c-figure figcaption { margin-top: var(--m-3); font-size: var(--font-sm); color: var(--ink-soft); }
+
+
+/* 画像を横並びにする（例: 測定風景とレポート見本） */
+.c-figure-group { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-5); align-items: start; }
+
+
+/* 本文と画像の2カラム。side で画像を置く側、width で画像カラムの幅を決める。
+   本文が先・画像があとのソース順にしてあるので、SPでは figure を order:-1 で先頭に上げる。 */
+.c-media { display: grid; gap: var(--gap-6); align-items: start; }
+.c-media--right { grid-template-columns: 1fr var(--media-w, 38%); }
+.c-media--narrow { --media-w: 25%; }
+.c-media__body > * + * { margin-top: var(--m-4); }
+.c-media__fig { margin: 0; }
+.c-media__fig img { width: 100%; height: auto; border-radius: var(--radius-md); }
+.c-media__fig figcaption { margin-top: var(--m-3); font-size: var(--font-sm); color: var(--ink-soft); }
+
+
+/* 番号付きの見出しに続く本文などを1段下げる */
+.c-indent { padding-left: var(--p-5); }
+
+@media (max-width: 980px) {
+  
+  /* 2カラムは1カラムに。写真を先頭へ上げ、何の話か先に伝える */
+.c-media, .c-media--right { grid-template-columns: 1fr; }
+  .c-media__fig { order: -1; }
+  .c-media--narrow .c-media__fig { max-width: 260px; }
+}
+
+
+/* 相談窓口（囲みの装飾は上の共通ルール） */
+.c-contact__name { font-size: var(--font-md); font-weight: 700; }
+.c-contact__tel {
+  display: inline-block; margin-top: var(--m-2);
+  font-family: var(--num); font-size: var(--font-xl); font-weight: 600; color: var(--wine-deep);
+}
+.c-contact__note { margin-top: var(--m-1); font-size: var(--font-def); color: var(--ink-soft); }
+
+
+/* 他ページへの導線（囲みの装飾は上の共通ルール）
+   ページ名と概要がある場合は、同じ行に続けず縦に積む。
+   横に並べると1つの長い文に見えて、どこまでがページ名か分からなくなるため。 */
+.c-linkcard {
+  display: flex; align-items: center; gap: var(--gap-2) var(--gap-3);
+  transition: background var(--duration-slow), border-color var(--duration-slow);
+}
+.c-linkcard:hover { background: var(--wine-tint); border-color: var(--blush); }
+.c-linkcard__title { font-size: var(--font-md); font-weight: 700; color: var(--ink); }
+.c-linkcard__desc { font-size: var(--font-def); color: var(--ink-soft); line-height: var(--lh-compact); }
+
+/* 概要があるときだけ2行組みにする。
+   「→」はページ名と同じ行の右端に置く（どこを押すと何に飛ぶかが1行で読めるように）。 */
+.c-linkcard:has(.c-linkcard__desc) { flex-wrap: wrap; }
+.c-linkcard:has(.c-linkcard__desc) .c-linkcard__title { flex: 1; }
+.c-linkcard:has(.c-linkcard__desc) .c-linkcard__desc { width: 100%; }
+.c-linkcard svg { margin-left: auto; flex-shrink: 0; color: var(--wine-deep); }
+
+
+/* サービス案内 一覧 */
+.c-index__group + .c-index__group { margin-top: var(--m-12); }
+
+/* 詳細ページの .c-section-block と同じく、固定された目次の下に着地させる */
+.c-index__group { scroll-margin-top: calc(var(--toc-h, 20px) + 8px); }
+.c-index__list { display: grid; gap: var(--gap-3); }
+
+/* ページ名を上段、概要を下段に分ける。横に続けると1つの長い文に見えるうえ、
+   概要が途中で切れて読めなくなるため。 */
+.c-index__item {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-2) var(--gap-4);
+  padding: var(--p-5) var(--p-6); background: var(--panel);
+  border: 1px solid var(--line); border-radius: var(--radius-md);
+  transition: background var(--duration-slow), border-color var(--duration-slow), transform var(--duration-slow);
+}
+.c-index__item:hover { background: var(--wine-tint); border-color: var(--blush); transform: translateX(3px); }
+.c-index__name { font-size: var(--font-md); font-weight: 700; color: var(--ink); flex-shrink: 0; }
+.c-index__lead { width: 100%; font-size: var(--font-def); color: var(--ink-soft); line-height: var(--lh-compact); }
+.c-index__item svg { margin-left: auto; flex-shrink: 0; color: var(--wine-deep); }
+
+@media (max-width: 620px) {
+  
+  /* 固定時に画面を占有しないよう、目次は横スクロールの1行に収める */
+.c-toc { gap: 0 var(--gap-3); padding: var(--p-2) 0; }
+  .c-toc.is-stuck { padding-top: var(--p-2); padding-bottom: var(--p-2); }
+  
+  /* マークと同じ行に横スクロールの1行を並べる */
+.c-toc ul {
+    /* flex-basis を 0 にして、マークと同じ行に収まるようにする（auto だと折り返す） */
+    flex-wrap: nowrap; overflow-x: auto; flex: 1 1 0; min-width: 0;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .c-toc ul::-webkit-scrollbar { display: none; }
+  .c-toc a { white-space: nowrap; padding: var(--p-1) var(--p-2); }
+  .c-toc a::after { left: 8px; right: 8px; }
+  .c-checklist, .c-price, .c-card, .c-contact, .c-linkcard { padding: var(--p-5) var(--p-5); }
+  .c-section-block__title { font-size: var(--font-lg); }
+  .c-price__row { flex-direction: column; align-items: flex-start; }
+  .c-index__item { flex-wrap: wrap; gap: var(--gap-2) var(--gap-3); }
+  .c-index__lead { width: 100%; }
+  .c-index__item svg { display: none; }
+  .c-list--grid { grid-template-columns: 1fr 1fr; }
+  .c-figure-group { grid-template-columns: 1fr; gap: var(--gap-4); }
+  .c-indent { padding-left: var(--p-3); }
+}
+
+
+/* 記事本文・よくある質問の回答の箇条書き
+   投稿者用エディタの「箇条書き」「番号付き」で入るのは素の <ul> <ol>。
+   このサイトは 132行目で `ul, ol { list-style: none }` と全部消しているため、
+   指定が無いと**点も番号も出ず、ただの段落に見える**。
+   点はサービス案内の .c-list と同じピンクの丸に揃える。 */
+.c-post__body ul, .c-post__body ol,
+.c-faq__a ul, .c-faq__a ol { margin: 1.5em 0; display: grid; gap: var(--gap-2); }
+.c-post__body li, .c-faq__a li { position: relative; padding-left: var(--p-5); line-height: var(--lh-body); }
+.c-post__body ul > li::before, .c-faq__a ul > li::before {
+  content: ""; position: absolute; left: 4px; top: .78em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--blush);
+}
+/* 番号は CSS カウンタで出す。list-style を戻すと上のリセットと食い違う */
+.c-post__body ol, .c-faq__a ol { counter-reset: okalc-ol; }
+.c-post__body ol > li, .c-faq__a ol > li { counter-increment: okalc-ol; }
+.c-post__body ol > li::before, .c-faq__a ol > li::before {
+  content: counter(okalc-ol) "."; position: absolute; left: 0; top: 0;
+  color: var(--wine-deep); font-weight: 700;
+}
+/* リストの中の段落。エディタは <li><p>…</p></li> の形で書き出す */
+.c-post__body li > p, .c-faq__a li > p { margin: 0; }
+
+/* ======================= 一覧表（c-data-table） =======================
+   記事・質問などを並べる一覧の表。公開サイトと管理画面の両方で使う共通部品。
+   営業時間・料金の対比などの「表のカード」は c-table（別の部品）。
+   列幅：c-data-table__col--*（colgroup の col に付ける）／セル：c-data-table__cell--*／
+   狭い画面でタイトルの下に出す日付：c-data-table__row-date／件数：c-data-table__row-count */
+/* overflow は常に付ける。付けないと中の <table> のセル背景が角の外まで描かれ、
+   外枠の角丸（R）の線が消えて四角い箱に見える。
+   表の中だけ横にスクロールさせる領域にもなる。 */
+.c-data-table { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: auto; }
+/* 列名は表の枠の上端に貼り付ける。**基準は画面ではなく `.c-data-table` のスクロール**。
+   画面上部に貼り付けようとして overflow を外すと、角丸が壊れる。 */
+.c-data-table thead th {
+  position: sticky; top: 0; z-index: 2;
+  background: var(--panel);
+  box-shadow: inset 0 -1px 0 var(--line);
+}
+.c-data-table table { width: 100%; border-collapse: collapse; }
+.c-data-table :is(th, td) { padding: var(--p-3); text-align: left; border-bottom: 1px solid var(--line); }
+/* 操作列は内容ぶんだけの幅にして、余った幅はタイトル列に吸わせる。
+   width:1% は「最小幅まで縮める」ための定石（table-layout: auto と併用）。 */
+
+/* 一覧表の列幅。**1列目（タイトル）だけを可変にし、残りは内容ぶんの幅で固定する。**
+   こうしないと、日付・ステータス・操作の列が先に潰れて、
+   「編 / 集」「公開 / 中」のように1文字ずつ縦に割れる。
+   幅が足りないときに詰めるのは、いちばん長くて折り返してよいタイトル列。 */
+.c-data-table th + th, .c-data-table td + td { white-space: nowrap; }
+/* 列幅を colgroup で決めていない表は、内容ぶんの幅まで縮める */
+.c-data-table table:not(:has(col)) th + th,
+.c-data-table table:not(:has(col)) td + td { width: 1%; }
+
+/* 一覧のタイトル・質問は1行に収める。はみ出しは公開サイトと同じ c-truncate で「…」にし、
+   全文はツールチップで見せる（js/components.js。キーボードでも読める）。
+   2行に折り返すと行の高さが揃わず、一覧としての走査性が落ちるため。 */
+/* テーブルのセルは中身に合わせて広がるので、幅の上限を決めないと省略が効かない */
+/* ⚠️ セレクタを `td:first-child` に戻さないこと。よくある質問では左端が
+   Q番号の列になり、省略とリンク色がタイトルに効かなくなる
+   `min-width` はタイトルが読めなくなる下限。よくある質問は列が6つあり、
+   1024px 幅だと他の列（計638px）に押されてタイトルが65pxまで潰れる。
+   下限を割ったら表の中だけ横スクロールする（.c-data-table の overflow: auto）。 */
+.c-data-table .c-data-table__cell--title { min-width: 200px; max-width: 0; }
+
+/* 同じ種類の一覧で列幅を揃える。中身の文字数で幅が変わると、
+   絞り込みを切り替えたときに列がずれて別の画面に見える。
+   並びの例は タイトル／状態／日付／操作。 */
+/* Q番号は「Q10」程度。数字は等幅で揃える */
+/* Q番号（よくある質問のみ）。「Q10」程度が入ればよい */
+.c-data-table__col--q { width: 72px; }
+.c-data-table__cell--q { white-space: nowrap; font-family: var(--num); font-variant-numeric: tabular-nums; }
+/* グループの列は表の幅の 25%（最小 96px）。広い画面では名前を全部出し、狭くなったら縮めて、中の c-truncate で「…」にする。
+   以前は 160px 固定だったが、長い名前（例：新型コロナウィルス・ワクチン）が折り返さずに列を押し広げ、
+   981〜1050px で表がはみ出して削除のボタンが見切れた（2026-10-04 ユーザーの指示「幅が狭くなればグループ名の幅を可変する」「1行で…に省略」） */
+.c-data-table .c-data-table__cell--group { min-width: 96px; max-width: 0; width: 25%; }
+/* 操作の列は中身（ボタン）ぶんの幅だけ取り、右端に寄せる。余った幅はタイトルの列へ回す
+   （以前は 176px 固定で、削除だけの一覧では右に余白が残っていた。2026-10-04 ユーザーの指摘） */
+.c-data-table__col--ops { width: 1%; }
+.c-data-table__col--date { width: 120px; }
+/* 件数の列（例：グループの「質問の数」）。日付の列と同じ幅・同じ畳み方。日付の部品を流用しない（2026-10-04 追加） */
+.c-data-table__col--count { width: 120px; }
+.c-data-table__col--status { width: 108px; }
+
+
+/* 一覧のタイトルは**リンクそのもの**。押すと編集画面へ行く。
+   専用の「編集」ボタンは置かない（同じ行に押せるものを2つ並べない） */
+.c-data-table .c-data-table__cell--title a { color: var(--wine-deep); text-decoration: none; }
+.c-data-table .c-data-table__cell--title a:hover { text-decoration: underline; }
+/* 狭い画面用の公開日。広い画面では公開日の列があるので出さない */
+.c-data-table__row-date { display: none; }
+/* 狭い画面用の件数。広い画面では件数の列があるので出さない */
+.c-data-table__row-count { display: none; }
+/* 狭い画面用の状態（管理画面）。広い画面では状態の列があるので出さない */
+.c-data-table__row-status { display: none; }
+/* 管理画面の行の削除ボタン：どの幅でもゴミ箱のアイコンだけ（2026-10-04 ユーザーの指示。PC とスマホで同じボタン）。
+   「削除する」の文字は読み上げ用に残す（見た目だけ消す） */
+.c-data-table__delete { padding-inline: 0; inline-size: var(--_h); }
+.c-data-table__delete > .c-data-table__delete-label {
+  position: absolute; inline-size: 1px; block-size: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+@media (max-width: 980px) {
+  /* 表は縮めずに横スクロールさせる。列を詰めるとタイトルが1文字ずつ折り返し、
+     一覧として読めなくなる。480px はタイトル・状態・日付の列が読める下限の目安 */
+  .c-data-table table { min-width: 480px; }
+  .c-data-table th { white-space: nowrap; }
+  /* 最後の列（操作）は表の右端に貼り付ける。横スクロールしても手が届くようにする。
+     背景を敷かないと、下を流れていく他の列が透けて重なる。
+     ⚠️ **左に境界線は引かない**。列が1本増えたように見えるため */
+  /* 貼り付けるのは操作の列（c-data-table__col--ops）がある表だけ。公開サイトの記事一覧のように操作の列が無い表は貼り付けない */
+  .c-data-table:has(.c-data-table__col--ops) :is(th, td):last-child { position: sticky; right: 0; background: var(--panel); }
+  /* 縦（thead）と横（右端）の両方で固定される左上の角。行より前に出す */
+  .c-data-table:has(.c-data-table__col--ops) thead th:last-child { z-index: 3; }
+}
+@media (max-width: 620px) {
+  /* ⚠️ **公開日を操作列の下に隠さない。** 375px では横スクロールしないと読めず、
+     同じタイトルの行を見分けられなかった。
+     列ごと畳んで、タイトルの下に小さく出す。 */
+  /* ⚠️ セレクタは `.c-data-table` から書く。`.c-data-table__row-date` だけだと、
+     この下にある `.c-data-table__row-date { display: none }` に負けて出てこない（同じ強さで後勝ち） */
+  .c-data-table :is(.c-data-table__cell--date, .c-data-table__cell--count) { display: none; }
+  /* ⚠️ セルを消しても **列（col）の幅は残る**。col 自体も消さないと、
+     見えない列に幅を取られてタイトルが数文字まで潰れる（97px → 165px）。
+     `visibility: collapse` は効かなかったため display: none を使う */
+  .c-data-table :is(.c-data-table__col--date, .c-data-table__col--count) { display: none; }
+  .c-data-table :is(.c-data-table__row-date, .c-data-table__row-count) { display: block; margin-top: var(--m-1); color: var(--ink-soft); font-size: var(--font-xs); }
+  /* 公開日の列を畳んだぶん、横スクロールの下限も下げる */
+  .c-data-table table { min-width: 300px; }
+
+  /* 管理画面（操作の列がある表）のスマホ幅：
+     左は内容の列（1行目 タイトル／2行目 状態と日付）、右は操作の列（中身ぶんの幅）。横スクロールも貼り付けもしない。
+     列名の行は見た目だけ消し、読み上げには残す */
+  .c-data-table:has(.c-data-table__col--ops) table { min-width: 0; }
+  .c-data-table:has(.c-data-table__col--ops) :is(th, td):last-child { position: static; }
+  /* 行ごと消す（th だけ消すと、空の行の高さが残る） */
+  .c-data-table:has(.c-data-table__col--ops) thead {
+    position: absolute; inline-size: 1px; block-size: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
+  /* 状態の列も畳んで、タイトルの下に日付と並べる（c-data-table__row-status を書いた表だけ） */
+  .c-data-table:has(.c-data-table__row-status) :is(.c-data-table__col--status, .c-data-table__cell--status) { display: none; }
+  .c-data-table .c-data-table__row-status { display: inline-flex; vertical-align: middle; margin-top: var(--m-1); margin-inline-end: var(--m-2); }
+  .c-data-table:has(.c-data-table__row-status) .c-data-table__row-date { display: inline-block; }
+}
+
+/* ---- よくある質問の一覧（Q番号・グループ・並び替えのある表）の狭い画面 ----
+   620px 以下は3列に畳む（2026-10-03 依頼者の指定）：
+     左   … 並び替え（上へ・下へを縦に重ねる）       c-data-table__cell--move
+     中   … 1行目 グループ／2行目 Q番号と質問        c-data-table__row-group・c-data-table__row-q
+     右   … 1行目 状態／2行目 削除（ゴミ箱）          c-data-table__ops-status
+   ⚠️ 「操作の列は右端」の例外。並び替えのある一覧（よくある質問・そのグループ）だけで使う。
+   グループの一覧は左の並び替えだけを使う（Q番号・グループ・状態の段は無い。2026-10-04 ユーザーの指示）。
+   狭い画面だけで出すものは、広い画面用のセルと**両方に書く**（状態・日付の畳み方と同じ）。
+   並び替えのボタンは広い画面では操作の列（c-data-table__ops-move）、狭い画面では左の列に出る（同時には出ない） */
+.c-data-table__col--move, .c-data-table__cell--move,
+.c-data-table__row-group, .c-data-table__row-q, .c-data-table__ops-status { display: none; }
+/* Q番号と質問を1行に並べる囲み。広い画面では質問だけが入って見える */
+.c-data-table__row-title { display: flex; align-items: baseline; gap: var(--gap-2); min-inline-size: 0; }
+@media (max-width: 620px) {
+  .c-data-table .c-data-table__col--move { display: table-column; width: 1%; }
+  .c-data-table .c-data-table__cell--move { display: table-cell; padding-inline-end: 0; }
+  /* 上へ・下へは 8px あける（指で押したときに隣を押しにくく。ユーザーの選択） */
+  .c-data-table__cell--move form { display: grid; gap: var(--gap-2); }
+  .c-data-table:has(.c-data-table__cell--move) :is(.c-data-table__col--q, .c-data-table__cell--q, .c-data-table__col--group, .c-data-table__cell--group) { display: none; }
+  .c-data-table .c-data-table__ops-move { display: none; }
+  .c-data-table .c-data-table__row-group { display: block; margin-bottom: var(--m-1); color: var(--ink-soft); font-size: var(--font-xs); }
+  .c-data-table .c-data-table__row-q { display: inline; flex: none; color: var(--ink); font-family: var(--num); font-variant-numeric: tabular-nums; }
+  /* 質問のセルの下限（200px）を外す。並び替えと操作の列に挟まれるので、下限があると 320px の画面で表がはみ出す。質問は「…」で縮む */
+  .c-data-table:has(.c-data-table__cell--move) .c-data-table__cell--title { min-width: 0; }
+  /* 状態は操作の列の上段へ（タイトルの下には出さない） */
+  .c-data-table:has(.c-data-table__ops-status) :is(.c-data-table__col--status, .c-data-table__cell--status) { display: none; }
+  .c-data-table .c-data-table__ops-status { display: block; margin-bottom: var(--m-1); text-align: right; }
+}

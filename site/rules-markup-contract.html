@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>マークアップ契約（公開ページの出力HTML） | OKA.L.C Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Outfit:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css?v=247fb91f">
+<link rel="stylesheet" href="../css/base.css?v=247fb91f">
+<link rel="stylesheet" href="../css/components.css?v=247fb91f">
+
+
+<link rel="stylesheet" href="assets/site.css?v=247fb91f">
+</head>
+<body data-page="rules-markup-contract">
+<a class="ds-skip" href="#main">本文へスキップ</a>
+<div class="ds-shell">
+  <header class="ds-header" data-sticky-header>
+    <a class="ds-logo" href="index.html"><span class="ds-logo__mark" aria-hidden="true"></span>OKA.L.C Design System</a>
+    <span class="c-tag c-tag--primary">v0.5</span>
+    <button class="ds-menu-btn c-button c-button--secondary c-button--ghost c-button--icon c-button--md" type="button" aria-controls="ds-nav" aria-expanded="false"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" role="img" aria-label="メニュー"><path d="M177.37-252.28q-17.45 0-29.48-11.97-12.02-11.96-12.02-29.32t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.96 12.02 29.33 0 17.36-12.02 29.53-12.03 12.18-29.48 12.18H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.96-12.02-29.33 0-17.36 12.02-29.53 12.03-12.18 29.48-12.18h605.26q17.45 0 29.48 11.97 12.02 11.96 12.02 29.32t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Z"/></svg></button>
+  </header>
+  <nav class="ds-nav" id="ds-nav" aria-label="サイト内"><p class="ds-nav__group">はじめに</p><ul class="ds-nav__list"><li><a class="ds-nav__link" href="index.html">概要</a></li></ul><details class="ds-nav__fold"><summary class="ds-nav__group">基礎</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="color.html">色</a></li><li><a class="ds-nav__link" href="typography.html">文字</a></li><li><a class="ds-nav__link" href="layout.html">レイアウト</a></li><li><a class="ds-nav__link" href="spacing.html">余白・角丸・影</a></li><li><a class="ds-nav__link" href="motion.html">モーション</a></li><li><a class="ds-nav__link" href="breakpoints.html">ブレークポイント</a></li><li><a class="ds-nav__link" href="icon.html">アイコン</a></li><li><a class="ds-nav__link" href="writing.html">ライティング</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">コンポーネント</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="site-frame.html">ページの骨格</a></li><li><a class="ds-nav__link" href="site-shell.html">共通UI</a></li><li><a class="ds-nav__link" href="button.html">ボタン</a></li><li><a class="ds-nav__link" href="site-text.html">見出しと文章のブロック</a></li><li><a class="ds-nav__link" href="site-box.html">囲み・カード・料金・表</a></li><li><a class="ds-nav__link" href="site-figure.html">画像と2カラム</a></li><li><a class="ds-nav__link" href="site-listing.html">一覧・記事・よくある質問</a></li><li><a class="ds-nav__link" href="form.html">ラベル・入力欄</a></li><li><a class="ds-nav__link" href="choice.html">チェック・ラジオ・スイッチ</a></li><li><a class="ds-nav__link" href="feedback.html">通知・読み込み</a></li><li><a class="ds-nav__link" href="navigation.html">タブ・リンク・ページ送り</a></li><li><a class="ds-nav__link" href="overlay.html">モーダル・ツールチップ</a></li><li><a class="ds-nav__link" href="display.html">空状態・区切り</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">個別最適ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="specific-site.html">公開サイト</a></li><li><a class="ds-nav__link" href="specific-admin.html">管理画面</a></li><li><a class="ds-nav__link" href="specific-tool.html">院内ツール</a></li></ul></details><details class="ds-nav__fold" open><summary class="ds-nav__group">ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="rules-prohibitions.html">禁止パターン</a></li><li><a class="ds-nav__link" href="rules-naming.html">命名規則</a></li><li><a class="ds-nav__link" href="rules-markup-contract.html" aria-current="page">マークアップ契約</a></li><li><a class="ds-nav__link" href="rules-structure.html">サイト構成のルール</a></li><li><a class="ds-nav__link" href="rules-design-tokens.html">デザイントークン</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">ハーネス</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="pattern-layout.html">画面の骨組み</a></li><li><a class="ds-nav__link" href="pattern-form.html">フォームの組み方</a></li><li><a class="ds-nav__link" href="pattern-states.html">画面の状態</a></li><li><a class="ds-nav__link" href="pattern-dodont.html">良い例・悪い例</a></li><li><a class="ds-nav__link" href="pattern-checklist.html">チェックリスト</a></li><li><a class="ds-nav__link" href="pattern-exercises.html">練習課題</a></li></ul></details></nav>
+  <main class="ds-main" id="main">
+<!-- title: マークアップ契約（公開ページの出力HTML） -->
+
+<h1>マークアップ契約（公開ページの出力HTML）</h1>
+<p class="ds-lead">公開ページの HTML で、クラス名・ID・構造をどう書くかの約束です。</p>
+
+<nav class="ds-related" aria-label="関連ページ"><span class="ds-related__label">関連ページ</span><a href="rules-naming.html">命名規則</a><a href="rules-structure.html">サイト構成のルール</a></nav>
+<section class="ds-section" id="この文書の役割">
+  <h2>この文書の役割</h2>
+<p><strong><code>site.css</code>（1,190行）と <code>site.js</code> は、特定のクラス名とHTML構造を前提に作られている。</strong> CMSが公開ページを出力する箇所は、この構造どおりに出す。</p>
+<p>独自のマークアップにすると、次のようにこれまでの調整がすべて失われる。</p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>独自実装した場合</th><th>起きること</th></tr></thead><tbody><tr><td>クラス名を変える</td><td>CSSが当たらず、無スタイルのHTMLが表示される</td></tr><tr><td>入れ子を変える</td><td>2カラム・グリッドが崩れる</td></tr><tr><td><code>data-</code> 属性を落とす</td><td><code>site.js</code> の機能が止まる（「もっと見る」など）</td></tr><tr><td><code>id</code> を変える</td><td><code>getElementById</code> が <code>null</code> を返し、その先で例外が出て<strong>機能ごと止まる</strong></td></tr></tbody></table></div>
+<p><strong>⚠️ 新しいCSSクラスを作らない。</strong> 既存クラスで表現できないものが出たら、 実装せず<strong>依頼者に報告する。</strong></p>
+</section>
+<section class="ds-section" id="1-お知らせ・コラム-一覧">
+  <h2>1. お知らせ・コラム 一覧</h2>
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;nav class=&quot;c-breadcrumb&quot; aria-label=&quot;パンくずリスト&quot;&gt;&lt;div class=&quot;l-wrap&quot;&gt;&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+  &lt;li aria-current=&quot;page&quot;&gt;お知らせ&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;&lt;/nav&gt;
+&lt;section class=&quot;l-section l-section--post&quot;&gt;
+  &lt;div class=&quot;l-wrap&quot;&gt;
+    &lt;div class=&quot;c-page-head&quot;&gt;&lt;h1 class=&quot;c-page-head__title&quot;&gt;お知らせ&lt;/h1&gt;&lt;/div&gt;
+    &lt;ul class=&quot;c-post-list__items c-post-list__items--wide c-post-list&quot; data-step=&quot;10&quot;&gt;
+      &lt;li&gt;&lt;a class=&quot;c-post-list__item&quot; href=&quot;/news/2026-08-05-01&quot;&gt;
+        &lt;time class=&quot;c-post-list__date&quot; datetime=&quot;2026-08-05&quot;&gt;2026.08.05&lt;/time&gt;
+        &lt;span class=&quot;c-post-list__title&quot;&gt;記事タイトル&lt;/span&gt;
+      &lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre></details></div>
+
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>決まりごと</th></tr></thead><tbody><tr><td><strong><code>data-step=&quot;10&quot;</code> は必須。</strong> <code>site.js</code> がこれを見て11件目以降を隠し、「もっと見る」を作る</td></tr><tr><td><strong>サーバー側でページネーションを実装しない。</strong> 公開側は全件出力してJSが送り出す</td></tr><tr><td>日付の表記は <code>2026.08.05</code>（ドット区切り）。<code>datetime</code> 属性はISO形式</td></tr><tr><td><strong>コラムは <code>&lt;time&gt;</code> ではなく <code>&lt;span class=&quot;c-post-list__date&quot;&gt;No.8&lt;/span&gt;</code></strong></td></tr><tr><td>JS無効時に全件がそのまま並ぶこと（<code>hidden</code> はJSが付ける）</td></tr></tbody></table></div>
+<h3>コラムの「No.」</h3>
+<ul class="ds-list"><li><strong>最新の記事が最大の番号。</strong> 総公開件数を N とすると、最新が <code>No.N</code>、次が <code>No.N-1</code></li><li>一覧・詳細・トップページの<strong>3か所すべてで同じ番号</strong>になること</li><li>⚠️ <strong>公開済み記事だけを数える。</strong> 下書き・予約中を含めると番号がずれる</li><li>⚠️ <strong>記事を削除すると以降の番号がすべて繰り上がる。</strong> これは仕様。番号を固定値として保存しないこと</li></ul>
+</section>
+<section class="ds-section" id="2-お知らせ・コラム-詳細">
+  <h2>2. お知らせ・コラム 詳細</h2>
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;nav class=&quot;c-breadcrumb&quot; aria-label=&quot;パンくずリスト&quot;&gt;&lt;div class=&quot;l-wrap&quot;&gt;&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/news/&quot;&gt;お知らせ&lt;/a&gt;&lt;/li&gt;
+  &lt;li aria-current=&quot;page&quot;&gt;記事タイトル&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;&lt;/nav&gt;
+&lt;article class=&quot;l-section l-section--post&quot;&gt;
+  &lt;div class=&quot;l-wrap l-wrap--narrow&quot;&gt;
+    &lt;div class=&quot;c-post__head&quot;&gt;
+      &lt;time class=&quot;c-post__meta&quot; datetime=&quot;2026-08-05&quot;&gt;2026.08.05&lt;/time&gt;
+      &lt;h1 class=&quot;c-post__title&quot;&gt;記事タイトル&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c-post__body&quot;&gt;
+      &lt;!-- ここに本文HTML --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c-post__foot&quot;&gt;
+      &lt;a class=&quot;c-post__back&quot; href=&quot;/news/&quot;&gt;← お知らせ一覧へ戻る&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;nav class=&quot;c-post-nav&quot; aria-label=&quot;記事ナビゲーション&quot;&gt;
+      &lt;a class=&quot;c-post-nav__link&quot; href=&quot;…&quot;&gt;
+        &lt;span class=&quot;c-post-nav__cap&quot;&gt;次の記事&lt;/span&gt;
+        &lt;time class=&quot;c-post-nav__meta&quot; datetime=&quot;2026-08-10&quot;&gt;2026.08.10&lt;/time&gt;
+        &lt;span class=&quot;c-post-nav__title&quot;&gt;…&lt;/span&gt;&lt;/a&gt;
+      &lt;a class=&quot;c-post-nav__link c-post-nav__link--next&quot; href=&quot;…&quot;&gt;
+        &lt;span class=&quot;c-post-nav__cap&quot;&gt;前の記事&lt;/span&gt;
+        &lt;time class=&quot;c-post-nav__meta&quot; datetime=&quot;2026-07-24&quot;&gt;2026.07.24&lt;/time&gt;
+        &lt;span class=&quot;c-post-nav__title&quot;&gt;…&lt;/span&gt;&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre></details></div>
+
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>決まりごと</th></tr></thead><tbody><tr><td><strong><code>l-wrap--narrow</code> を忘れない。</strong> 本文の行長を抑えるための指定（760px）</td></tr><tr><td><code>c-post-nav</code> は<strong>前後の記事が存在するときだけ</strong>その <code>&lt;a&gt;</code> を出す。両方無ければ <code>&lt;nav&gt;</code> ごと出さない</td></tr><tr><td><strong><code>c-post-nav__link--next</code> が付くほうが古い記事（「前の記事」）。</strong> クラス名と表示ラベルが逆に見えるが、CSSがこうなっているので合わせる。<code>--next</code> は <code>grid-column: 2</code>（右列・右寄せ）の意味</td></tr><tr><td><strong>前後記事のナビは公開済み記事だけを辿る。</strong> 下書き・予約中を挟んでスキップする</td></tr></tbody></table></div>
+<h3>📌 <code>post-nav-prev</code> は書かない</h3>
+<p>もとの契約書（マークアップ契約の元の文書 §5-2）の見本には <code>class=&quot;c-post-nav__link post-nav-prev&quot;</code> と書かれていたが、 <strong><code>post-nav-prev</code> は <code>site.css</code> に定義が無く、何の効果も無い</strong>。 接頭辞の規則からも外れている。現行の実装（<code>article.html.twig</code>）でも使っていない。</p>
+<p><strong>新しく書き足さないこと。</strong></p>
+</section>
+<section class="ds-section" id="3-本文-c-post__body-で使える要素">
+  <h2>3. 本文（<code>c-post__body</code>）で使える要素</h2>
+<p>サニタイズのホワイトリストと、<code>site.css</code> が想定している要素は一致している。</p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>要素</th><th>CSSの指定</th></tr></thead><tbody><tr><td><code>p</code></td><td><code>margin-bottom: 1.5em</code></td></tr><tr><td><code>h2</code> <code>h3</code></td><td>見出し。<code>h2</code> はセクション見出しと同じ形（明朝＋左の短い線）</td></tr><tr><td><code>strong</code></td><td><code>font-weight: 700</code></td></tr><tr><td><code>a</code></td><td><code>--wine-deep</code> ＋ 下線</td></tr><tr><td><code>ul</code> <code>ol</code> <code>li</code></td><td>箇条書き（<strong>下記の注意</strong>）</td></tr><tr><td><code>img</code></td><td><code>max-width: 100%; height: auto; border-radius: 16px</code></td></tr><tr><td><code>figure</code></td><td><code>margin: 1.8em 0</code></td></tr><tr><td><code>picture</code> <code>source</code></td><td>WebPフォールバック</td></tr><tr><td><code>br</code></td><td>改行</td></tr></tbody></table></div>
+<h3>⚠️ 箇条書きは CSS で点と番号を出している</h3>
+
+<p><code>.c-post__body</code> と <code>.c-faq__a</code> に、サービス案内の <code>.c-list</code> と同じピンクの丸と、 CSSカウンタによる番号を用意してある。<strong><code>list-style</code> を戻さない。</strong></p>
+<p><strong>公開ページを出力するときに、本文の <code>ul</code> / <code>ol</code> に <code>role="list"</code> を付ける。</strong> 記号を CSS で描いているため、付けないと Safari の読み上げがリストと扱わないことがある。エディタの保存形式は変えず、公開側の出力で足す。</p>
+<h3>⚠️ <code>u</code>（下線）は <code>site.css</code> に指定がない</h3>
+<p>エディタでは使えるが、ブラウザ既定の下線になり、<strong>リンクと見分けが付かなくなる。</strong> 使うなら実装後に表示を確認すること。</p>
+<h3>画像</h3>
+<ul class="ds-list"><li><code>&lt;picture&gt;</code> で出力し、<code>width</code> / <code>height</code> を必ず付ける（CLS対策）</li><li>公開側の画像は<strong>すべてWebP</strong></li><li>⚠️ <strong>ロゴ・図版などフラットな画像は非可逆WebPだと逆に太る。</strong> 極端にサイズが増える場合は元形式を残す判断ができるようにしておく</li></ul>
+</section>
+<section class="ds-section" id="4-よくある質問">
+  <h2>4. よくある質問</h2>
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;nav class=&quot;c-breadcrumb c-breadcrumb--soft&quot; aria-label=&quot;パンくずリスト&quot;&gt;…&lt;/nav&gt;
+&lt;section class=&quot;l-section l-section--post c-faq&quot;&gt;
+  &lt;div class=&quot;l-wrap&quot;&gt;
+    &lt;div class=&quot;c-page-head&quot;&gt;&lt;h1 class=&quot;c-page-head__title&quot;&gt;よくある質問&lt;/h1&gt;&lt;/div&gt;
+    &lt;nav class=&quot;c-toc&quot; aria-label=&quot;このページの目次&quot;&gt;
+      &lt;p class=&quot;c-toc__title&quot;&gt;このページの内容&lt;/p&gt;
+      &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#cat1&quot;&gt;施設について&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;c-faq__group&quot; id=&quot;cat1&quot;&gt;
+      &lt;h2&gt;施設について&lt;/h2&gt;
+      &lt;details class=&quot;c-faq__item&quot; id=&quot;q1&quot;&gt;
+        &lt;summary&gt;
+          &lt;span class=&quot;c-faq__q&quot; aria-hidden=&quot;true&quot;&gt;Q1&lt;/span&gt;
+          &lt;span class=&quot;c-faq__q-text&quot;&gt;質問文&lt;/span&gt;
+          &lt;svg class=&quot;c-icon--chev&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;
+               stroke=&quot;currentColor&quot; stroke-width=&quot;2.4&quot; stroke-linecap=&quot;round&quot;
+               stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m6 9 6 6 6-6&quot;/&gt;&lt;/svg&gt;
+        &lt;/summary&gt;
+        &lt;div class=&quot;c-faq__a&quot;&gt;&lt;p&gt;回答&lt;/p&gt;&lt;/div&gt;
+      &lt;/details&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre></details></div>
+
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>決まりごと</th></tr></thead><tbody><tr><td><strong><code>c-breadcrumb--soft</code> を付ける</strong>（FAQページだけ地の色が違うため）</td></tr><tr><td><strong><code>c-toc</code> はサービス案内と共有のコンポーネント。</strong> <code>site.js</code> が固定・現在地ハイライト・送りボタンを担当する。<strong>構造を変えない</strong></td></tr><tr><td><code>id=&quot;cat1&quot;</code> はグループID、<code>id=&quot;q1&quot;</code> は<strong>ページ内通し番号</strong>。グループをまたいで連番（Q1 … Q15）</td></tr><tr><td><code>c-faq__q</code> の表示も同じページ内通し番号</td></tr><tr><td><strong><code>&lt;details&gt;</code> を使う。</strong> JS無効でも開閉できるようにするため</td></tr><tr><td><code>c-toc</code> の項目は<strong>グループ名</strong>。<code>order</code> 昇順</td></tr><tr><td><strong>ページの見出しは <code>c-page-head</code> の h1</strong>（お知らせなど、ほかの一覧ページと同じ）。グループの見出しは <code>c-faq__group</code> の直下の h2（トップページの「よくある質問」の節の中では、節の見出し h2 の下なので h3）</td></tr></tbody></table></div>
+<p><code>c-faq__q</code>（Q番号）の色は <strong><code>--wine-deep</code></strong>。 読ませるための文字であって、ブランドの見せ場ではないため。</p>
+</section>
+<section class="ds-section" id="5-lt-head-gt-と共通部品">
+  <h2>5. <code>&lt;head&gt;</code> と共通部品</h2>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>項目</th><th>仕様</th></tr></thead><tbody><tr><td>CSS/JSの <code>?v=</code></td><td><code>site.css</code> と <code>site.js</code> の<strong>中身から算出した8桁ハッシュ</strong></td></tr><tr><td><code>canonical</code></td><td>自己参照。サイトのオリジン ＋ パス</td></tr><tr><td>OGP</td><td><code>og:title</code> <code>og:url</code> <code>og:description</code> <code>og:image</code>。画像は <code>assets/ogp.jpg</code> 固定</td></tr><tr><td>スキップリンク</td><td><code>&lt;a class=&quot;c-skip-link&quot; href=&quot;#main&quot;&gt;</code></td></tr><tr><td><code>&lt;main id=&quot;main&quot;&gt;</code></td><td><code>site.js</code> とスキップリンクが前提にしている</td></tr></tbody></table></div>
+<h3>🟠 CSS/JSを変えたら <code>?v=</code> を打ち直す</h3>
+<p>打ち直さないと、利用者のブラウザが古いCSSを読み続ける。 <strong>算出方式を複数箇所で持たない。</strong> 食い違うとページによって別のURLでCSSを読むことになり、 キャッシュが効かなくなる。</p>
+<h3>🟠 サイトのオリジンを2か所で持たない</h3>
+<p>必ずずれる。1か所（設定ファイル）に置き、全員がそこを読む。</p>
+</section>
+<section class="ds-section" id="6-site-js-が前提にしているフック">
+  <h2>6. <code>site.js</code> が前提にしているフック</h2>
+<p>出力するHTMLが変わっても、以下は機能し続ける必要がある。</p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>機能</th><th>必要なフック</th></tr></thead><tbody><tr><td>記事一覧の「もっと見る」</td><td><code>.c-post-list[data-step=&quot;10&quot;]</code></td></tr><tr><td>FAQのアコーディオン</td><td><code>details.c-faq__item</code></td></tr><tr><td>ページ内目次</td><td><code>.c-toc</code> ＋ <code>.c-faq__group[id]</code> / <code>.c-faq__item[id]</code></td></tr><tr><td>モバイルナビ</td><td>ヘッダーの既存マークアップ</td></tr><tr><td>トップへ戻る</td><td><code>.c-floating__top</code></td></tr><tr><td>ヒーロースライダー・リビール</td><td><code>.p-hero__slide</code> が2枚以上 ／ <code>.u-reveal</code></td></tr></tbody></table></div>
+<h3>🔴 <code>site.js</code> が参照する id を改名しない</h3>
+
+<pre class="ds-pre"><code>site-header / mobile-nav / nav-toggle / floating-top / main</code></pre>
+
+<h3>🔴 JSが付けるクラスとCSSが待つクラスをズラさない</h3>
+
+<div class="ds-example"><p class="ds-example__title">JavaScript</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>classList.toggle(&#x27;is-open&#x27;)        // ← 必ず文字列で渡す
+querySelector(&#x27;.a-alert&#x27;)</code></pre></details></div>
+
+<p>⚠️ 2026-08-13 に、CSSだけ <code>is-in</code> へ変えて JS が <code>in</code> のまま残り、 <code>.u-reveal</code> が永久に <code>opacity: 0</code> となって<strong>トップページがヘッダー以外すべて消えた。</strong></p>
+<p>⚠️ 一括置換で <code>det.open</code> が <code>det.is-open</code> に化け、<strong>公開サイトのJSが3か月弱まるごと 止まっていた</strong>（<code>&lt;details&gt;</code> の DOMプロパティは <code>.open</code>）。 同じ原因の2件目が <code>editor.js</code> の <code>global.a-alert</code> （<code>global.a - alert(...)</code> と解釈され、<strong>構文エラーにならない</strong>）。</p>
+<p><strong>色・余白・命名の検査3種はどれもこれを見つけられない。</strong></p>
+</section>
+<section class="ds-section" id="7-やってはいけないこと">
+  <h2>7. やってはいけないこと</h2>
+<ul class="ds-list"><li><code>css/components.css</code> / <code>js/site.js</code> を<strong>編集する</strong>（変更が必要なら提案に留める）</li><li><strong>新しいCSSクラスを作る</strong>（既存クラスで表現できないものが出たら、実装せず報告する）</li><li>記事一覧に<strong>サーバー側ページネーション</strong>を実装する（公開側はJSの「もっと見る」方式）</li><li><strong>サービス案内の詳細ページに関連リンクを追加する</strong> （合意事項。回遊率やSEOを理由に戻す提案は事前確認が必要）</li><li><strong>生成されたHTMLを直接編集する</strong>（再生成で上書きされる）</li><li>ブロックの見本のページを<strong>本番の一部として扱う</strong>（配信されない場所に置くもの）</li></ul>
+</section>
+<section class="ds-section" id="この文書の前提について">
+  <h2>📌 この文書の前提について</h2>
+<ul class="ds-list"><li>PHP のディレクトリ構成・ページを作るスクリプト の役割分担</li><li>記事の画像フォルダ への画像移行手順</li><li><code>SITE_ORIGIN</code> を 設定ファイル に置く話</li><li>WordPress からの移行と <code>?p=NNNN</code> の旧URL対応</li></ul>
+</section>
+
+  </main>
+</div>
+<template id="tpl-icon-close"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-421.35 319.83-261.17Q307.15-248.5 291-249t-28.83-13.17q-12.67-12.68-12.67-29.33t12.67-29.33L421.35-480 261.17-640.17Q248.5-652.85 249-669.5t13.17-29.33q12.68-12.67 29.33-12.67t29.33 12.67L480-538.65l160.17-160.18q12.68-12.67 29.33-12.67t29.33 12.67q12.67 12.68 12.67 29.33t-12.67 29.33L538.65-480l160.18 160.17Q711.5-307.15 711.5-291t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-421.35Z"/></svg></template>
+<template id="tpl-icon-success"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg></template>
+<template id="tpl-icon-error"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<template id="tpl-icon-info"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<script src="../js/components.js?v=247fb91f"></script>
+<script src="assets/site.js?v=247fb91f"></script>
+</body>
+</html>

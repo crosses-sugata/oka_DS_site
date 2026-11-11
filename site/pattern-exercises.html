@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>練習課題 | OKA.L.C Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Outfit:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css?v=247fb91f">
+<link rel="stylesheet" href="../css/base.css?v=247fb91f">
+<link rel="stylesheet" href="../css/components.css?v=247fb91f">
+
+
+<link rel="stylesheet" href="assets/site.css?v=247fb91f">
+</head>
+<body data-page="pattern-exercises">
+<a class="ds-skip" href="#main">本文へスキップ</a>
+<div class="ds-shell">
+  <header class="ds-header" data-sticky-header>
+    <a class="ds-logo" href="index.html"><span class="ds-logo__mark" aria-hidden="true"></span>OKA.L.C Design System</a>
+    <span class="c-tag c-tag--primary">v0.5</span>
+    <button class="ds-menu-btn c-button c-button--secondary c-button--ghost c-button--icon c-button--md" type="button" aria-controls="ds-nav" aria-expanded="false"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" role="img" aria-label="メニュー"><path d="M177.37-252.28q-17.45 0-29.48-11.97-12.02-11.96-12.02-29.32t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.96 12.02 29.33 0 17.36-12.02 29.53-12.03 12.18-29.48 12.18H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.96-12.02-29.33 0-17.36 12.02-29.53 12.03-12.18 29.48-12.18h605.26q17.45 0 29.48 11.97 12.02 11.96 12.02 29.32t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Z"/></svg></button>
+  </header>
+  <nav class="ds-nav" id="ds-nav" aria-label="サイト内"><p class="ds-nav__group">はじめに</p><ul class="ds-nav__list"><li><a class="ds-nav__link" href="index.html">概要</a></li></ul><details class="ds-nav__fold"><summary class="ds-nav__group">基礎</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="color.html">色</a></li><li><a class="ds-nav__link" href="typography.html">文字</a></li><li><a class="ds-nav__link" href="layout.html">レイアウト</a></li><li><a class="ds-nav__link" href="spacing.html">余白・角丸・影</a></li><li><a class="ds-nav__link" href="motion.html">モーション</a></li><li><a class="ds-nav__link" href="breakpoints.html">ブレークポイント</a></li><li><a class="ds-nav__link" href="icon.html">アイコン</a></li><li><a class="ds-nav__link" href="writing.html">ライティング</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">コンポーネント</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="site-frame.html">ページの骨格</a></li><li><a class="ds-nav__link" href="site-shell.html">共通UI</a></li><li><a class="ds-nav__link" href="button.html">ボタン</a></li><li><a class="ds-nav__link" href="site-text.html">見出しと文章のブロック</a></li><li><a class="ds-nav__link" href="site-box.html">囲み・カード・料金・表</a></li><li><a class="ds-nav__link" href="site-figure.html">画像と2カラム</a></li><li><a class="ds-nav__link" href="site-listing.html">一覧・記事・よくある質問</a></li><li><a class="ds-nav__link" href="form.html">ラベル・入力欄</a></li><li><a class="ds-nav__link" href="choice.html">チェック・ラジオ・スイッチ</a></li><li><a class="ds-nav__link" href="feedback.html">通知・読み込み</a></li><li><a class="ds-nav__link" href="navigation.html">タブ・リンク・ページ送り</a></li><li><a class="ds-nav__link" href="overlay.html">モーダル・ツールチップ</a></li><li><a class="ds-nav__link" href="display.html">空状態・区切り</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">個別最適ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="specific-site.html">公開サイト</a></li><li><a class="ds-nav__link" href="specific-admin.html">管理画面</a></li><li><a class="ds-nav__link" href="specific-tool.html">院内ツール</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="rules-prohibitions.html">禁止パターン</a></li><li><a class="ds-nav__link" href="rules-naming.html">命名規則</a></li><li><a class="ds-nav__link" href="rules-markup-contract.html">マークアップ契約</a></li><li><a class="ds-nav__link" href="rules-structure.html">サイト構成のルール</a></li><li><a class="ds-nav__link" href="rules-design-tokens.html">デザイントークン</a></li></ul></details><details class="ds-nav__fold" open><summary class="ds-nav__group">ハーネス</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="pattern-layout.html">画面の骨組み</a></li><li><a class="ds-nav__link" href="pattern-form.html">フォームの組み方</a></li><li><a class="ds-nav__link" href="pattern-states.html">画面の状態</a></li><li><a class="ds-nav__link" href="pattern-dodont.html">良い例・悪い例</a></li><li><a class="ds-nav__link" href="pattern-checklist.html">チェックリスト</a></li><li><a class="ds-nav__link" href="pattern-exercises.html" aria-current="page">練習課題</a></li></ul></details></nav>
+  <main class="ds-main" id="main">
+<!-- title: 練習課題 -->
+<h1>練習課題</h1>
+<p class="ds-lead">同じ課題を人と AI の両方に作ってもらい、同じ基準で採点します。点が低かった所は、ルール・見本・検査に戻して直します（これがデザインハーネスの使い方です）。</p>
+
+<nav class="ds-related" aria-label="関連ページ"><span class="ds-related__label">関連ページ</span><a href="pattern-checklist.html">チェックリスト</a></nav>
+<section class="ds-section">
+  <h2>進め方</h2>
+  <ol class="ds-list">
+    <li>課題を1つ選び、「作るもの」「必要な状態」を渡す（AI には下の指示文を使う）</li>
+    <li>できたものを <code>ds_lint_html</code>（HTML）と <code>ds_lint_css</code>（CSS）、または <code>scripts/check_colors.py</code> で検査する</li>
+    <li><a class="c-link" href="pattern-checklist.html">チェックリスト</a>と、課題ごとの「合格の条件」で採点する</li>
+    <li>落ちた項目を記録し、原因がデザインシステム側（ルールが無い・分かりにくい）ならルール・見本・検査を直す</li>
+  </ol>
+</section>
+
+<section class="ds-section">
+  <h2>採点（100点・80点以上で合格）</h2>
+  <div class="ds-table-wrap"><table class="ds-table">
+    <thead><tr><th scope="col">観点</th><th scope="col">配点</th><th scope="col">測り方</th></tr></thead>
+    <tbody>
+      <tr><td>自動検査</td><td>30</td><td><code>ds_lint_html</code> と <code>ds_lint_css</code> の error が合わせて 0 件で 30 点。1件ごとに −10 点。warning は 1件ごとに −2 点（最大 −10 点）</td></tr>
+      <tr><td>部品・トークン</td><td>20</td><td>「必ず使う部品」をすべて使っている。部品を作り替えていない</td></tr>
+      <tr><td>状態</td><td>20</td><td>「必要な状態」がすべてある（1つ欠けるごとに −5 点）</td></tr>
+      <tr><td>レイアウト</td><td>15</td><td>コンテナの幅・余白の決め方・スマホ幅で崩れない</td></tr>
+      <tr><td>ライティング・合格の条件</td><td>15</td><td>ライティングのルールと、課題ごとの「合格の条件」を満たす</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="ds-section">
+  <h2>AI への指示文（そのまま使える）</h2>
+  <div class="ds-example"><p class="ds-example__title">指示文</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>あなたは OKA.L.C Design System を使って UI を作ります。
+1. MCP の ds_get_overview を呼び、「AI への指示」と「守ること」を読んでください
+2. 課題：{ここに課題の「作るもの」「必要な状態」を貼る}
+3. 使う部品は ds_get_component で HTML を取り、クラスを作り替えずに使ってください
+4. 足りない値やルールがあれば、推測で足さずに質問してください
+5. 作ったら ds_lint_html（HTML）と ds_lint_css（自分で書いた CSS）で検査し、error が 0 件になるまで直してください
+6. 最後に、次の形で報告してください（採点に使います）
+   ・使った部品：部品の id と使った場所
+   ・状態：課題の「必要な状態」ごとに「あり／なし」と、どこで見られるか
+   ・ds_lint_html の結果：error と warning の件数
+   ・チェックリスト（作った後）：各項目「満たした／満たしていない」と理由
+   ・迷ったこと・足りなかったもの：推測で決めた所があれば必ず書く</code></pre></details></div>
+</section>
+
+<section class="ds-section" id="ex-clinic">
+  <h2>課題1：ホームページ（施設名A）</h2>
+  <p>公開サイトのトップページ。内容は実際の公開サイトのトップページを元にし、見た目はこのデザインシステムの部品とトークンだけで作る。サイトの部品（ヘッダー・キービジュアル・フッターなど）の使い方と、ページの骨組みを測る。</p>
+  <h3>作るもの</h3>
+  <ul class="ds-list"><li>本文へスキップ・サイトのヘッダー（ロゴ・ナビ・電話・メニュー）</li><li>ヒーロー（見出し・リード文・写真のスライド・お悩みの入口）</li><li>お悩みカード</li><li>サービス案内（分類カード3件）</li><li>施設について（文章・写真・営業時間表）</li><li>お知らせ（記事の一覧）</li><li>アクセス（地図・住所・行き方のアコーディオン）</li><li>代表者紹介・代表者コラム（記事の一覧）</li><li>よくある質問（アコーディオン）</li><li>フッター・右下の固定ボタン（予約・ページの先頭へ）</li></ul>
+  <h3>必ず使う部品</h3>
+  <ul class="ds-list"><li>ヘッダー（c-header・c-brand・c-nav）・スキップリンク（c-skip-link）・フッター（c-footer）・右下の固定ボタン（c-floating）</li><li>骨格（l-wrap・l-section・l-section__head）</li><li>ヒーロー（p-hero）・お悩みカード（p-worry）・サービス案内カード（p-service）</li><li>施設について（p-about）・営業時間表（c-table）・お知らせ（p-news・c-post-list）</li><li>アクセス（p-access）・行き方（p-route）・代表者紹介（p-director）・よくある質問（c-faq）</li><li>動き：js/site.js（ヘッダー・メニュー・アコーディオン・スライド・u-reveal）</li></ul>
+  <h3>必要な状態</h3>
+  <ul class="ds-list"><li>ふつう（981px 以上）</li><li>タブレット（980px 以下）・スマホ（620px 以下）：メニューが開閉できる</li></ul>
+  <h3>合格の条件（この課題だけのもの）</h3>
+  <ul class="ds-list"><li>公開サイトの導線のボタン（CTA）はピル型の c-button--pill（副の導線は c-button--pill c-button--ghost）</li><li>内容は l-wrap に入れ、セクションは l-section で区切る</li><li>リンクの文字は行き先が分かる言葉（「こちら」を使わない）</li><li>2つ目の分類カードは p-service__card--sage</li><li>p- のクラスをトップページ以外で使い回さない</li></ul>
+</section>
+
+<section class="ds-section" id="ex-contact">
+  <h2>課題2：問い合わせフォーム</h2>
+  <p>入力・検証・送信完了までの流れ。ラベルセット・フォームの組み方・エラーの出し方を測る。</p>
+  <h3>作るもの</h3>
+  <ul class="ds-list"><li>お名前（必須）・メールアドレス（必須・形式チェック）・電話番号（任意）</li><li>お問い合わせの種類（ラジオ・必須）</li><li>お問い合わせ内容（テキストエリア・必須・256文字まで）</li><li>個人情報の取り扱いへの同意（チェックボックス・必須）</li><li>［前の画面に戻る］［送信する］</li><li>送信完了（完了画面へ移る、または前の画面に戻して完了を知らせる。入力した内容をそのまま残さない）</li></ul>
+  <h3>必ず使う部品</h3>
+  <ul class="ds-list"><li>ラベルセット（c-formset）</li><li>テキストフィールド（c-field）</li><li>ラジオ（c-choice--radio）</li><li>テキストエリア（c-textarea-box）</li><li>チェックボックス（c-choice）</li><li>エラーのまとめ（c-error-summary）</li></ul>
+  <h3>必要な状態</h3>
+  <ul class="ds-list"><li>ふつう</li><li>入力エラー（項目の下＋先頭のまとめ）</li><li>送信中（ボタンの loading）</li><li>送信完了</li></ul>
+  <h3>合格の条件（この課題だけのもの）</h3>
+  <ul class="ds-list"><li>l-wrap l-wrap--narrow に入っている</li><li>項目の間 24px・まとまりの間 48px</li><li>エラーは欄を離れたとき＋送信時。直すと消える</li><li>入力例は「例：」で始まる</li></ul>
+</section>
+
+<section class="ds-section" id="ex-list">
+  <h2>課題3：一覧＋検索＋空状態</h2>
+  <p>データを検索して一覧で見る画面。画面の状態の出し分けを測る。</p>
+  <h3>作るもの</h3>
+  <ul class="ds-list"><li>検索欄とボタン（同じ高さ）・件数</li><li>一覧（表）。長いタイトルは「…」で省略し、ツールチップで全文</li><li>ページ送り</li></ul>
+  <h3>必ず使う部品</h3>
+  <ul class="ds-list"><li>テキストフィールド（c-field）</li><li>ボタン（c-button）</li><li>表（c-data-table）・省略表示（c-truncate）</li><li>ページ送り（c-pagination）</li><li>空状態（c-empty）</li><li>スケルトン（c-skeleton）</li><li>アラート（c-alert）</li></ul>
+  <h3>必要な状態</h3>
+  <ul class="ds-list"><li>読み込み中</li><li>ふつう</li><li>0件（初めて）</li><li>0件（検索結果なし）</li><li>エラー（読み込み）</li></ul>
+  <h3>合格の条件（この課題だけのもの）</h3>
+  <ul class="ds-list"><li>エラーと0件が別の見た目</li><li>検索欄とボタンの高さがそろっている</li><li>ページ送りは9個まで</li></ul>
+</section>
+
+<section class="ds-section" id="ex-admin">
+  <h2>課題4：管理画面の記事一覧</h2>
+  <p>記事の状態を見て、削除などの操作をする管理画面。状態の表示・確認ダイアログ・トーストを測る。</p>
+  <h3>作るもの</h3>
+  <ul class="ds-list"><li>記事の一覧（タイトル・状態・更新日・操作）</li><li>状態：下書き／公開中／公開予約（a-status）</li><li>絞り込みのタブ（すべて・下書き・公開中・公開予約）</li><li>行ごとの削除 → 確認ダイアログ → 完了トースト</li><li>新規作成ボタン</li></ul>
+  <h3>必ず使う部品</h3>
+  <ul class="ds-list"><li>タブ（c-tabs）</li><li>表（c-data-table）</li><li>記事の状態（a-status）</li><li>ボタン（c-button）</li><li>モーダル（c-modal）</li><li>トースト（OKALC.toast）</li></ul>
+  <h3>必要な状態</h3>
+  <ul class="ds-list"><li>ふつう</li><li>0件</li><li>削除の確認</li><li>削除中</li><li>削除完了</li><li>エラー（削除できなかった）</li></ul>
+  <h3>合格の条件（この課題だけのもの）</h3>
+  <ul class="ds-list"><li>管理画面の骨格（a-shell・a-main）に入っている</li><li>削除の実行ボタンは negative、ダイアログのタイトルは「〜を削除しますか？」</li><li>ダイアログに「×」を置かない</li><li>状態は色の点だけでなく文字でも示す</li></ul>
+</section>
+
+<section class="ds-section" id="ex-settings">
+  <h2>課題5：設定画面</h2>
+  <p>設定を変えて保存する画面。スイッチとチェックボックスの使い分け・保存の流れを測る。</p>
+  <h3>作るもの</h3>
+  <ul class="ds-list"><li>通知のオン／オフ（すぐ反映）</li><li>表示する言語（セレクト）</li><li>メールの受け取り方（ラジオ）</li><li>［前の画面に戻る］［保存する］と、保存完了のトースト</li></ul>
+  <h3>必ず使う部品</h3>
+  <ul class="ds-list"><li>スイッチ（c-switch）</li><li>セレクト（c-select）</li><li>ラジオ（c-choice--radio）</li><li>ボタン（c-button）</li><li>トースト</li></ul>
+  <h3>必要な状態</h3>
+  <ul class="ds-list"><li>ふつう</li><li>保存中</li><li>保存完了</li><li>エラー（保存できなかった）</li></ul>
+  <h3>合格の条件（この課題だけのもの）</h3>
+  <ul class="ds-list"><li>すぐ反映するものはスイッチ、保存ボタンで確定するものはラジオ・セレクト</li><li>保存ボタンの primary の solid は1つ</li><li>保存できなかったときは理由と次の行動を書く</li></ul>
+</section>
+
+<section class="ds-section" id="ex-posts">
+  <h2>課題6：公開サイトの記事（一覧と詳細）</h2>
+  <p>課題4 の管理画面で公開した記事を、公開サイトで読む画面。サイトの外枠（ヘッダー・パンくず・フッター）と、記事の一覧・詳細の部品の使い方を測る。</p>
+  <h3>作るもの</h3>
+  <ul class="ds-list"><li>記事の一覧のページ：ヘッダー・パンくず・ページの見出し・記事の一覧（日付・タイトル）・フッター</li><li>記事の詳細のページ：ヘッダー・パンくず・記事（日付・見出し・本文）・一覧へ戻る・前後の記事・フッター</li><li>本文には小見出し・段落・画像・箇条書きを入れる</li></ul>
+  <h3>必ず使う部品</h3>
+  <ul class="ds-list"><li>スキップリンク（c-skip-link）・ヘッダー（c-header・c-brand・c-nav）・パンくず（c-breadcrumb）・フッター（c-footer）</li><li>骨格（l-wrap・l-section）・下層ページの見出し（c-page-head）</li><li>記事の一覧：c-post-list（「もっと見る」）か、c-data-table ＋ ページ送り（c-pagination）のどちらか。選んだ理由を報告する</li><li>記事の詳細（c-post・c-post-nav）</li><li>空状態（c-empty）</li><li>動き：js/site.js（ヘッダー・メニュー）</li></ul>
+  <h3>必要な状態</h3>
+  <ul class="ds-list"><li>ふつう（981px 以上）</li><li>タブレット（980px 以下）・スマホ（620px 以下）：メニューが開閉できる。一覧が崩れない</li><li>一覧が0件</li><li>前の記事・次の記事の片方が無い（最初と最後の記事）</li></ul>
+  <h3>合格の条件（この課題だけのもの）</h3>
+  <ul class="ds-list"><li>ページの見出し（h1）は1ページに1つ。記事の詳細では記事のタイトルが h1</li><li>日付は time と datetime。表記は「2026.09.24」</li><li>一覧のリンクの名前は記事のタイトル。「こちら」を使わない</li><li>パンくずの今いるページはリンクにしない（aria-current="page"）</li><li>p- のクラス（トップページだけの部品）を使わない</li></ul>
+</section>
+
+
+  </main>
+</div>
+<template id="tpl-icon-close"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-421.35 319.83-261.17Q307.15-248.5 291-249t-28.83-13.17q-12.67-12.68-12.67-29.33t12.67-29.33L421.35-480 261.17-640.17Q248.5-652.85 249-669.5t13.17-29.33q12.68-12.67 29.33-12.67t29.33 12.67L480-538.65l160.17-160.18q12.68-12.67 29.33-12.67t29.33 12.67q12.67 12.68 12.67 29.33t-12.67 29.33L538.65-480l160.18 160.17Q711.5-307.15 711.5-291t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-421.35Z"/></svg></template>
+<template id="tpl-icon-success"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg></template>
+<template id="tpl-icon-error"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<template id="tpl-icon-info"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<script src="../js/components.js?v=247fb91f"></script>
+<script src="assets/site.js?v=247fb91f"></script>
+</body>
+</html>

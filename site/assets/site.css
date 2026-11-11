@@ -1,0 +1,271 @@
+/* まとめサイトの外枠（ds- で始める）。部品ではないのでプロダクトでは使わない。色はトークンのみ */
+:root { --ds-mono: ui-monospace, SFMono-Regular, Menlo, monospace; } /* 等幅フォントはサイト専用 */
+code, kbd, pre { font-family: var(--ds-mono); }
+
+.ds-skip { position: absolute; inset-inline-start: var(--p-4); inset-block-start: calc(var(--p-16) * -1); padding: var(--p-2) var(--p-4); background: var(--panel); border-radius: var(--radius-sm); z-index: var(--z-toast); }
+.ds-skip:focus { inset-block-start: var(--p-4); }
+
+.ds-shell {
+  overflow-x: clip; /* 見本の中の、画面外に置いた一覧やツールチップでページが横にはみ出さないようにする */
+  display: grid;
+  grid-template-columns: calc(var(--p-16) * 4) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header header" "nav main";
+  min-block-size: 100dvh;
+}
+.ds-header {
+  grid-area: header;
+  position: sticky; inset-block-start: 0; z-index: var(--z-sticky);
+  display: flex; align-items: center; gap: var(--gap-3);
+  block-size: var(--p-16);
+  padding-inline: var(--p-6);
+  background: var(--panel);
+  border-block-end: 1px solid var(--line);
+}
+.ds-logo { display: inline-flex; align-items: center; gap: var(--gap-2); font-weight: var(--fw-bold); font-size: var(--font-md); color: var(--ink); text-decoration: none; white-space: nowrap; }
+@media (max-width: 620px) { .ds-logo { font-size: var(--font-sm); } .ds-header .c-tag { display: none; } }
+.ds-logo__mark { inline-size: var(--p-6); block-size: var(--p-6); border-radius: var(--radius-xs); background: var(--wine); }
+.ds-menu-btn { display: none; margin-inline-start: auto; }
+
+.ds-nav {
+  grid-area: nav;
+  position: sticky; inset-block-start: var(--p-16);
+  align-self: start;
+  max-block-size: calc(100dvh - var(--p-16));
+  overflow-y: auto;
+  padding: var(--p-6) var(--p-4);
+  border-inline-end: 1px solid var(--line);
+}
+.ds-nav__group { margin-block: var(--m-4) var(--m-1); padding-inline: var(--p-3); font-size: var(--font-xs); font-weight: var(--fw-bold); color: var(--ink-soft); }
+.ds-nav > .ds-nav__group:first-child { margin-block-start: 0; }   /* いちばん上の「はじめに」だけ。開閉するグループの summary には当てない */
+/* 基礎から下のグループの開閉。グループ名を押すと開け閉めできる */
+.ds-nav__fold > summary { display: flex; align-items: center; justify-content: space-between; gap: var(--gap-2); padding-block: var(--p-1); border-radius: var(--radius-sm); cursor: pointer; list-style: none; }
+.ds-nav__fold > summary::-webkit-details-marker { display: none; }
+.ds-nav__fold > summary::after { content: ""; inline-size: 7px; block-size: 7px; margin-inline-end: var(--m-1); border-inline-end: 1.5px solid currentColor; border-block-end: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform var(--duration-fast) var(--ease-standard); }
+.ds-nav__fold[open] > summary::after { transform: rotate(45deg); }
+.ds-nav__fold > summary:hover { color: var(--ink); background: var(--primary-tint); }
+.ds-nav__list { list-style: none; padding: 0; display: grid; gap: var(--gap-0\.5); }
+.ds-nav__link { display: block; padding: var(--p-2) var(--p-3); border-radius: var(--radius-sm); color: var(--ink-soft); text-decoration: none; font-size: var(--font-sm); transition: background-color var(--duration-fast) var(--ease-standard); }
+.ds-nav__link:hover { background: var(--primary-tint); color: var(--ink); }
+.ds-nav__link[aria-current="page"] { background: var(--bg-soft); color: var(--primary-solid-hover); font-weight: var(--fw-bold); }
+
+.ds-main { grid-area: main; min-inline-size: 0; padding: var(--p-10) var(--p-10) var(--p-16); max-inline-size: calc(var(--p-16) * 18); }
+.ds-main > h1 { font-size: var(--font-3xl); line-height: var(--lh-tight); margin-block-end: var(--m-3); }
+.ds-lead { color: var(--ink-soft); margin-block-end: var(--m-10); max-inline-size: 48em; }
+.ds-section { margin-block-end: var(--m-16); }
+.ds-section > h2 { font-size: var(--font-2xl); line-height: var(--lh-tight); margin-block-end: var(--m-4); padding-block-end: var(--p-2); border-block-end: 1px solid var(--line); }
+.ds-section h3 { font-size: var(--font-lg); line-height: var(--lh-tight); margin-block: var(--m-8) var(--m-3); }
+.ds-section h4 { font-size: var(--font-def); margin-block: var(--m-6) var(--m-2); color: var(--ink-soft); }
+/* 「個別最適ルール」のページ：大見出し（h2）の節で区切り、その下の部品の節は h3 から始まる */
+.ds-section--group { margin-block-start: var(--m-16); }
+.ds-section--group > h2 { font-size: var(--font-3xl); border-block-end-width: 2px; }
+.ds-section > h3:first-child { font-size: var(--font-2xl); margin-block-start: 0; }
+.ds-section > p, .ds-demo > p { margin-block-end: var(--m-3); max-inline-size: 48em; }
+.ds-note { font-size: var(--font-def); color: var(--ink-soft); }
+.ds-list { list-style: disc; padding-inline-start: var(--p-5); display: grid; gap: var(--gap-1); margin-block-end: var(--m-4); }
+.ds-list li::marker { color: var(--wine); }
+code { font-size: 0.9em; }
+:not(pre) > code { padding: 0 var(--p-1); border-radius: var(--radius-xs); background: var(--bg-soft); }
+
+/* 出どころバッジ */
+.ds-src { display: inline-block; padding: 0 var(--p-1); border-radius: var(--radius-xs); font-size: var(--font-xs); background: var(--mute-fill); color: var(--ink-soft); white-space: nowrap; }
+.ds-src--gen { background: var(--tone-warning-bg); color: var(--tone-warning-fg); box-shadow: inset 0 0 0 1px var(--tone-warning-line); }
+
+/* 表 */
+.ds-table-wrap { overflow-x: auto; margin-block-end: var(--m-6); border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--panel); }
+.ds-table { inline-size: 100%; border-collapse: collapse; font-size: var(--font-sm); }
+.ds-table th { background: var(--bg-soft); font-weight: var(--fw-medium); text-align: start; white-space: nowrap; }
+.ds-table th, .ds-table td { padding: var(--p-3) var(--p-4); border-block-end: 1px solid var(--line); vertical-align: middle; }
+.ds-table tr:last-child td { border-block-end: 0; }
+.ds-table td:first-child code { white-space: nowrap; }
+.ds-bar { display: inline-block; block-size: var(--p-3); min-inline-size: 2px; border-radius: var(--radius-xs); background: var(--wine); vertical-align: middle; }
+.ds-radius { display: inline-block; inline-size: var(--p-16); block-size: var(--p-10); background: var(--bg-soft); border: 2px solid var(--wine); }
+.ds-shadow { display: inline-block; inline-size: calc(var(--p-16) * 2); block-size: var(--p-16); background: var(--panel); border-radius: var(--radius-md); }
+.ds-chip { display: inline-block; inline-size: var(--p-4); block-size: var(--p-4); border-radius: var(--radius-xs); margin-inline-end: var(--m-2); vertical-align: middle; box-shadow: inset 0 0 0 1px var(--line); }
+
+/* 色見本 */
+.ds-palette { margin-block-end: var(--m-6); }
+.ds-palette__name { display: flex; align-items: baseline; gap: var(--gap-3); font-size: var(--font-def) !important; margin: 0 0 var(--m-1) !important; }
+.ds-palette__desc { font-size: var(--font-xs); font-weight: var(--fw-regular); color: var(--ink-soft); }
+.ds-palette__var { font-size: var(--font-xs); color: var(--ink-soft); margin-block-end: var(--m-2) !important; }
+/* 1色を改行せず1段で見せる（50〜1000 の20段）。狭い画面ではマスを小さくして収める */
+.ds-swatches { display: grid; grid-template-columns: repeat(20, minmax(calc(var(--p-10) + var(--p-1)), 1fr)); list-style: none; padding: 0; overflow-x: auto; }   /* 1色は1段のまま。狭い幅では段の中だけ横にスクロールする */
+.ds-swatch { display: grid; gap: var(--gap-1); min-inline-size: 0; }
+.ds-swatch__chip { block-size: var(--p-10); }
+.ds-swatch:first-child .ds-swatch__chip { border-start-start-radius: var(--radius-xs); border-end-start-radius: var(--radius-xs); }
+.ds-swatch:last-child .ds-swatch__chip { border-start-end-radius: var(--radius-xs); border-end-end-radius: var(--radius-xs); }
+.ds-swatch__step { font-size: var(--font-xs); color: var(--ink-soft); }
+.ds-swatch__hex { font-size: var(--font-xs); line-height: var(--lh-tight); color: var(--ink-soft); overflow-wrap: anywhere; background: none !important; padding: 0 !important; }   /* 文字の最小（12px）を下回らない。入り切らないときは折り返す */
+.ds-swatch__mark { text-decoration: none; margin-inline-start: 2px; padding: 0 2px; border-radius: 2px; background: var(--tone-info-bg); color: var(--tone-info-fg); }
+
+/* 見本の置き場 */
+.ds-demo { padding: var(--p-6); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-md); margin-block-end: var(--m-6); }
+/* 横に長い状態一覧だけ横スクロール（ほかは中身を隠さない：開いた一覧やツールチップが切れないように） */
+.ds-demo:has(> .ds-matrix), .ds-demo:has(> .ds-cols-4) { overflow-x: auto; }
+.ds-demo--page { background: var(--bg); }
+.ds-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-3); }
+.ds-row--top { align-items: flex-start; }
+.ds-stack { display: grid; gap: var(--gap-3); justify-items: start; }
+.ds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--p-16) * 4), 1fr)); gap: var(--gap-6); }
+.ds-grid--2 { grid-template-columns: repeat(auto-fill, minmax(calc(var(--p-16) * 5), 1fr)); }
+.ds-cols-4 { display: flex; flex-wrap: wrap; gap: var(--gap-8) var(--gap-10); align-items: flex-start; }
+.ds-label { display: block; font-size: var(--font-xs); color: var(--ink-soft); font-family: var(--ds-mono); margin-block-end: var(--m-2); }
+
+/* 状態マトリクス */
+.ds-matrix { border-collapse: separate; border-spacing: var(--gap-3) var(--gap-3); margin: calc(var(--m-3) * -1); }
+.ds-matrix th { font-size: var(--font-xs); font-weight: var(--fw-medium); color: var(--ink-soft); text-align: start; white-space: nowrap; font-family: var(--ds-mono); }
+.ds-matrix td { vertical-align: middle; }
+
+/* アイコン一覧 */
+.ds-icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--p-16) * 1.75), 1fr)); gap: var(--gap-2); list-style: none; padding: 0; }
+.ds-icon-cell { display: grid; justify-items: center; gap: var(--gap-2); padding: var(--p-4) var(--p-2); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.ds-icon-cell code { font-size: 10px; background: none !important; color: var(--ink-soft); text-align: center; overflow-wrap: anywhere; }
+
+/* モーションのデモ */
+.ds-ease { position: relative; display: inline-block; inline-size: calc(var(--p-16) * 2); block-size: var(--p-3); border-radius: var(--radius-full); background: var(--mute-fill); vertical-align: middle; }
+.ds-ease__dot { position: absolute; inset-block-start: 0; inset-inline-start: 0; inline-size: var(--p-3); block-size: var(--p-3); border-radius: var(--radius-full); background: var(--wine); transition-property: inset-inline-start; transition-duration: 1s; }
+.ds-main:has(.is-on) .is-on .ds-ease__dot, .is-on .ds-ease__dot { inset-inline-start: calc(100% - var(--p-3)); }
+.ds-motion-stage { display: grid; place-items: center; min-block-size: calc(var(--p-16) * 3); padding: var(--p-6); background: var(--bg); border-radius: var(--radius-sm); overflow: hidden; }
+
+/* 見出しの右端にボタンを置く */
+.ds-h2-row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--gap-4); margin-block-end: var(--m-4); padding-block-end: var(--p-2); border-block-end: 1px solid var(--line); }
+.ds-h2-row > h2 { font-size: var(--font-2xl); line-height: var(--lh-tight); }
+.ds-alerts { display: grid; gap: var(--gap-3); margin-block-end: var(--m-12); }
+
+/* 見出しの階層：左に名前と値、右に見本。頭をそろえる */
+.ds-type-scale { display: grid; grid-template-columns: calc(var(--p-16) * 2.5) minmax(0, 1fr); align-items: start; column-gap: var(--gap-6); row-gap: var(--gap-4); }
+.ds-type-scale__meta { font-size: var(--font-xs); color: var(--ink-soft); font-family: var(--ds-mono); line-height: var(--lh-def); }
+
+/* 影の見本：ページ背景の上にカードの大きさで置く */
+.ds-shadow-cell { display: inline-grid; place-items: center; padding: var(--p-6) var(--p-8); background: var(--bg); border-radius: var(--radius-sm); }
+
+/* 列が多い表：狭いときは横にスクロールする */
+.ds-table--wide { min-inline-size: calc(var(--p-16) * 15); }
+.ds-table--wide td code { white-space: nowrap; }
+.ds-table--wide td:nth-child(5) { min-inline-size: calc(var(--p-16) * 3.5); }
+
+/* セマンティック表の使用イメージ */
+.ds-use { min-inline-size: calc(var(--p-16) * 2.5); }
+.ds-use-box { display: inline-block; padding: var(--p-1) var(--p-2); border-radius: var(--radius-xs); font-size: var(--font-xs); }
+.ds-use-card { display: inline-block; padding: var(--p-2) var(--p-3); font-size: var(--font-xs); }
+.ds-use-icon { inline-size: var(--p-10); block-size: var(--p-10); }
+.ds-use-field { inline-size: calc(var(--p-16) * 2); }
+
+/* -rgb の色見本 */
+.ds-rgb-chip { display: inline-block; inline-size: var(--p-10); block-size: var(--p-6); margin-inline-end: var(--m-2); border-radius: var(--radius-xs); vertical-align: middle; box-shadow: inset 0 0 0 1px var(--line); }
+
+/* モーションの見本 */
+.ds-dur { position: relative; display: inline-block; inline-size: calc(var(--p-16) * 2.5); block-size: var(--p-3); border-radius: var(--radius-full); background: var(--mute-fill); vertical-align: middle; }
+.ds-dur__dot { position: absolute; inset-block-start: 0; inset-inline-start: 0; inline-size: var(--p-3); block-size: var(--p-3); border-radius: var(--radius-full); background: var(--wine); transition-property: inset-inline-start; transition-timing-function: var(--ease-standard); }
+.is-on .ds-dur__dot { inset-inline-start: calc(100% - var(--p-3)); }
+.ds-mini { display: flex; align-items: center; gap: var(--gap-2); min-block-size: var(--p-12); }
+.ds-reduced { display: none; }
+@media (prefers-reduced-motion: reduce) { .ds-reduced { display: flex; } }
+
+/* 見本 ＋ コード（Phase 2） */
+.ds-example { margin-block-end: var(--m-6); border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--panel); }
+.ds-example__title { border-start-start-radius: inherit; border-start-end-radius: inherit; margin: 0 !important; padding: var(--p-3) var(--p-6); font-size: var(--font-sm); font-weight: var(--fw-bold); border-block-end: 1px solid var(--line); background: var(--bg-soft); }
+.ds-example__preview { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-3); padding: var(--p-6); }
+.ds-example__preview > :is(div, fieldset, nav, table, section, article) { flex: 1 1 100%; min-inline-size: 0; }
+.ds-code { position: relative; border-block-start: 1px solid var(--line); }
+.ds-code__summary { display: flex; align-items: center; gap: var(--gap-1); min-block-size: var(--btn-md-h); padding-inline: var(--p-4); cursor: pointer; list-style: none; font-size: var(--font-sm); font-weight: var(--fw-bold); color: var(--ink-soft); border-end-start-radius: calc(var(--radius-md) - 1px); border-end-end-radius: calc(var(--radius-md) - 1px); transition: background-color var(--duration-fast) var(--ease-standard); }
+.ds-code__summary::-webkit-details-marker { display: none; }
+.ds-code__summary:hover { background: var(--bg-soft); color: var(--ink); }
+.ds-code__chevron { transition: transform var(--duration-def) var(--ease-standard); }
+.ds-code[open] .ds-code__summary { border-radius: 0; border-block-end: 1px solid var(--line); }
+.ds-code[open] .ds-code__chevron { transform: rotate(180deg); }
+.ds-code[open] pre { background: var(--ink); border-end-start-radius: calc(var(--radius-md) - 1px); border-end-end-radius: calc(var(--radius-md) - 1px); }
+.ds-code__tool { position: absolute; inset-block-start: calc(var(--btn-md-h) + var(--p-2)); inset-inline-end: var(--p-2); }
+.ds-code:not([open]) .ds-code__tool { display: none; }
+.ds-code .ds-code__copy { color: var(--on-fill); }
+.ds-code .ds-code__copy:hover { background: rgba(var(--bg-rgb), .16) !important; color: var(--on-fill) !important; }
+.ds-code pre { margin: 0; padding: var(--p-4) var(--p-6); padding-block-start: var(--p-12); overflow-x: auto; max-block-size: calc(var(--p-16) * 6); color: var(--on-fill); font-size: var(--font-sm); line-height: var(--lh-def); }
+.ds-code code { background: none !important; padding: 0 !important; font-size: inherit; white-space: pre; }
+
+/* 使い方ガイド（使う・使わない・アクセシビリティ） */
+/* デザインと、使い方・コードの区切り（見出しの文字は出さない） */
+.ds-usage-h { margin-block: var(--m-10) var(--m-6); border: 0; border-block-start: 1px dashed var(--line); }
+.ds-guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(var(--p-16) * 4), 1fr)); gap: var(--gap-4); margin-block-end: var(--m-8); }
+.ds-guide__col { padding: var(--p-4) var(--p-5); border-radius: var(--radius-md); background: var(--panel); border: 1px solid var(--line); }
+.ds-guide__col h4 { display: flex; align-items: center; gap: var(--gap-2); margin: 0 0 var(--m-2) !important; font-size: var(--font-def) !important; color: var(--ink) !important; }
+.ds-guide__col ul { margin: 0; list-style: disc; padding-inline-start: var(--p-5); display: grid; gap: var(--gap-1); }
+.ds-guide__col--do { border-block-start: 4px solid var(--tone-success-icon); }
+.ds-guide__col--dont { border-block-start: 4px solid var(--tone-error-icon); }
+.ds-guide__col--a11y { border-block-start: 4px solid var(--tone-info-icon); }
+.ds-kbd { display: inline-block; padding: 0 var(--p-1); border: 1px solid var(--field-line); border-radius: var(--radius-xs); font-family: var(--ds-mono); font-size: var(--font-xs); }
+
+/* ハーネス（Phase 4） */
+.ds-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(var(--p-16) * 4.5), 1fr)); gap: var(--gap-4); margin-block-end: var(--m-6); }
+.ds-compare__col { display: grid; align-content: start; gap: var(--gap-3); padding: var(--p-4) var(--p-5); background: var(--panel); border-radius: var(--radius-md); }
+.ds-compare__label { display: flex; align-items: center; gap: var(--gap-1); margin: 0 !important; font-weight: var(--fw-bold); }
+.ds-do .ds-compare__label { color: var(--tone-success-fg); }
+.ds-dont .ds-compare__label { color: var(--tone-error-fg); }
+.ds-compare__view { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-3); min-block-size: var(--p-16); padding: var(--p-4); background: var(--bg); border-radius: var(--radius-sm); }
+.ds-compare__note { margin: 0 !important; font-size: var(--font-sm); }
+.ds-compare__rule { margin: 0 !important; font-size: var(--font-xs); color: var(--ink-soft); }
+.ds-wire { display: grid; gap: var(--gap-2); margin-block-end: var(--m-6); padding: var(--p-4); background: var(--bg-soft); border-radius: var(--radius-md); font-size: var(--font-sm); }
+.ds-wire__bar { padding: var(--p-3); background: var(--panel); border: 1px dashed var(--field-line); border-radius: var(--radius-xs); text-align: center; }
+.ds-wire__container { display: grid; gap: var(--gap-2); inline-size: min(100%, calc(var(--p-16) * 8)); margin-inline: auto; padding: var(--p-4); border: 1px dashed var(--wine); border-radius: var(--radius-xs); }
+.ds-wire__box { padding: var(--p-6) var(--p-3); background: var(--panel); border-radius: var(--radius-xs); text-align: center; }
+.ds-wire__box--title { padding-block: var(--p-3); }
+.ds-wire__gap { text-align: center; color: var(--wine-deep); font-size: var(--font-xs); }
+.ds-states { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--p-16) * 5), 1fr)); gap: var(--gap-4); }
+.ds-state { display: grid; grid-template-rows: auto auto 1fr; gap: var(--gap-1); padding: var(--p-4); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-md); }
+.ds-state__title { margin: 0 !important; font-weight: var(--fw-bold); }
+.ds-state__note { margin: 0 0 var(--m-2) !important; font-size: var(--font-sm); color: var(--ink-soft); }
+.ds-state__view { display: grid; align-content: center; min-block-size: calc(var(--p-16) * 3); }
+.ds-state__view .c-empty { padding: var(--p-4); }
+.ds-check { display: grid; gap: var(--gap-3); padding: 0; list-style: none; }
+
+/* サイトの部品の見本（8940 から取り込んだ見本を、まとめサイトの枠の中で見せるための調整） */
+.ds-demo--flush { padding: 0; overflow: hidden; }
+.ds-example__preview { display: block; }
+.ds-example__preview:has(> .c-button, > button, > a.c-button, > span) { display: flex; }
+.ds-example__preview .u-reveal { opacity: 1; transform: none; }          /* 見本では最初から見せる（JS を読まないため） */
+.ds-example__preview .c-header { position: relative; }
+.ds-example__preview .c-nav--mobile { position: static; inset: auto; }
+.ds-example__preview .c-floating { position: static; }
+.ds-example__preview .c-toc { position: relative; top: auto; }
+.ds-example__preview .a-shell { min-height: 0; }
+.ds-example__preview .a-side { position: relative; height: auto; }
+.ds-example__preview > .c-field + .c-field { margin-block-start: var(--m-4); }     /* 入力欄を縦に並べた見本の間 */
+.ds-example__preview .a-editor + .c-textarea-box { margin-block-start: var(--m-4); }       /* 編集ツールと受け皿の textarea を並べて見せるときの間 */
+
+/* 8940 から取り込んだ文書 */
+.ds-intro { margin-block-end: var(--m-10); max-inline-size: 48em; }
+.ds-intro > * + * { margin-block-start: var(--m-3); }
+.ds-quote { margin-block: var(--m-3) var(--m-4); padding: var(--p-3) var(--p-4); border-inline-start: 4px solid var(--wine); background: var(--panel); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: var(--font-sm); }
+.ds-pre { margin-block: var(--m-3) var(--m-4); padding: var(--p-4); overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm); font-size: var(--font-sm); line-height: 1.6; }
+.ds-classes { font-size: var(--font-sm); color: var(--ink-soft); }
+.ds-classes code { margin-inline-end: var(--m-1); }
+.ds-section h4 + .ds-list, .ds-section h4 + p { margin-block-start: 0; }
+.ds-section > p, .ds-intro > p { max-inline-size: 48em; }
+.ds-logo-dummy { display: grid; place-items: center; inline-size: var(--p-16); block-size: var(--p-10); border-radius: var(--radius-xs); background: var(--wine-tint); color: var(--wine-deep); font-size: var(--font-xs); font-weight: var(--fw-bold); }
+.ds-img-dummy { display: grid; place-items: center; inline-size: 100%; block-size: 100%; min-block-size: calc(var(--p-16) * 2); background: var(--bg-soft); color: var(--ink-soft); font-size: var(--font-sm); }
+
+/* 練習課題で追加した部品のタグ */
+.ds-added { vertical-align: middle; margin-inline-start: var(--m-2); }
+
+/* 例（良い／悪い）— Phase 4 で使う */
+.ds-do, .ds-dont { padding: var(--p-4); border-radius: var(--radius-md); border: 2px solid; }
+.ds-do { border-color: var(--tone-success-line); }
+.ds-dont { border-color: var(--tone-error-line); }
+
+/* スマホ幅 */
+@media (max-width: 980px) /* --bp-lg 以下 */ {
+  .ds-shell { grid-template-columns: minmax(0, 1fr); grid-template-areas: "header" "main"; }
+  .ds-menu-btn { display: inline-flex; }
+  .ds-nav { display: none; position: fixed; inset: var(--p-16) 0 0 0; max-block-size: none; background: var(--panel); z-index: var(--z-overlay); border: 0; }
+  .ds-nav.is-open { display: block; }
+  .ds-main { padding: var(--p-6) var(--p-4) var(--p-12); }
+  .ds-header { padding-inline: var(--p-4); }
+}
+.ds-list--num { list-style: decimal; }
+/* 関連ページ（build.py の RELATED） */
+.ds-related { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gap-2) var(--gap-3); margin-block: 0 var(--m-8); font-size: var(--font-sm); }
+.ds-related__label { color: var(--ink-soft); font-weight: var(--fw-bold); }
+.ds-related a { color: var(--wine-deep); text-decoration: underline; text-underline-offset: .2em; }
+.ds-icon-grid + .ds-example { margin-block-start: var(--m-6); } /* アイコンの一覧とコード例の間 */
+
+/* 管理画面ページの見本は、実物（管理画面）と同じくゴシックの見出しで見せる */
+[data-page="specific-admin"] .ds-example__preview :is(h1, h2, h3, h4) { font-family: var(--sans); }

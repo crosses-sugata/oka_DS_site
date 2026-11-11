@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>共通UI | OKA.L.C Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Outfit:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css?v=247fb91f">
+<link rel="stylesheet" href="../css/base.css?v=247fb91f">
+<link rel="stylesheet" href="../css/components.css?v=247fb91f">
+
+
+<link rel="stylesheet" href="assets/site.css?v=247fb91f">
+</head>
+<body data-page="site-shell">
+<a class="ds-skip" href="#main">本文へスキップ</a>
+<div class="ds-shell">
+  <header class="ds-header" data-sticky-header>
+    <a class="ds-logo" href="index.html"><span class="ds-logo__mark" aria-hidden="true"></span>OKA.L.C Design System</a>
+    <span class="c-tag c-tag--primary">v0.5</span>
+    <button class="ds-menu-btn c-button c-button--secondary c-button--ghost c-button--icon c-button--md" type="button" aria-controls="ds-nav" aria-expanded="false"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" role="img" aria-label="メニュー"><path d="M177.37-252.28q-17.45 0-29.48-11.97-12.02-11.96-12.02-29.32t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.96 12.02 29.33 0 17.36-12.02 29.53-12.03 12.18-29.48 12.18H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.96-12.02-29.33 0-17.36 12.02-29.53 12.03-12.18 29.48-12.18h605.26q17.45 0 29.48 11.97 12.02 11.96 12.02 29.32t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Z"/></svg></button>
+  </header>
+  <nav class="ds-nav" id="ds-nav" aria-label="サイト内"><p class="ds-nav__group">はじめに</p><ul class="ds-nav__list"><li><a class="ds-nav__link" href="index.html">概要</a></li></ul><details class="ds-nav__fold"><summary class="ds-nav__group">基礎</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="color.html">色</a></li><li><a class="ds-nav__link" href="typography.html">文字</a></li><li><a class="ds-nav__link" href="layout.html">レイアウト</a></li><li><a class="ds-nav__link" href="spacing.html">余白・角丸・影</a></li><li><a class="ds-nav__link" href="motion.html">モーション</a></li><li><a class="ds-nav__link" href="breakpoints.html">ブレークポイント</a></li><li><a class="ds-nav__link" href="icon.html">アイコン</a></li><li><a class="ds-nav__link" href="writing.html">ライティング</a></li></ul></details><details class="ds-nav__fold" open><summary class="ds-nav__group">コンポーネント</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="site-frame.html">ページの骨格</a></li><li><a class="ds-nav__link" href="site-shell.html" aria-current="page">共通UI</a></li><li><a class="ds-nav__link" href="button.html">ボタン</a></li><li><a class="ds-nav__link" href="site-text.html">見出しと文章のブロック</a></li><li><a class="ds-nav__link" href="site-box.html">囲み・カード・料金・表</a></li><li><a class="ds-nav__link" href="site-figure.html">画像と2カラム</a></li><li><a class="ds-nav__link" href="site-listing.html">一覧・記事・よくある質問</a></li><li><a class="ds-nav__link" href="form.html">ラベル・入力欄</a></li><li><a class="ds-nav__link" href="choice.html">チェック・ラジオ・スイッチ</a></li><li><a class="ds-nav__link" href="feedback.html">通知・読み込み</a></li><li><a class="ds-nav__link" href="navigation.html">タブ・リンク・ページ送り</a></li><li><a class="ds-nav__link" href="overlay.html">モーダル・ツールチップ</a></li><li><a class="ds-nav__link" href="display.html">空状態・区切り</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">個別最適ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="specific-site.html">公開サイト</a></li><li><a class="ds-nav__link" href="specific-admin.html">管理画面</a></li><li><a class="ds-nav__link" href="specific-tool.html">院内ツール</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="rules-prohibitions.html">禁止パターン</a></li><li><a class="ds-nav__link" href="rules-naming.html">命名規則</a></li><li><a class="ds-nav__link" href="rules-markup-contract.html">マークアップ契約</a></li><li><a class="ds-nav__link" href="rules-structure.html">サイト構成のルール</a></li><li><a class="ds-nav__link" href="rules-design-tokens.html">デザイントークン</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">ハーネス</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="pattern-layout.html">画面の骨組み</a></li><li><a class="ds-nav__link" href="pattern-form.html">フォームの組み方</a></li><li><a class="ds-nav__link" href="pattern-states.html">画面の状態</a></li><li><a class="ds-nav__link" href="pattern-dodont.html">良い例・悪い例</a></li><li><a class="ds-nav__link" href="pattern-checklist.html">チェックリスト</a></li><li><a class="ds-nav__link" href="pattern-exercises.html">練習課題</a></li></ul></details></nav>
+  <main class="ds-main" id="main">
+<!-- title: 共通UI -->
+
+<h1>共通UI</h1>
+
+<nav class="ds-related" aria-label="関連ページ"><span class="ds-related__label">関連ページ</span><a href="site-frame.html">ページの骨格</a><a href="button.html">ボタン</a><a href="icon.html">アイコン</a></nav>
+<div class="ds-intro">
+<p>全ページで同じものを使う。<strong>トップページだけ手書き</strong>で、 下層ページはページを作る仕組み（スクリプトとテンプレート）が同じ部品を出力する。</p>
+</div>
+
+<section class="ds-section" id="c-header">
+  <h2><code>c-header</code> — ヘッダー</h2>
+<p class="ds-classes">クラス：<code>c-header</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<header class="c-header" id="site-header">
+  <div class="l-wrap c-header__inner">
+    <a class="c-brand" href="#" aria-label="施設名A トップへ">
+      <img class="c-brand__logo" src="assets/placeholder.svg" width="119" height="63" alt="" aria-hidden="true" decoding="async">
+      <span class="c-brand__name">施設名A<small>Facility A</small></span>
+    </a>
+    <nav class="c-nav" aria-label="メインナビゲーション">
+      <ul>
+        <li><a href="#">お知らせ</a></li>
+        <li><a href="#">サービス案内</a></li>
+        <li><a href="#">施設について</a></li>
+        <li><a href="#">代表者コラム</a></li>
+        <li><a href="#">よくある質問</a></li>
+      </ul>
+    </nav>
+    <div class="c-header__cta">
+      <a class="c-header__tel" href="tel:000-000-0000"><span>ご予約・お問い合わせ</span>000-000-0000</a>
+    </div>
+    <button class="c-nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="c-nav--mobile" id="mobile-nav" aria-label="モバイルナビゲーション">
+  <a href="#">お知らせ</a>
+  <a href="#">サービス案内</a>
+  <a href="#">施設について</a>
+  <a href="#">代表者コラム</a>
+  <a href="#">よくある質問</a>
+  <a class="c-button c-button--pill" href="#">項目A</a>
+</nav>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;header class=&quot;c-header&quot; id=&quot;site-header&quot;&gt;
+  &lt;div class=&quot;l-wrap c-header__inner&quot;&gt;
+    &lt;a class=&quot;c-brand&quot; href=&quot;#&quot; aria-label=&quot;施設名A トップへ&quot;&gt;
+      &lt;img class=&quot;c-brand__logo&quot; src=&quot;assets/placeholder.svg&quot; width=&quot;119&quot; height=&quot;63&quot; alt=&quot;&quot; aria-hidden=&quot;true&quot; decoding=&quot;async&quot;&gt;
+      &lt;span class=&quot;c-brand__name&quot;&gt;施設名A&lt;small&gt;Facility A&lt;/small&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;nav class=&quot;c-nav&quot; aria-label=&quot;メインナビゲーション&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お知らせ&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サービス案内&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;施設について&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;代表者コラム&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;c-header__cta&quot;&gt;
+      &lt;a class=&quot;c-header__tel&quot; href=&quot;tel:000-000-0000&quot;&gt;&lt;span&gt;ご予約・お問い合わせ&lt;/span&gt;000-000-0000&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;c-nav__toggle&quot; id=&quot;nav-toggle&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;mobile-nav&quot; aria-label=&quot;メニューを開く&quot;&gt;
+      &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;nav class=&quot;c-nav--mobile&quot; id=&quot;mobile-nav&quot; aria-label=&quot;モバイルナビゲーション&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;お知らせ&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;サービス案内&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;施設について&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;代表者コラム&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;
+  &lt;a class=&quot;c-button c-button--pill&quot; href=&quot;#&quot;&gt;項目A&lt;/a&gt;
+&lt;/nav&gt;</code></pre></details></div>
+
+<p>sticky・すりガラス（<code>rgba(--bg-rgb,.9)</code> + <code>blur(10px)</code>）・高さ72px。 スクロールすると <code>is-scrolled</code> が付いて影が出る。</p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>幅</th><th>表示</th></tr></thead><tbody><tr><td>通常</td><td>ロゴ44px＋ブランド名＋ナビ5項目＋電話＋CTAボタン</td></tr><tr><td>≤1100px</td><td>ナビとCTAを隠し、ハンバーガー（<code>c-nav__toggle</code>）を出す。ロゴ38px</td></tr><tr><td>≤620px</td><td><strong>ブランド名を消してロゴのみ</strong>（36px）</td></tr></tbody></table></div>
+<p>⚠️ ≤620px でロゴのみにしているのは、<strong>375px幅にロゴ・名称・電話ラベル・ハンバーガーが同居できない</strong>ため。 施設名は <code>aria-label</code> で担保している。<strong>「SPでも名称を出す」に戻さない</strong>（依頼者と合意済み）。</p>
+<p>⚠️ <strong>ID はクラスとは別系統。</strong> <code>site-header</code> <code>mobile-nav</code> <code>nav-toggle</code> <code>floating-top</code> は <strong>旧名のまま</strong>にしてある。JSが <code>getElementById</code> で参照し、<code>aria-controls</code> からも指されているため。 一括置換でこれをクラス名と誤認して書き換え、ヘッダー固定・モバイルナビ・トップへ戻るが <strong>同時に動かなくなった</strong>ことがある。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>ロゴのリンクは aria-label で施設名を読ませ、ロゴ画像は alt="" と aria-hidden</li><li>メニューボタンは aria-expanded・aria-controls・aria-label を開閉に合わせて書き換える（js/site.js）</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-brand">
+  <h2>ヘッダーの中身（<code>c-brand</code> / <code>c-header__tel</code>）</h2>
+<p class="ds-classes">クラス：<code>c-brand</code> <code>c-header__tel</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<header class="c-header" id="brand-site-header">
+  <div class="l-wrap c-header__inner">
+    <a class="c-brand" href="#" aria-label="施設名A トップへ">
+      <img class="c-brand__logo" src="assets/placeholder.svg" width="119" height="63" alt="" aria-hidden="true" decoding="async">
+      <span class="c-brand__name">施設名A<small>Facility A</small></span>
+    </a>
+    <nav class="c-nav" aria-label="メインナビゲーション">
+      <ul>
+        <li><a href="#">お知らせ</a></li>
+        <li><a href="#">サービス案内</a></li>
+        <li><a href="#">施設について</a></li>
+        <li><a href="#">代表者コラム</a></li>
+        <li><a href="#">よくある質問</a></li>
+      </ul>
+    </nav>
+    <div class="c-header__cta">
+      <a class="c-header__tel" href="tel:000-000-0000"><span>ご予約・お問い合わせ</span>000-000-0000</a>
+    </div>
+    <button class="c-nav__toggle" id="brand-nav-toggle" aria-expanded="false" aria-controls="brand-mobile-nav" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;header class=&quot;c-header&quot; id=&quot;brand-site-header&quot;&gt;
+  &lt;div class=&quot;l-wrap c-header__inner&quot;&gt;
+    &lt;a class=&quot;c-brand&quot; href=&quot;#&quot; aria-label=&quot;施設名A トップへ&quot;&gt;
+      &lt;img class=&quot;c-brand__logo&quot; src=&quot;assets/placeholder.svg&quot; width=&quot;119&quot; height=&quot;63&quot; alt=&quot;&quot; aria-hidden=&quot;true&quot; decoding=&quot;async&quot;&gt;
+      &lt;span class=&quot;c-brand__name&quot;&gt;施設名A&lt;small&gt;Facility A&lt;/small&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;nav class=&quot;c-nav&quot; aria-label=&quot;メインナビゲーション&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お知らせ&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サービス案内&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;施設について&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;代表者コラム&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;c-header__cta&quot;&gt;
+      &lt;a class=&quot;c-header__tel&quot; href=&quot;tel:000-000-0000&quot;&gt;&lt;span&gt;ご予約・お問い合わせ&lt;/span&gt;000-000-0000&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;c-nav__toggle&quot; id=&quot;brand-nav-toggle&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;brand-mobile-nav&quot; aria-label=&quot;メニューを開く&quot;&gt;
+      &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre></details></div>
+
+
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>クラス</th><th>役割</th></tr></thead><tbody><tr><td><code>c-header__inner</code></td><td>ヘッダーの中身。<code>gap</code> は 16 → 12（≤1100px）→ 8（≤620px）</td></tr><tr><td><code>c-brand</code></td><td>ロゴ＋名称のまとまり</td></tr><tr><td><code>c-brand__logo</code></td><td>ロゴ画像。<strong>44px → 38px（≤1100px）→ 36px（≤620px）</strong></td></tr><tr><td><code>c-brand__name</code></td><td>ブランド名。明朝18px。中の <code>small</code> は英字副題（<code>--num</code> 12px）</td></tr><tr><td><code>c-header__tel</code></td><td>電話番号。<code>--num</code> 20px / 600 / <code>--wine-deep</code>。中の <code>span</code> はラベル</td></tr></tbody></table></div>
+<h3>⚠️ ≤620px ではブランド名を消す</h3>
+
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>@media (max-width: 620px) { .c-brand__name { display: none; } }</code></pre></details></div>
+
+<p>375px 幅では<strong>ロゴ・名称・電話ラベル・ハンバーガーが同居できない。</strong> 消すのは名称テキストだけで、<strong>電話番号とラベルは残す</strong>（1行を維持）。</p>
+<h3>🔵 SPヘッダーはロゴのみのまま</h3>
+<p>依頼者との合意事項。名称を戻す提案は事前確認が必要。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>電話番号は tel: のリンクにし、「ご予約・お問い合わせ」を同じリンクの中に置く</li><li>スマホ幅で名前を隠しても、リンクの aria-label で施設名が伝わる</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-nav">
+  <h2><code>c-nav</code> — ナビゲーション</h2>
+<p class="ds-classes">クラス：<code>c-nav</code></p>
+<div class="ds-example"><p class="ds-example__title">HTML（PC のナビ・スマホのメニュー）</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;nav class=&quot;c-nav&quot; aria-label=&quot;メインナビゲーション&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;お知らせ&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;サービス案内&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;施設について&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;代表者コラム&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;nav class=&quot;c-nav--mobile&quot; id=&quot;mobile-nav&quot; aria-label=&quot;モバイルナビゲーション&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;お知らせ&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;サービス案内&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;施設について&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;代表者コラム&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;よくある質問&lt;/a&gt;
+  &lt;a class=&quot;c-button c-button--pill&quot; href=&quot;#&quot;&gt;項目A&lt;/a&gt;
+&lt;/nav&gt;</code></pre></details></div>
+
+<ul class="ds-list"><li>項目は <strong>お知らせ → サービス案内 → 施設について → 代表者コラム → よくある質問</strong> の5つ（2026-10-18 から。お知らせをサービス案内の上へ移し、代表者コラムを代表者紹介の外の節にした）</li><li><strong>ナビ順とページ内の並び順を一致させる。</strong> 押したら必ず下方向へ進む</li><li>項目の間は 24px（<code>--gap-6</code>）。5項目でブランド名とぶつからないよう 32px から詰めた</li><li>電話番号の上の小さい文字は「ご予約・お問い合わせ」（5項目にしたとき、ナビの場所を空けるため短くした）</li><li><code>c-nav--mobile</code> は全画面。<code>is-open</code> で表示。z-index はヘッダー（200）より<strong>下</strong>の190 — ハンバーガーを押して閉じられるようにするため</li></ul>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>nav に aria-label（メインナビゲーション／モバイルナビゲーション）</li><li>スマホのメニューを開いている間は裏の本文を操作できない（inert）。Esc で閉じてメニューボタンへ戻る（js/site.js）</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-footer">
+  <h2><code>c-footer</code> — フッター</h2>
+<p class="ds-classes">クラス：<code>c-footer</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<footer class="c-footer">
+  <div class="l-wrap">
+    <div class="c-footer__bottom c-footer__bottom--min">
+      <p>項目A</p>
+    </div>
+  </div>
+</footer>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;footer class=&quot;c-footer&quot;&gt;
+  &lt;div class=&quot;l-wrap&quot;&gt;
+    &lt;div class=&quot;c-footer__bottom c-footer__bottom--min&quot;&gt;
+      &lt;p&gt;項目A&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre></details></div>
+
+<ul class="ds-list"><li><code>c-footer__bottom</code> … 上に罫線＋44pxの間隔</li><li><code>c-footer__bottom--min</code> … 罫線と間隔なしの簡易版</li></ul>
+<p><code>body</code> は flex 縦並びで、<code>main</code> が <code>flex: 1 0 auto</code>。<strong>内容が短いページでもフッターが画面下端に来る。</strong></p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>footer 要素にする</li><li>リンクは行き先が分かる文字にする</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-breadcrumb">
+  <h2><code>c-breadcrumb</code> — パンくず</h2>
+<p class="ds-classes">クラス：<code>c-breadcrumb</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<nav class="c-breadcrumb" aria-label="パンくずリスト">
+  <div class="l-wrap"><ol><li><a href="#">ホーム</a></li><li><a href="#">項目A</a></li><li aria-current="page">項目B</li></ol></div>
+</nav>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;nav class=&quot;c-breadcrumb&quot; aria-label=&quot;パンくずリスト&quot;&gt;
+  &lt;div class=&quot;l-wrap&quot;&gt;&lt;ol&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;ホーム&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;項目A&lt;/a&gt;&lt;/li&gt;&lt;li aria-current=&quot;page&quot;&gt;項目B&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;
+&lt;/nav&gt;</code></pre></details></div>
+
+<ul class="ds-list"><li>区切りの「/」はCSSが入れる（<code>li + li::before</code>）。<strong>テキストに書かない</strong></li><li>現在地は <code>aria-current=&quot;page&quot;</code>。30文字で省略（SPは18文字）</li><li><code>c-breadcrumb--soft</code> … 直下のセクションが <code>--bg-soft</code> のとき、背景を合わせて境目を消す（よくある質問）</li></ul>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>nav aria-label="パンくずリスト" と ol</li><li>今いるページはリンクにせず aria-current="page"</li><li>区切りの記号は CSS で描き、読み上げない</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-page-head">
+  <h2><code>c-page-head</code> — 下層ページの見出し</h2>
+<p class="ds-classes">クラス：<code>c-page-head</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-page-head">
+  <p class="c-page-head__category">その他</p>
+  <h2 class="c-page-head__title">ページA</h2>
+  <p class="c-page-head__lead">ダミーテキストA</p>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-page-head&quot;&gt;
+  &lt;p class=&quot;c-page-head__category&quot;&gt;その他&lt;/p&gt;
+  &lt;h2 class=&quot;c-page-head__title&quot;&gt;ページA&lt;/h2&gt;
+  &lt;p class=&quot;c-page-head__lead&quot;&gt;ダミーテキストA&lt;/p&gt;
+&lt;/div&gt;</code></pre></details></div>
+
+<ul class="ds-list"><li>直後が <code>c-toc</code> のときは<strong>下罫線を引かない</strong>（<code>:has(+ .c-toc)</code>）。目次の上罫線と二重線になるため</li></ul>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>ページの見出しは h1 を1つ</li><li>分類（c-page-head__category）は見出しの前に置き、見出しの中に入れない</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-toc">
+  <h2><code>c-toc</code> — ページ内目次</h2>
+<p class="ds-classes">クラス：<code>c-toc</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<nav class="c-toc" aria-label="このページの目次">
+  <p class="c-toc__title">このページの内容</p>   <!-- 視覚的には非表示 -->
+  <ul><li><a href="#" aria-disabled="true">項目A</a></li></ul>
+</nav>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;nav class=&quot;c-toc&quot; aria-label=&quot;このページの目次&quot;&gt;
+  &lt;p class=&quot;c-toc__title&quot;&gt;このページの内容&lt;/p&gt;   &lt;!-- 視覚的には非表示 --&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#&quot; aria-disabled=&quot;true&quot;&gt;項目A&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/nav&gt;</code></pre></details></div>
+
+<p>サービス案内の各ページ・サービス案内一覧・よくある質問で<strong>共有</strong>する。</p>
+
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;nav class=&quot;c-toc&quot; aria-label=&quot;このページの目次&quot;&gt;
+  &lt;p class=&quot;c-toc__title&quot;&gt;このページの内容&lt;/p&gt;   &lt;!-- 視覚的には非表示 --&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#oc&quot;&gt;項目A&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;/nav&gt;</code></pre></details></div>
+
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th></th><th>仕様</th></tr></thead><tbody><tr><td>枠</td><td><strong>カードにしない。</strong> 角丸・枠線・塗りなし。上下1pxの罫線だけ</td></tr><tr><td>項目</td><td>連番（01, 02…）＋テキスト＋下線インジケーター。連番は <code>--num</code> 10.5px <code>--blush</code></td></tr><tr><td>見出し・アイコン</td><td><strong>出さない。</strong> 「このページの内容」は読み上げにだけ残す</td></tr><tr><td>現在地</td><td><code>is-current</code>（JSのスクロール監視）。<strong>最下部では最後の項目</strong>を現在地にする</td></tr><tr><td>固定時</td><td><code>is-stuck</code> で背景が画面幅いっぱいに広がり、ヘッダーと地続きのバーになる。高さ PC 51px / SP 46px</td></tr><tr><td>送りボタン</td><td>1行に収まらないときだけ <code>c-toc__more</code> をJSが生成（実質SPのみ）。右端まで来ると反転して先頭へ戻る</td></tr><tr><td>背景色</td><td>ページの地色に合わせて <code>--toc-bg</code> で差し替える。よくある質問は <code>--bg-soft</code></td></tr></tbody></table></div>
+<p><strong>なぜこの見た目なのか</strong> — 以前はカード＋ピル型だったが、<strong>料金表示や他のUIに酷似している</strong>という 依頼者指摘を受けて刷新した。行頭アイコンも「3本線＝ハンバーガーに見える」「縦バー＝不要」と 順に指摘を受けて撤去している。<strong>カード・ピル・アイコンを戻さない。</strong></p>
+<h3>実装上の注意</h3>
+<ul class="ds-list"><li>全幅の実現は <code>::before</code> を <code>calc((var(--vw) - 100%) / -2)</code> で伸ばす。<strong><code>--vw</code> はJSが <code>clientWidth</code> を実測</strong> （<code>100vw</code> だとスクロールバー分だけ横にあふれる）</li><li>着地位置は3種とも同じ式 — <code>c-section-block</code> / <code>c-index__group</code> / <code>c-faq__group[id]</code> すべて <code>scroll-margin-top: calc(var(--toc-h) + 8px)</code>。<code>--toc-h</code> はJSが実測する</li><li>背景は<strong>JS無効でも不透明</strong>を敷いてある（固定中に本文が透けないように）</li></ul>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>nav に aria-label="このページの目次"。目次のタイトルは見た目では隠しても読み上げには残す</li><li>今いる節は is-current と aria-current="location"（js/site.js）</li><li>右端の送りボタンは状態に合わせて aria-label が変わる（js/site.js）</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-floating">
+  <h2><code>c-floating</code> — 右下の固定ボタン</h2>
+<p class="ds-classes">クラス：<code>c-floating</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-floating">
+  <a class="c-floating__cta" href="#">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    <span>項目A</span>
+  </a>
+  <button class="c-floating__top" id="floating-top" type="button" aria-label="ページ上部へ戻る">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-floating&quot;&gt;
+  &lt;a class=&quot;c-floating__cta&quot; href=&quot;#&quot;&gt;
+    &lt;svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;rect x=&quot;3&quot; y=&quot;4&quot; width=&quot;18&quot; height=&quot;18&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;M16 2v4M8 2v4M3 10h18&quot;/&gt;&lt;/svg&gt;
+    &lt;span&gt;項目A&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;button class=&quot;c-floating__top&quot; id=&quot;floating-top&quot; type=&quot;button&quot; aria-label=&quot;ページ上部へ戻る&quot;&gt;
+    &lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 19V5M5 12l7-7 7 7&quot;/&gt;&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre></details></div>
+
+<p><code>c-floating__cta</code>（ご予約）と <code>c-floating__top</code>（トップへ戻る）。z-index 150。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>ページ上部へ戻るは button と aria-label</li><li>予約は行き先が分かる文字のリンク</li><li>固定表示で本文の最後が隠れないよう、ページの下に余白をとる</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-skip-link">
+  <h2><code>c-skip-link</code> — スキップリンク</h2>
+<p class="ds-classes">クラス：<code>c-skip-link</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<a class="c-skip-link" href="#main">本文へスキップ</a>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;a class=&quot;c-skip-link&quot; href=&quot;#main&quot;&gt;本文へスキップ&lt;/a&gt;</code></pre></details></div>
+
+<p><code>Tab</code> で最初に到達する。フォーカス時だけ画面に出る。<strong>消さない</strong>（キーボード操作の入口）。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>ページで最初にフォーカスが来る位置に置き、本文（main の id）へ飛ばす</li><li>フォーカスしたときだけ見える</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="c-icon---アイコン">
+  <h2><code>c-icon--*</code> — アイコン</h2>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<span class="c-icon--arrow" aria-hidden="true">→</span>
+<svg class="c-icon--chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+<svg class="c-icon--ext" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;span class=&quot;c-icon--arrow&quot; aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;
+&lt;svg class=&quot;c-icon--chev&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m6 9 6 6 6-6&quot;/&gt;&lt;/svg&gt;
+&lt;svg class=&quot;c-icon--ext&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 12h13M12 5.5 18.5 12 12 18.5&quot;/&gt;&lt;/svg&gt;</code></pre></details></div>
+<p>ほかの線のアイコン（お悩みカード・サービス案内カードなど）は <a href="icon.html#site-icons">アイコン</a> を見る。</p>
+
+<p><code>c-icon--arrow</code>（→） / <code>c-icon--chev</code>（∨） / <code>c-icon--ext</code>（外部・移動）。 インラインSVGに付ける。色は親から継承する。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>飾りなので aria-hidden="true"</li><li>意味があるときは隣に文字を置き、アイコンだけで伝えない</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="u--ユーティリティ">
+  <h2><code>u-</code> — ユーティリティ</h2>
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;p class=&quot;u-reveal&quot;&gt;ダミーテキストA（js/site.js が画面に入ったときに is-in を付けて、ふわっと出す）&lt;/p&gt;
+&lt;h1&gt;項目A&lt;span class=&quot;u-nowrap&quot;&gt;「項目B」&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;ダミーテキストB&lt;br class=&quot;u-br-sp&quot;&gt;ダミーテキストC（スマホ幅だけ改行する）&lt;/p&gt;
+&lt;span class=&quot;u-num&quot;&gt;000-000-0000&lt;/span&gt;</code></pre></details></div>
+
+<p><strong>5つしかない。増やさない。</strong></p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>クラス</th><th>効果</th></tr></thead><tbody><tr><td><code>u-nowrap</code></td><td>折り返さない</td></tr><tr><td><code>u-num</code></td><td>数字用書体（Outfit）</td></tr><tr><td><code>u-reveal</code></td><td>スクロールで下から現れる。JSが <code>is-in</code> を付ける</td></tr><tr><td><code>u-br-sp</code></td><td><strong>SP幅でだけ効かせる改行。</strong> PC幅では <code>display: none</code> で詰めて表示する</td></tr><tr><td><code>u-visually-hidden</code></td><td>画面には出さず、読み上げにだけ伝える（例：表の「ー」に添える「休み」の文字）</td></tr></tbody></table></div>
+<p>余白や色のユーティリティは<strong>作らない</strong>。Tailwind 風のユーティリティを増やす方針は採っていない （<a href="rules-prohibitions.html">禁止パターン</a> の「ユーティリティを増やさない」）。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>u-reveal は「動きを減らす」設定の人には最初から表示する（js/site.js）</li><li>u-br-sp の改行は見た目だけで、読み上げには影響しない</li></ul></div></div>
+</section>
+
+  </main>
+</div>
+<template id="tpl-icon-close"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-421.35 319.83-261.17Q307.15-248.5 291-249t-28.83-13.17q-12.67-12.68-12.67-29.33t12.67-29.33L421.35-480 261.17-640.17Q248.5-652.85 249-669.5t13.17-29.33q12.68-12.67 29.33-12.67t29.33 12.67L480-538.65l160.17-160.18q12.68-12.67 29.33-12.67t29.33 12.67q12.67 12.68 12.67 29.33t-12.67 29.33L538.65-480l160.18 160.17Q711.5-307.15 711.5-291t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-421.35Z"/></svg></template>
+<template id="tpl-icon-success"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg></template>
+<template id="tpl-icon-error"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<template id="tpl-icon-info"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<script src="../js/components.js?v=247fb91f"></script>
+<script src="assets/site.js?v=247fb91f"></script>
+</body>
+</html>

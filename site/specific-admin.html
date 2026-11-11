@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>管理画面 | OKA.L.C Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Outfit:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../tokens/tokens.css?v=247fb91f">
+<link rel="stylesheet" href="../css/base.css?v=247fb91f">
+<link rel="stylesheet" href="../css/components.css?v=247fb91f">
+<link rel="stylesheet" href="../css/admin.css?v=247fb91f">
+
+<link rel="stylesheet" href="assets/site.css?v=247fb91f">
+</head>
+<body data-page="specific-admin">
+<a class="ds-skip" href="#main">本文へスキップ</a>
+<div class="ds-shell">
+  <header class="ds-header" data-sticky-header>
+    <a class="ds-logo" href="index.html"><span class="ds-logo__mark" aria-hidden="true"></span>OKA.L.C Design System</a>
+    <span class="c-tag c-tag--primary">v0.5</span>
+    <button class="ds-menu-btn c-button c-button--secondary c-button--ghost c-button--icon c-button--md" type="button" aria-controls="ds-nav" aria-expanded="false"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" role="img" aria-label="メニュー"><path d="M177.37-252.28q-17.45 0-29.48-11.97-12.02-11.96-12.02-29.32t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.96 12.02 29.33 0 17.36-12.02 29.53-12.03 12.18-29.48 12.18H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17h605.26q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Zm0-186.22q-17.45 0-29.48-11.96-12.02-11.96-12.02-29.33 0-17.36 12.02-29.53 12.03-12.18 29.48-12.18h605.26q17.45 0 29.48 11.97 12.02 11.96 12.02 29.32t-12.02 29.54q-12.03 12.17-29.48 12.17H177.37Z"/></svg></button>
+  </header>
+  <nav class="ds-nav" id="ds-nav" aria-label="サイト内"><p class="ds-nav__group">はじめに</p><ul class="ds-nav__list"><li><a class="ds-nav__link" href="index.html">概要</a></li></ul><details class="ds-nav__fold"><summary class="ds-nav__group">基礎</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="color.html">色</a></li><li><a class="ds-nav__link" href="typography.html">文字</a></li><li><a class="ds-nav__link" href="layout.html">レイアウト</a></li><li><a class="ds-nav__link" href="spacing.html">余白・角丸・影</a></li><li><a class="ds-nav__link" href="motion.html">モーション</a></li><li><a class="ds-nav__link" href="breakpoints.html">ブレークポイント</a></li><li><a class="ds-nav__link" href="icon.html">アイコン</a></li><li><a class="ds-nav__link" href="writing.html">ライティング</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">コンポーネント</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="site-frame.html">ページの骨格</a></li><li><a class="ds-nav__link" href="site-shell.html">共通UI</a></li><li><a class="ds-nav__link" href="button.html">ボタン</a></li><li><a class="ds-nav__link" href="site-text.html">見出しと文章のブロック</a></li><li><a class="ds-nav__link" href="site-box.html">囲み・カード・料金・表</a></li><li><a class="ds-nav__link" href="site-figure.html">画像と2カラム</a></li><li><a class="ds-nav__link" href="site-listing.html">一覧・記事・よくある質問</a></li><li><a class="ds-nav__link" href="form.html">ラベル・入力欄</a></li><li><a class="ds-nav__link" href="choice.html">チェック・ラジオ・スイッチ</a></li><li><a class="ds-nav__link" href="feedback.html">通知・読み込み</a></li><li><a class="ds-nav__link" href="navigation.html">タブ・リンク・ページ送り</a></li><li><a class="ds-nav__link" href="overlay.html">モーダル・ツールチップ</a></li><li><a class="ds-nav__link" href="display.html">空状態・区切り</a></li></ul></details><details class="ds-nav__fold" open><summary class="ds-nav__group">個別最適ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="specific-site.html">公開サイト</a></li><li><a class="ds-nav__link" href="specific-admin.html" aria-current="page">管理画面</a></li><li><a class="ds-nav__link" href="specific-tool.html">院内ツール</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">ルール</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="rules-prohibitions.html">禁止パターン</a></li><li><a class="ds-nav__link" href="rules-naming.html">命名規則</a></li><li><a class="ds-nav__link" href="rules-markup-contract.html">マークアップ契約</a></li><li><a class="ds-nav__link" href="rules-structure.html">サイト構成のルール</a></li><li><a class="ds-nav__link" href="rules-design-tokens.html">デザイントークン</a></li></ul></details><details class="ds-nav__fold"><summary class="ds-nav__group">ハーネス</summary><ul class="ds-nav__list"><li><a class="ds-nav__link" href="pattern-layout.html">画面の骨組み</a></li><li><a class="ds-nav__link" href="pattern-form.html">フォームの組み方</a></li><li><a class="ds-nav__link" href="pattern-states.html">画面の状態</a></li><li><a class="ds-nav__link" href="pattern-dodont.html">良い例・悪い例</a></li><li><a class="ds-nav__link" href="pattern-checklist.html">チェックリスト</a></li><li><a class="ds-nav__link" href="pattern-exercises.html">練習課題</a></li></ul></details></nav>
+  <main class="ds-main" id="main">
+<!-- title: 管理画面 -->
+
+<!-- page-css: admin -->
+
+<h1>管理画面</h1>
+<p class="ds-lead">管理画面だけで使う部品（a-）と決まりです。公開サイトと管理画面の両方で使う部品（ボタン・タブ・省略表示など）は共通部品（c-）に置き、管理画面でもそれを使います。トップページ用の部品（p-）は使いません。</p>
+
+<nav class="ds-related" aria-label="関連ページ"><span class="ds-related__label">関連ページ</span><a href="button.html">ボタン</a><a href="form.html">ラベル・入力欄</a><a href="feedback.html">通知・読み込み</a><a href="overlay.html">モーダル・ツールチップ</a><a href="site-box.html">囲み・カード・料金・表</a><a href="display.html">空状態・区切り</a></nav>
+<section class="ds-section ds-section--group" id="admin-shell">
+  <h2>骨格</h2>
+<div class="ds-intro">
+<p>画面の骨格と、全画面に共通するUI。</p>
+</div>
+</section>
+
+<section class="ds-section" id="a-shell">
+  <h3><code>a-shell</code> — 画面全体</h3>
+<p class="ds-classes">クラス：<code>a-shell</code></p>
+<p>左に固定幅（240px）のサイドメニュー、右に本文。<strong>実装では <code>&lt;body class="a-shell"&gt;</code> に付ける</strong>（下の見本は、まとめサイトの中に置くため <code>&lt;div&gt;</code> で表示している）。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="a-shell">
+  <a class="c-skip-link" href="#">本文へスキップ</a>
+  <aside class="a-side">
+    <a class="a-side__brand" href="#" aria-disabled="true">
+      <img src="assets/placeholder.svg" alt="ダミー画像" width="119" height="63">
+    </a>
+    <nav class="a-side__nav" aria-label="管理メニュー">
+      <ul>
+        <li><a class="a-side__link is-current" href="#" aria-disabled="true" aria-current="page">項目A</a></li>
+        <li><a class="a-side__link" href="#" aria-disabled="true">項目B</a></li>
+      </ul>
+    </nav>
+    <div class="a-side__foot">
+      <p class="a-side__user">項目A さん</p>
+      <a class="c-button c-button--secondary c-button--outline" href="#">ログアウト</a>
+    </div>
+  </aside>
+  <div class="a-main">
+    <div class="a-title-row">
+      <div><h2>項目A</h2></div>
+      <div class="a-title-row__actions">
+        <p class="a-title-row__count">全 0 件</p>
+        <a class="c-button" href="#">新規作成</a>
+      </div>
+    </div>
+    <div class="c-empty"><span class="c-empty__icon"><svg class="c-icon c-icon--xl" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-120H640q-30 38-71.5 59T480-240q-47 0-88.5-21T320-320H200v120Zm280-120q32 0 59-16.5t44-43.5q6-9 15-14.5t20-5.5h142v-360H200v360h142q11 0 20 5.5t15 14.5q17 27 44 43.5t59 16.5ZM200-200h560-560Z"/></svg></span><h2 class="c-empty__title">記事はまだありません</h2><p class="c-empty__text">「新規作成」から追加してください。</p></div>
+  </div>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;a-shell&quot;&gt;
+  &lt;a class=&quot;c-skip-link&quot; href=&quot;#&quot;&gt;本文へスキップ&lt;/a&gt;
+  &lt;aside class=&quot;a-side&quot;&gt;
+    &lt;a class=&quot;a-side__brand&quot; href=&quot;#&quot; aria-disabled=&quot;true&quot;&gt;
+      &lt;img src=&quot;assets/placeholder.svg&quot; alt=&quot;ダミー画像&quot; width=&quot;119&quot; height=&quot;63&quot;&gt;
+    &lt;/a&gt;
+    &lt;nav class=&quot;a-side__nav&quot; aria-label=&quot;管理メニュー&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a class=&quot;a-side__link is-current&quot; href=&quot;#&quot; aria-disabled=&quot;true&quot; aria-current=&quot;page&quot;&gt;項目A&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;a-side__link&quot; href=&quot;#&quot; aria-disabled=&quot;true&quot;&gt;項目B&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;a-side__foot&quot;&gt;
+      &lt;p class=&quot;a-side__user&quot;&gt;項目A さん&lt;/p&gt;
+      &lt;a class=&quot;c-button c-button--secondary c-button--outline&quot; href=&quot;#&quot;&gt;ログアウト&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
+  &lt;div class=&quot;a-main&quot;&gt;
+    &lt;div class=&quot;a-title-row&quot;&gt;
+      &lt;div&gt;&lt;h2&gt;項目A&lt;/h2&gt;&lt;/div&gt;
+      &lt;div class=&quot;a-title-row__actions&quot;&gt;
+        &lt;p class=&quot;a-title-row__count&quot;&gt;全 0 件&lt;/p&gt;
+        &lt;a class=&quot;c-button&quot; href=&quot;#&quot;&gt;新規作成&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c-empty&quot;&gt;&lt;span class=&quot;c-empty__icon&quot;&gt;&lt;svg class=&quot;c-icon c-icon--xl&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/inbox.svg の path --&gt;&lt;/svg&gt;&lt;/span&gt;&lt;h2 class=&quot;c-empty__title&quot;&gt;記事はまだありません&lt;/h2&gt;&lt;p class=&quot;c-empty__text&quot;&gt;「新規作成」から追加してください。&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></div>
+
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;body class=&quot;a-shell&quot;&gt;
+  &lt;a class=&quot;c-skip-link&quot; href=&quot;#a-content&quot;&gt;本文へスキップ&lt;/a&gt;
+  &lt;aside class=&quot;a-side&quot;&gt;&lt;!-- a-side の HTML（下の節） --&gt;&lt;/aside&gt;
+  &lt;main class=&quot;a-main&quot; id=&quot;a-content&quot;&gt;
+    &lt;div class=&quot;a-title-row&quot;&gt;&lt;!-- a-title-row の HTML（下の節） --&gt;&lt;/div&gt;
+    &lt;!-- 画面ごとの中身 --&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre></details></div>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>最初に本文へスキップ（共通の c-skip-link）</li><li>サイドメニューは nav と aria-label、今いる画面は aria-current="page"</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="a-side">
+  <h3><code>a-side</code> — サイドメニュー</h3>
+<p class="ds-classes">クラス：<code>a-side</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<aside class="a-side">
+  <a class="a-side__brand" href="#" aria-disabled="true">
+    <img src="assets/placeholder.svg" alt="ダミー画像" width="119" height="63">
+  </a>
+  <nav class="a-side__nav" aria-label="管理メニュー">
+    <ul>
+      <li><a class="a-side__link is-current" href="#" aria-disabled="true" aria-current="page">お知らせ</a></li>
+      <li><a class="a-side__link" href="#" aria-disabled="true">代表者コラム</a></li>
+    </ul>
+  </nav>
+  <div class="a-side__foot">
+    <p class="a-side__user">項目A さん</p>
+    <a class="c-button c-button--secondary c-button--outline" href="#">ログアウト</a>
+  </div>
+</aside>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;aside class=&quot;a-side&quot;&gt;
+  &lt;a class=&quot;a-side__brand&quot; href=&quot;#&quot; aria-disabled=&quot;true&quot;&gt;
+    &lt;img src=&quot;assets/placeholder.svg&quot; alt=&quot;ダミー画像&quot; width=&quot;119&quot; height=&quot;63&quot;&gt;
+  &lt;/a&gt;
+  &lt;nav class=&quot;a-side__nav&quot; aria-label=&quot;管理メニュー&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a class=&quot;a-side__link is-current&quot; href=&quot;#&quot; aria-disabled=&quot;true&quot; aria-current=&quot;page&quot;&gt;お知らせ&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&quot;a-side__link&quot; href=&quot;#&quot; aria-disabled=&quot;true&quot;&gt;代表者コラム&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div class=&quot;a-side__foot&quot;&gt;
+    &lt;p class=&quot;a-side__user&quot;&gt;項目A さん&lt;/p&gt;
+    &lt;a class=&quot;c-button c-button--secondary c-button--outline&quot; href=&quot;#&quot;&gt;ログアウト&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/aside&gt;</code></pre></details></div>
+
+
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>クラス</th><th>役割</th></tr></thead><tbody><tr><td><code>a-side__brand</code></td><td>ロゴ。高さ44px</td></tr><tr><td><code>a-side__nav</code></td><td>メニュー本体。<code>&lt;ul&gt;</code> は <code>gap: 4px</code></td></tr><tr><td><code>a-side__link</code></td><td>項目1つ</td></tr><tr><td><code>a-side__link.is-current</code></td><td><strong>現在地。</strong> 背景 <code>--bg-soft</code> ＋ 文字 <code>--primary-solid</code> ＋ 左の線（3px）＋ 太字</td></tr><tr><td><code>a-side__foot</code></td><td><code>margin-top: auto</code> で下端に寄せる。利用者名とログアウト</td></tr></tbody></table></div>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--do"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Zm0-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>使う</h4><ul><li>現在地には <code>is-current</code> と <code>aria-current=&quot;page&quot;</code> を<strong>両方</strong>付ける。 見た目だけでは支援技術に伝わらない</li><li>ログアウトのボタンは <code>width: 100%</code>（<code>.a-side__foot .c-button</code> が効く）</li></ul></div><div class="ds-guide__col ds-guide__col--dont"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>使わない・してはいけない</h4><ul><li>現在地の表現に左のバー以外を持ち込まない。 公開サイトの見出し（<code>.c-section-block__title::before</code>）と同じ語彙。今いる画面は文字 <code>--primary-solid</code>（4.82:1）＋左の縦線＋太字</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="a-main">
+  <h3><code>a-main</code> — 本文</h3>
+<p class="ds-classes">クラス：<code>a-main</code></p>
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>.a-main { max-width: 1120px; margin: 0 auto; padding: var(--p-8); width: 100%; }</code></pre></details></div>
+
+<p><strong>全画面で同じ幅。</strong> 画面ごとに幅を変えない。</p>
+</section>
+
+<section class="ds-section" id="a-title-row">
+  <h3><code>a-title-row</code> — 画面名とボタンの行</h3>
+<p class="ds-classes">クラス：<code>a-title-row</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="a-title-row">
+  <div><h1>お知らせ</h1></div>
+  <div class="a-title-row__actions">
+    <p class="a-title-row__count">全 29 件</p>
+    <a class="c-button" href="#">新規作成</a>
+  </div>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;a-title-row&quot;&gt;
+  &lt;div&gt;&lt;h1&gt;お知らせ&lt;/h1&gt;&lt;/div&gt;
+  &lt;div class=&quot;a-title-row__actions&quot;&gt;
+    &lt;p class=&quot;a-title-row__count&quot;&gt;全 29 件&lt;/p&gt;
+    &lt;a class=&quot;c-button&quot; href=&quot;#&quot;&gt;新規作成&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></div>
+
+
+<ul class="ds-list"><li>画面名と本文の間隔は <strong>32px。全画面で同じ</strong>にする</li><li>件数（<code>a-title-row__count</code>）は<strong>ボタンの左</strong>に置く</li></ul>
+<h4>⚠️ ボタンのラベルを折り返させない</h4>
+<p>ボタン（<code>c-button</code>）は <code>white-space: nowrap</code>。狭いときは他の列を詰める。 幅が足りずに「新規作 / 成」と割れると、押すものに見えなくなる。</p>
+</section>
+
+<section class="ds-section" id="a-lead">
+  <h3><code>a-lead</code> — 画面の説明文</h3>
+<p class="ds-classes">クラス：<code>a-lead</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<p class="a-lead">グループ名を押すと名前を変えられます。質問が入っているグループは削除できません。</p>
+<div class="c-data-table"><table><thead><tr><th scope="col">グループ名</th><th scope="col">質問の数</th></tr></thead><tbody><tr><td>グループA</td><td>2 件</td></tr></tbody></table></div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;p class=&quot;a-lead&quot;&gt;グループ名を押すと名前を変えられます。質問が入っているグループは削除できません。&lt;/p&gt;
+&lt;div class=&quot;c-data-table&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;グループ名&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;質問の数&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;グループA&lt;/td&gt;&lt;td&gt;2 件&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</code></pre></details></div>
+
+
+<ul class="ds-list"><li>画面名の行（<code>a-title-row</code>）の下、表やフォームの上に置く</li><li>下の部品との間は <strong>24px</strong>。説明文を裸の <code>p</code> で置かない（下の部品とくっつく）</li></ul>
+</section>
+
+<section class="ds-section" id="admin-skip-link">
+  <h3>本文へスキップ — 共通部品の <code>c-skip-link</code> を使う</h3>
+<p class="ds-classes">クラス：<code>c-skip-link</code>（<a href="site-shell.html">共通UI</a>）</p>
+<p>管理画面専用のスキップリンク（<code>a-skip-link</code>）は持たない。公開サイトと同じ <code>c-skip-link</code> を <code>body</code> の最初に置き、本文（<code>a-main</code> の id）へ飛ばす。塗りは <strong><code>--wine-deep</code></strong>（支援技術のための機能なので、<code>--wine</code> より濃い色。白文字 4.15:1）。</p>
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;a class=&quot;c-skip-link&quot; href=&quot;#a-content&quot;&gt;本文へスキップ&lt;/a&gt;</code></pre></details></div>
+</section>
+
+<section class="ds-section" id="a-topbar">
+  <h3>ドロワー（<code>a-topbar</code> / <code>a-scrim</code> / <code>a-side__close</code>）</h3>
+<p class="ds-classes">クラス：<code>a-topbar</code> <code>a-scrim</code> <code>a-side__close</code></p>
+<p><strong><code>≤980px</code> で <code>a-side</code> は画面外へ隠れる。</strong></p>
+
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>@media (max-width: 980px) {
+  .a-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; }
+  .a-side  { position: fixed; width: 280px; transform: translateX(-100%); visibility: hidden; }
+  .a-side.is-open { transform: none; visibility: visible; }
+}</code></pre></details></div>
+
+<p>必要なマークアップ:</p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>クラス</th><th>役割</th></tr></thead><tbody><tr><td><code>a-topbar</code></td><td>上の帯。ロゴと開くボタンを載せる</td></tr><tr><td><code>a-topbar__toggle</code></td><td>開くボタン。<strong>44px角</strong></td></tr><tr><td><code>a-topbar__brand</code></td><td>帯の中のロゴ。高さ32px</td></tr><tr><td><code>a-side__close</code></td><td>閉じるボタン。ロゴの右上に重ねる</td></tr><tr><td><code>a-scrim</code></td><td>背景の覆い。押すと閉じる</td></tr><tr><td><code>a-shell.has-drawer</code></td><td>開いているあいだ背面をスクロールさせない</td></tr></tbody></table></div>
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;body class=&quot;a-shell&quot;&gt;
+  &lt;a class=&quot;c-skip-link&quot; href=&quot;#a-content&quot;&gt;本文へスキップ&lt;/a&gt;
+  &lt;!-- 上の帯（≤980px だけ出る）。id は js/admin.js が探すので変えない --&gt;
+  &lt;div class=&quot;a-topbar&quot;&gt;
+    &lt;button class=&quot;a-topbar__toggle&quot; id=&quot;drawer-toggle&quot; type=&quot;button&quot; aria-controls=&quot;a-side&quot; aria-expanded=&quot;false&quot; aria-label=&quot;メニューを開く&quot;&gt;&lt;svg class=&quot;c-icon c-icon--md&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/menu.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;a class=&quot;a-topbar__brand&quot; href=&quot;/admin/&quot;&gt;&lt;img src=&quot;（ロゴの画像）&quot; alt=&quot;管理画面のトップへ&quot; width=&quot;119&quot; height=&quot;63&quot;&gt;&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;a-scrim&quot; id=&quot;drawer-scrim&quot; hidden&gt;&lt;/div&gt;
+  &lt;aside class=&quot;a-side&quot; id=&quot;a-side&quot;&gt;
+    &lt;button class=&quot;a-side__close&quot; id=&quot;drawer-close&quot; type=&quot;button&quot; aria-label=&quot;メニューを閉じる&quot;&gt;&lt;svg class=&quot;c-icon c-icon--md&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/close.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;
+    &lt;!-- a-side__brand・a-side__nav・a-side__user は上の「a-side — サイドメニュー」と同じ --&gt;
+  &lt;/aside&gt;
+  &lt;main class=&quot;a-main&quot; id=&quot;a-content&quot;&gt;&lt;!-- 本文 --&gt;&lt;/main&gt;
+  &lt;script src=&quot;js/components.js&quot; defer&gt;&lt;/script&gt;   &lt;!-- 共通部品の動き（トースト・検証・省略表示など）。admin.js より先に読む --&gt;
+  &lt;script src=&quot;js/admin.js&quot; defer&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre></details></div>
+<h4>⚠️ <code>grid-template-rows: auto 1fr</code> を省かない</h4>
+<p><code>a-shell</code> は <code>min-height: 100vh</code> のグリッドで、<code>align-content</code> の既定は <code>stretch</code>。 <strong>中身が画面より短いと余った高さが各行へ均等配分され</strong>、帯が 62px → 187px に膨らむ 。</p>
+<h4>⚠️ 閉じているあいだは <code>visibility: hidden</code> にする</h4>
+<p><code>transform</code> だけだと、隠れていてもタブ移動で中のリンクに到達できてしまう。</p>
+<h4>⚠️ このマークアップを省かない</h4>
+<p><code>a-topbar</code>・<code>a-scrim</code>・<code>a-side__close</code> が無いと、<strong><code>≤980px</code>（タブレット・スマートフォン）ではサイドメニューが画面外に消えたまま開けない。</strong> 切り替えもログアウトもできなくなる。開閉の動きは <code>js/admin.js</code>。</p>
+<h4>⚠️ 開いた直後に <code>focus()</code> しても効かない</h4>
+<p><code>admin.css</code> は <code>visibility</code> を <strong><code>--duration-slow</code>（300ms）かけて遷移させる</strong>。 クラスを付けた直後はまだ <code>visibility: hidden</code> で、<strong>見えない要素にフォーカスは入らない。</strong> <code>transitionend</code> を待ってから移す（タイマーの保険も置く）。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>メニューボタンは aria-expanded と aria-controls</li><li>Esc で閉じる（js/admin.js）</li></ul></div></div>
+</section>
+
+<section class="ds-section ds-section--group" id="admin-list">
+  <h2>一覧</h2>
+<div class="ds-intro">
+<p>記事・質問を並べる画面。<strong>管理画面でいちばん使う。</strong></p>
+</div>
+</section>
+
+<section class="ds-section" id="admin-data-table">
+  <h3>一覧表 — 共通部品の <code>c-data-table</code> を使う</h3>
+<p>一覧の表は公開サイトと同じ共通部品の <code>c-data-table</code>（<a href="site-box.html#c-data-table">囲み・カード・料金・表</a>）。列幅・長いタイトルの省略・狭い画面での振る舞いもそちらにまとめてある。状態バッジ（<code>a-status</code>）と行の操作（<code>a-ops</code>）は管理画面だけで使う。</p>
+
+<h4>記事の一覧（スマホ幅では2列に畳む）</h4>
+<p>620px 以下では、列名の行を見た目だけ消し（読み上げには残す）、<strong>左に内容の列（1行目 タイトル／2行目 状態と日付）</strong>、<strong>右に操作の列（ゴミ箱のアイコンボタン。中身ぶんの幅）</strong>にする。横スクロールも右端の貼り付けもしない。広い画面は今までどおり4列。削除はどの幅でもゴミ箱のアイコンのボタン。画面の幅を狭めると確かめられる。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-data-table">
+  <table>
+    <colgroup><col><col class="c-data-table__col--status"><col class="c-data-table__col--date"><col class="c-data-table__col--ops"></colgroup>
+    <thead><tr><th scope="col" class="c-data-table__cell--title">タイトル</th><th scope="col" class="c-data-table__cell--status">状態</th><th scope="col" class="c-data-table__cell--date">更新日</th><th scope="col">操作</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="c-data-table__cell--title"><a class="c-truncate" href="#">ダミーテキストA</a><span class="c-data-table__row-status"><span class="a-status a-status--published">公開中</span></span><span class="c-data-table__row-date">2026.08.05</span></td>
+        <td class="c-data-table__cell--status"><span class="a-status a-status--published">公開中</span></td>
+        <td class="c-data-table__cell--date">2026.08.05</td>
+        <td><div class="a-ops"><form method="post" action="#" data-confirm-title="「ダミーテキストA」を削除しますか？" data-confirm="この操作は元に戻せません。" data-confirm-ok="削除する">
+          <button class="c-button c-button--sm c-button--negative c-button--outline c-data-table__delete" type="submit"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M309.37-135.87q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.5h-12q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17H378.5v-12q0-17.45 12.02-29.48 12.03-12.02 29.48-12.02h119.52q17.45 0 29.48 12.02 12.02 12.03 12.02 29.48v12h164.61q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17h-12v474.07q0 35.21-24.26 59.32t-58.74 24.11H309.37Zm341.26-557.5H309.37v474.5h341.26v-474.5ZM418.35-288.24q16.17 0 27.51-11.19 11.34-11.18 11.34-27.44v-258.74q0-16.26-11.13-27.44-11.13-11.19-27.29-11.19-16.17 0-27.63 11.19-11.45 11.18-11.45 27.44v258.74q0 16.26 11.24 27.44 11.25 11.19 27.41 11.19Zm123.11 0q16.17 0 27.51-11.19 11.33-11.18 11.33-27.44v-258.74q0-16.26-11.12-27.44-11.13-11.19-27.3-11.19-16.16 0-27.62 11.19-11.46 11.18-11.46 27.44v258.74q0 16.26 11.25 27.44 11.25 11.19 27.41 11.19ZM309.37-693.37v474.5-474.5Z"/></svg><span class="c-data-table__delete-label">削除する</span></button>
+        </form></div></td>
+      </tr>
+      <tr>
+        <td class="c-data-table__cell--title"><a class="c-truncate" href="#">ダミーテキストB</a><span class="c-data-table__row-status"><span class="a-status a-status--draft">下書き</span></span><span class="c-data-table__row-date">2026.07.24</span></td>
+        <td class="c-data-table__cell--status"><span class="a-status a-status--draft">下書き</span></td>
+        <td class="c-data-table__cell--date">2026.07.24</td>
+        <td><div class="a-ops"><form method="post" action="#" data-confirm-title="「ダミーテキストB」を削除しますか？" data-confirm="この操作は元に戻せません。" data-confirm-ok="削除する">
+          <button class="c-button c-button--sm c-button--negative c-button--outline c-data-table__delete" type="submit"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M309.37-135.87q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.5h-12q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17H378.5v-12q0-17.45 12.02-29.48 12.03-12.02 29.48-12.02h119.52q17.45 0 29.48 12.02 12.02 12.03 12.02 29.48v12h164.61q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17h-12v474.07q0 35.21-24.26 59.32t-58.74 24.11H309.37Zm341.26-557.5H309.37v474.5h341.26v-474.5ZM418.35-288.24q16.17 0 27.51-11.19 11.34-11.18 11.34-27.44v-258.74q0-16.26-11.13-27.44-11.13-11.19-27.29-11.19-16.17 0-27.63 11.19-11.45 11.18-11.45 27.44v258.74q0 16.26 11.24 27.44 11.25 11.19 27.41 11.19Zm123.11 0q16.17 0 27.51-11.19 11.33-11.18 11.33-27.44v-258.74q0-16.26-11.12-27.44-11.13-11.19-27.3-11.19-16.16 0-27.62 11.19-11.46 11.18-11.46 27.44v258.74q0 16.26 11.25 27.44 11.25 11.19 27.41 11.19ZM309.37-693.37v474.5-474.5Z"/></svg><span class="c-data-table__delete-label">削除する</span></button>
+        </form></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-data-table&quot;&gt;
+  &lt;table&gt;
+    &lt;colgroup&gt;&lt;col&gt;&lt;col class=&quot;c-data-table__col--status&quot;&gt;&lt;col class=&quot;c-data-table__col--date&quot;&gt;&lt;col class=&quot;c-data-table__col--ops&quot;&gt;&lt;/colgroup&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--title&quot;&gt;タイトル&lt;/th&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--status&quot;&gt;状態&lt;/th&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--date&quot;&gt;更新日&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;操作&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;c-data-table__cell--title&quot;&gt;&lt;a class=&quot;c-truncate&quot; href=&quot;#&quot;&gt;ダミーテキストA&lt;/a&gt;&lt;span class=&quot;c-data-table__row-status&quot;&gt;&lt;span class=&quot;a-status a-status--published&quot;&gt;公開中&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;c-data-table__row-date&quot;&gt;2026.08.05&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--status&quot;&gt;&lt;span class=&quot;a-status a-status--published&quot;&gt;公開中&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--date&quot;&gt;2026.08.05&lt;/td&gt;
+        &lt;td&gt;&lt;div class=&quot;a-ops&quot;&gt;&lt;form method=&quot;post&quot; action=&quot;#&quot; data-confirm-title=&quot;「ダミーテキストA」を削除しますか？&quot; data-confirm=&quot;この操作は元に戻せません。&quot; data-confirm-ok=&quot;削除する&quot;&gt;
+          &lt;button class=&quot;c-button c-button--sm c-button--negative c-button--outline c-data-table__delete&quot; type=&quot;submit&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/delete.svg の path --&gt;&lt;/svg&gt;&lt;span class=&quot;c-data-table__delete-label&quot;&gt;削除する&lt;/span&gt;&lt;/button&gt;
+        &lt;/form&gt;&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;c-data-table__cell--title&quot;&gt;&lt;a class=&quot;c-truncate&quot; href=&quot;#&quot;&gt;ダミーテキストB&lt;/a&gt;&lt;span class=&quot;c-data-table__row-status&quot;&gt;&lt;span class=&quot;a-status a-status--draft&quot;&gt;下書き&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;c-data-table__row-date&quot;&gt;2026.07.24&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--status&quot;&gt;&lt;span class=&quot;a-status a-status--draft&quot;&gt;下書き&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--date&quot;&gt;2026.07.24&lt;/td&gt;
+        &lt;td&gt;&lt;div class=&quot;a-ops&quot;&gt;&lt;form method=&quot;post&quot; action=&quot;#&quot; data-confirm-title=&quot;「ダミーテキストB」を削除しますか？&quot; data-confirm=&quot;この操作は元に戻せません。&quot; data-confirm-ok=&quot;削除する&quot;&gt;
+          &lt;button class=&quot;c-button c-button--sm c-button--negative c-button--outline c-data-table__delete&quot; type=&quot;submit&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/delete.svg の path --&gt;&lt;/svg&gt;&lt;span class=&quot;c-data-table__delete-label&quot;&gt;削除する&lt;/span&gt;&lt;/button&gt;
+        &lt;/form&gt;&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></details></div>
+<ul class="ds-list"><li>状態と日付は、広い画面用のセル（<code>c-data-table__cell--status</code> / <code>c-data-table__cell--date</code>）と、スマホ幅用（タイトルのセルの中の <code>c-data-table__row-status</code> / <code>c-data-table__row-date</code>）の両方に書く</li><li>削除ボタンは <code>c-data-table__delete</code>。中に <code>&lt;icon name="delete" size="sm"/&gt;</code> と <code>&lt;span class="c-data-table__delete-label"&gt;削除する&lt;/span&gt;</code> を入れる（どの幅でもゴミ箱のアイコンだけを見せ、文字は読み上げ用に残す。読み上げでは「削除する」と読まれる。行が分かるよう、ボタンに <code>aria-label="「タイトル」を削除する"</code> を付けるとよい）</li></ul>
+
+<h4>並び替えのある一覧（よくある質問。スマホ幅では3列に畳む）</h4>
+<p>Q番号・グループ・並び替えがある一覧は、620px 以下で<strong>左に並び替え（上へ・下へを縦に重ねる）</strong>、<strong>真ん中に 1行目 グループ／2行目 Q番号と質問</strong>、<strong>右に 1行目 状態／2行目 削除（ゴミ箱）</strong>の3列にする。横スクロールしない。広い画面は Q番号 → 質問 → グループ → 状態 → 操作（右端）。「操作の列は右端」の例外で、並び替えのある一覧だけで使う。番号を持たない行（下書き・公開予約）の Q番号は「—」。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-data-table">
+  <table>
+    <colgroup><col class="c-data-table__col--move"><col class="c-data-table__col--q"><col><col class="c-data-table__col--group"><col class="c-data-table__col--status"><col class="c-data-table__col--ops"></colgroup>
+    <thead><tr><th scope="col" class="c-data-table__cell--move">並び替え</th><th scope="col" class="c-data-table__cell--q">Q番号</th><th scope="col" class="c-data-table__cell--title">質問</th><th scope="col" class="c-data-table__cell--group">グループ</th><th scope="col" class="c-data-table__cell--status">状態</th><th scope="col">操作</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="c-data-table__cell--move"><form method="post" action="#"><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="up" aria-label="「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を上へ移動" disabled><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-517.59 319.83-357.41q-12.68 12.67-29.33 12.67t-29.33-12.67q-12.67-12.68-12.67-29.33t13.01-29.66l189.42-189.43q6.12-5.71 13.62-8.81 7.49-3.1 15.65-3.1t15.65 3.1q7.5 3.1 13.22 8.81L698.49-416.4q13.01 13.01 13.01 29.16t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-517.59Z"/></svg></button><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="down" aria-label="「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を下へ移動"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg></button></form></td>
+        <td class="c-data-table__cell--q">Q1</td>
+        <td class="c-data-table__cell--title"><span class="c-data-table__row-group">分類A</span><span class="c-data-table__row-title"><span class="c-data-table__row-q">Q1</span><a class="c-truncate" href="#">ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します</a></span></td>
+        <td class="c-data-table__cell--group"><span class="c-truncate">分類A</span></td>
+        <td class="c-data-table__cell--status"><span class="a-status a-status--published">公開中</span></td>
+        <td><span class="c-data-table__ops-status"><span class="a-status a-status--published">公開中</span></span><div class="a-ops"><form class="c-data-table__ops-move" method="post" action="#"><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="up" aria-label="「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を上へ移動" disabled><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-517.59 319.83-357.41q-12.68 12.67-29.33 12.67t-29.33-12.67q-12.67-12.68-12.67-29.33t13.01-29.66l189.42-189.43q6.12-5.71 13.62-8.81 7.49-3.1 15.65-3.1t15.65 3.1q7.5 3.1 13.22 8.81L698.49-416.4q13.01 13.01 13.01 29.16t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-517.59Z"/></svg></button><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="down" aria-label="「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を下へ移動"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg></button></form><form method="post" action="#" data-confirm-title="「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を削除しますか？" data-confirm="この操作は元に戻せません。" data-confirm-ok="削除する">
+          <button class="c-button c-button--sm c-button--negative c-button--outline c-data-table__delete" type="submit"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M309.37-135.87q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.5h-12q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17H378.5v-12q0-17.45 12.02-29.48 12.03-12.02 29.48-12.02h119.52q17.45 0 29.48 12.02 12.02 12.03 12.02 29.48v12h164.61q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17h-12v474.07q0 35.21-24.26 59.32t-58.74 24.11H309.37Zm341.26-557.5H309.37v474.5h341.26v-474.5ZM418.35-288.24q16.17 0 27.51-11.19 11.34-11.18 11.34-27.44v-258.74q0-16.26-11.13-27.44-11.13-11.19-27.29-11.19-16.17 0-27.63 11.19-11.45 11.18-11.45 27.44v258.74q0 16.26 11.24 27.44 11.25 11.19 27.41 11.19Zm123.11 0q16.17 0 27.51-11.19 11.33-11.18 11.33-27.44v-258.74q0-16.26-11.12-27.44-11.13-11.19-27.3-11.19-16.16 0-27.62 11.19-11.46 11.18-11.46 27.44v258.74q0 16.26 11.25 27.44 11.25 11.19 27.41 11.19ZM309.37-693.37v474.5-474.5Z"/></svg><span class="c-data-table__delete-label">削除する</span></button>
+        </form></div></td>
+      </tr>
+      <tr>
+        <td class="c-data-table__cell--move"><form method="post" action="#"><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="up" aria-label="「ダミーテキストB」を上へ移動"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-517.59 319.83-357.41q-12.68 12.67-29.33 12.67t-29.33-12.67q-12.67-12.68-12.67-29.33t13.01-29.66l189.42-189.43q6.12-5.71 13.62-8.81 7.49-3.1 15.65-3.1t15.65 3.1q7.5 3.1 13.22 8.81L698.49-416.4q13.01 13.01 13.01 29.16t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-517.59Z"/></svg></button><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="down" aria-label="「ダミーテキストB」を下へ移動" disabled><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg></button></form></td>
+        <td class="c-data-table__cell--q">—</td>
+        <td class="c-data-table__cell--title"><span class="c-data-table__row-group">分類A</span><span class="c-data-table__row-title"><span class="c-data-table__row-q">—</span><a class="c-truncate" href="#">ダミーテキストB</a></span></td>
+        <td class="c-data-table__cell--group"><span class="c-truncate">分類A</span></td>
+        <td class="c-data-table__cell--status"><span class="a-status a-status--draft">下書き</span></td>
+        <td><span class="c-data-table__ops-status"><span class="a-status a-status--draft">下書き</span></span><div class="a-ops"><form class="c-data-table__ops-move" method="post" action="#"><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="up" aria-label="「ダミーテキストB」を上へ移動"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-517.59 319.83-357.41q-12.68 12.67-29.33 12.67t-29.33-12.67q-12.67-12.68-12.67-29.33t13.01-29.66l189.42-189.43q6.12-5.71 13.62-8.81 7.49-3.1 15.65-3.1t15.65 3.1q7.5 3.1 13.22 8.81L698.49-416.4q13.01 13.01 13.01 29.16t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-517.59Z"/></svg></button><button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="down" aria-label="「ダミーテキストB」を下へ移動" disabled><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg></button></form><form method="post" action="#" data-confirm-title="「ダミーテキストB」を削除しますか？" data-confirm="この操作は元に戻せません。" data-confirm-ok="削除する">
+          <button class="c-button c-button--sm c-button--negative c-button--outline c-data-table__delete" type="submit"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M309.37-135.87q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.5h-12q-17.45 0-29.48-11.96-12.02-11.97-12.02-29.33t12.02-29.54q12.03-12.17 29.48-12.17H378.5v-12q0-17.45 12.02-29.48 12.03-12.02 29.48-12.02h119.52q17.45 0 29.48 12.02 12.02 12.03 12.02 29.48v12h164.61q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17h-12v474.07q0 35.21-24.26 59.32t-58.74 24.11H309.37Zm341.26-557.5H309.37v474.5h341.26v-474.5ZM418.35-288.24q16.17 0 27.51-11.19 11.34-11.18 11.34-27.44v-258.74q0-16.26-11.13-27.44-11.13-11.19-27.29-11.19-16.17 0-27.63 11.19-11.45 11.18-11.45 27.44v258.74q0 16.26 11.24 27.44 11.25 11.19 27.41 11.19Zm123.11 0q16.17 0 27.51-11.19 11.33-11.18 11.33-27.44v-258.74q0-16.26-11.12-27.44-11.13-11.19-27.3-11.19-16.16 0-27.62 11.19-11.46 11.18-11.46 27.44v258.74q0 16.26 11.25 27.44 11.25 11.19 27.41 11.19ZM309.37-693.37v474.5-474.5Z"/></svg><span class="c-data-table__delete-label">削除する</span></button>
+        </form></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-data-table&quot;&gt;
+  &lt;table&gt;
+    &lt;colgroup&gt;&lt;col class=&quot;c-data-table__col--move&quot;&gt;&lt;col class=&quot;c-data-table__col--q&quot;&gt;&lt;col&gt;&lt;col class=&quot;c-data-table__col--group&quot;&gt;&lt;col class=&quot;c-data-table__col--status&quot;&gt;&lt;col class=&quot;c-data-table__col--ops&quot;&gt;&lt;/colgroup&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--move&quot;&gt;並び替え&lt;/th&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--q&quot;&gt;Q番号&lt;/th&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--title&quot;&gt;質問&lt;/th&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--group&quot;&gt;グループ&lt;/th&gt;&lt;th scope=&quot;col&quot; class=&quot;c-data-table__cell--status&quot;&gt;状態&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;操作&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;c-data-table__cell--move&quot;&gt;&lt;form method=&quot;post&quot; action=&quot;#&quot;&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;up&quot; aria-label=&quot;「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を上へ移動&quot; disabled&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_less.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;down&quot; aria-label=&quot;「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を下へ移動&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_more.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/form&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--q&quot;&gt;Q1&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--title&quot;&gt;&lt;span class=&quot;c-data-table__row-group&quot;&gt;分類A&lt;/span&gt;&lt;span class=&quot;c-data-table__row-title&quot;&gt;&lt;span class=&quot;c-data-table__row-q&quot;&gt;Q1&lt;/span&gt;&lt;a class=&quot;c-truncate&quot; href=&quot;#&quot;&gt;ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--group&quot;&gt;&lt;span class=&quot;c-truncate&quot;&gt;分類A&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--status&quot;&gt;&lt;span class=&quot;a-status a-status--published&quot;&gt;公開中&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class=&quot;c-data-table__ops-status&quot;&gt;&lt;span class=&quot;a-status a-status--published&quot;&gt;公開中&lt;/span&gt;&lt;/span&gt;&lt;div class=&quot;a-ops&quot;&gt;&lt;form class=&quot;c-data-table__ops-move&quot; method=&quot;post&quot; action=&quot;#&quot;&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;up&quot; aria-label=&quot;「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を上へ移動&quot; disabled&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_less.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;down&quot; aria-label=&quot;「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を下へ移動&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_more.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/form&gt;&lt;form method=&quot;post&quot; action=&quot;#&quot; data-confirm-title=&quot;「ダミーテキストA：とても長い質問の例。幅に入り切らないときは省略して表示します」を削除しますか？&quot; data-confirm=&quot;この操作は元に戻せません。&quot; data-confirm-ok=&quot;削除する&quot;&gt;
+          &lt;button class=&quot;c-button c-button--sm c-button--negative c-button--outline c-data-table__delete&quot; type=&quot;submit&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/delete.svg の path --&gt;&lt;/svg&gt;&lt;span class=&quot;c-data-table__delete-label&quot;&gt;削除する&lt;/span&gt;&lt;/button&gt;
+        &lt;/form&gt;&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;c-data-table__cell--move&quot;&gt;&lt;form method=&quot;post&quot; action=&quot;#&quot;&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;up&quot; aria-label=&quot;「ダミーテキストB」を上へ移動&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_less.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;down&quot; aria-label=&quot;「ダミーテキストB」を下へ移動&quot; disabled&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_more.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/form&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--q&quot;&gt;—&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--title&quot;&gt;&lt;span class=&quot;c-data-table__row-group&quot;&gt;分類A&lt;/span&gt;&lt;span class=&quot;c-data-table__row-title&quot;&gt;&lt;span class=&quot;c-data-table__row-q&quot;&gt;—&lt;/span&gt;&lt;a class=&quot;c-truncate&quot; href=&quot;#&quot;&gt;ダミーテキストB&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--group&quot;&gt;&lt;span class=&quot;c-truncate&quot;&gt;分類A&lt;/span&gt;&lt;/td&gt;
+        &lt;td class=&quot;c-data-table__cell--status&quot;&gt;&lt;span class=&quot;a-status a-status--draft&quot;&gt;下書き&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class=&quot;c-data-table__ops-status&quot;&gt;&lt;span class=&quot;a-status a-status--draft&quot;&gt;下書き&lt;/span&gt;&lt;/span&gt;&lt;div class=&quot;a-ops&quot;&gt;&lt;form class=&quot;c-data-table__ops-move&quot; method=&quot;post&quot; action=&quot;#&quot;&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;up&quot; aria-label=&quot;「ダミーテキストB」を上へ移動&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_less.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;down&quot; aria-label=&quot;「ダミーテキストB」を下へ移動&quot; disabled&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_more.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/form&gt;&lt;form method=&quot;post&quot; action=&quot;#&quot; data-confirm-title=&quot;「ダミーテキストB」を削除しますか？&quot; data-confirm=&quot;この操作は元に戻せません。&quot; data-confirm-ok=&quot;削除する&quot;&gt;
+          &lt;button class=&quot;c-button c-button--sm c-button--negative c-button--outline c-data-table__delete&quot; type=&quot;submit&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/delete.svg の path --&gt;&lt;/svg&gt;&lt;span class=&quot;c-data-table__delete-label&quot;&gt;削除する&lt;/span&gt;&lt;/button&gt;
+        &lt;/form&gt;&lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></details></div>
+<ul class="ds-list"><li>狭い画面だけで出すものは、広い画面用のセルと<strong>両方に書く</strong>：グループ（<code>c-data-table__row-group</code> と <code>c-data-table__cell--group</code>）、Q番号（<code>c-data-table__row-q</code> と <code>c-data-table__cell--q</code>）、状態（<code>c-data-table__ops-status</code> と <code>c-data-table__cell--status</code>）</li><li>並び替えのボタンも2か所に書く：左の列（<code>c-data-table__cell--move</code>・狭い画面だけ）と操作の列（<code>c-data-table__ops-move</code>・広い画面だけ）。同時には出ない</li><li>Q番号と質問は <code>c-data-table__row-title</code> で1行に並べる（質問は <code>c-truncate</code> で「…」）</li></ul>
+</section>
+
+<section class="ds-section" id="a-status">
+  <h3><code>a-status</code> — 状態バッジ</h3>
+<p class="ds-classes">クラス：<code>a-status</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<span class="a-status a-status--published">公開中</span>
+<span class="a-status a-status--draft">下書き</span>
+<span class="a-status a-status--scheduled">公開予約</span>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;span class=&quot;a-status a-status--published&quot;&gt;公開中&lt;/span&gt;
+&lt;span class=&quot;a-status a-status--draft&quot;&gt;下書き&lt;/span&gt;
+&lt;span class=&quot;a-status a-status--scheduled&quot;&gt;公開予約&lt;/span&gt;</code></pre></details></div>
+
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>.a-status { block-size: var(--p-6); font-size: var(--font-xs); line-height: var(--lh-none);
+            border-radius: var(--radius-full); border: 1px solid; background: var(--panel); }</code></pre></details></div>
+<p>高さは <strong>24px・文字 12px</strong>（共通部品の <code>c-tag</code> と同じ）。<strong>ボタンと同じ高さにしない</strong>（小さいボタンは 32px）。並べたときに、押せるボタンと押せないタグを高さでも見分けられるようにする。</p>
+
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>状態</th><th>色</th><th>枠線の形</th><th>トークン</th></tr></thead><tbody><tr><td>公開中</td><td>緑</td><td><strong>実線</strong></td><td><code>--state-published</code>（<code>--green-600</code>）</td></tr><tr><td>下書き</td><td>灰紫</td><td><strong>点線</strong></td><td><code>--state-draft</code>（<code>--mauve-500</code>）</td></tr><tr><td>公開予約</td><td>琥珀</td><td><strong>破線</strong></td><td><code>--state-scheduled</code>（<code>--amber-600</code>）</td></tr></tbody></table></div>
+<p>3色とも白の上で <strong>5.0:1 以上</strong>あることを確認済み。</p>
+<h4>守ること</h4>
+<ul class="ds-list"><li><strong>地は白のまま。</strong> 塗ると文字とのコントラストが取れない</li><li><strong>形（実線・点線・破線）も残す。</strong> 色だけに頼らない（色覚特性への配慮）</li><li>角丸は <strong>999px</strong>。ボタン（8px）と見間違えないため</li><li><strong>新しい状態色を追加しない</strong></li></ul>
+<h4>⚠️ 予約投稿とエラーを同じ見た目にしない</h4>
+<p>予約は<strong>正常な状態</strong>であり、異常を示すエラーや破壊的操作である削除と混同させてはならない。 破線は「まだ有効になっていない」の意味で、サービス案内の「当施設では対応していません」 （<code>c-card--unavailable</code>）と同じ語彙。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>状態は色だけでなく文字（公開中・下書き・公開予約）で示す</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="a-ops">
+  <h3><code>a-ops</code> — 行の操作</h3>
+<p class="ds-classes">クラス：<code>a-ops</code>（ボタンは共通の <code>c-button</code> の sm）</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-data-table">
+  <table>
+    <tbody>
+      <tr>
+        <td>ダミーテキストA</td>
+        <td><div class="a-ops">
+          <form method="post" action="/admin/items/1/reorder">
+            <button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="up" aria-label="上へ移動"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-517.59 319.83-357.41q-12.68 12.67-29.33 12.67t-29.33-12.67q-12.67-12.68-12.67-29.33t13.01-29.66l189.42-189.43q6.12-5.71 13.62-8.81 7.49-3.1 15.65-3.1t15.65 3.1q7.5 3.1 13.22 8.81L698.49-416.4q13.01 13.01 13.01 29.16t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-517.59Z"/></svg></button>
+            <button class="c-button c-button--sm c-button--icon c-button--secondary c-button--outline" type="submit" name="dir" value="down" aria-label="下へ移動"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg></button>
+          </form>
+          <form method="post" action="/admin/items/1/delete" data-confirm-title="「ダミーテキストA」を削除しますか？" data-confirm="この操作は元に戻せません。" data-confirm-ok="削除する">
+            <button class="c-button c-button--sm c-button--negative c-button--outline" type="submit">削除する</button>
+          </form>
+        </div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-data-table&quot;&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;ダミーテキストA&lt;/td&gt;
+        &lt;td&gt;&lt;div class=&quot;a-ops&quot;&gt;
+          &lt;form method=&quot;post&quot; action=&quot;/admin/items/1/reorder&quot;&gt;
+            &lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;up&quot; aria-label=&quot;上へ移動&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_less.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;
+            &lt;button class=&quot;c-button c-button--sm c-button--icon c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;dir&quot; value=&quot;down&quot; aria-label=&quot;下へ移動&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/expand_more.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;
+          &lt;/form&gt;
+          &lt;form method=&quot;post&quot; action=&quot;/admin/items/1/delete&quot; data-confirm-title=&quot;「ダミーテキストA」を削除しますか？&quot; data-confirm=&quot;この操作は元に戻せません。&quot; data-confirm-ok=&quot;削除する&quot;&gt;
+            &lt;button class=&quot;c-button c-button--sm c-button--negative c-button--outline&quot; type=&quot;submit&quot;&gt;削除する&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></details></div>
+
+<h4>⚠️ <code>display: flex</code> は <code>&lt;td&gt;</code> ではなく中の <code>&lt;div&gt;</code> に当てる</h4>
+<p><code>td</code> に当てると行の組み立てが壊れ、狭い画面で操作列が他の列に重なる。</p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>クラス</th><th>用途</th></tr></thead><tbody><tr><td><code>a-ops</code></td><td>行の中の操作。<code>gap: 8px</code></td></tr><tr><td><code>c-button c-button--sm c-button--icon</code></td><td>並べ替え（上へ・下へ）。<code>c-button--secondary c-button--outline</code>。削除は <code>c-button--sm c-button--negative c-button--outline</code></td></tr></tbody></table></div>
+<p>操作列は内容ぶんだけの幅にして、余った幅はタイトル列に吸わせる。</p>
+<h4>⚠️ 押せないときは <code>disabled</code> を付ける</h4>
+<p>「上へ移動」は先頭の行では押せない（<code>c-button</code> は <code>disabled</code> で押せない見た目になる）。 押せないものが押せるように見えると、<strong>反応しないボタン</strong>になる。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>アイコンだけのボタンは aria-label（例：上へ移動）</li><li>押せないときは disabled</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="admin-empty">
+  <h3>1件も無いとき — 共通部品の <code>c-empty</code> を使う</h3>
+<p class="ds-classes">クラス：<code>c-empty</code>（<a href="display.html">空状態・区切り</a>）</p>
+<p>管理画面専用の空状態（<code>a-empty</code>）は持たない。共通部品の <code>c-empty</code> を使う。<strong>管理画面では中にボタンを置かない</strong>（見出しの行に「新規作成」があるため。主ボタンは1画面に1つ）。「無い」だけで終わらせず、次にやることを文で書く。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-empty">
+  <span class="c-empty__icon"><svg class="c-icon c-icon--xl" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-120H640q-30 38-71.5 59T480-240q-47 0-88.5-21T320-320H200v120Zm280-120q32 0 59-16.5t44-43.5q6-9 15-14.5t20-5.5h142v-360H200v360h142q11 0 20 5.5t15 14.5q17 27 44 43.5t59 16.5ZM200-200h560-560Z"/></svg></span>
+  <h3 class="c-empty__title">記事はまだありません</h3>
+  <p class="c-empty__text">「新規作成」から追加してください。</p>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-empty&quot;&gt;
+  &lt;span class=&quot;c-empty__icon&quot;&gt;&lt;svg class=&quot;c-icon c-icon--xl&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/inbox.svg の path --&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;h3 class=&quot;c-empty__title&quot;&gt;記事はまだありません&lt;/h3&gt;
+  &lt;p class=&quot;c-empty__text&quot;&gt;「新規作成」から追加してください。&lt;/p&gt;
+&lt;/div&gt;</code></pre></details></div>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>「無い」だけで終わらせず、次にやること（「新規作成」から追加）を文字で書く</li></ul></div></div>
+</section>
+
+<section class="ds-section ds-section--group" id="admin-form">
+  <h2>フォーム</h2>
+<div class="ds-intro">
+<p>入力とボタン。</p>
+</div>
+</section>
+
+<section class="ds-section" id="a-login">
+  <h3><code>a-login</code> — ログイン画面</h3>
+<p class="ds-classes">クラス：<code>a-login</code></p>
+<p>管理画面のログイン画面の器。公開サイトのヘッダー・フッターは出さず、画面の中央にカードを1枚置く。上から ロゴ → 見出し → カード → 下のリンク。見出しの下に説明文は置かない。カードの中は共通部品（ラベルセット・入力欄・チェックボックス・ボタン・知らせ）。実装では <code>&lt;body class="a-login"&gt;</code> に付ける（下の見本は、まとめサイトの中に置くため <code>&lt;div&gt;</code> で表示している）。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="a-login" style="min-block-size: 0">
+  <div class="a-login__inner">
+    <div class="a-login__head">
+      <a class="a-login__brand" href="#" aria-disabled="true"><img src="assets/placeholder.svg" alt="ダミー画像" width="119" height="63"></a>
+      <h1 class="a-login__title">項目Aにログイン</h1>
+    </div>
+    <div class="a-login__card">
+      <form class="c-form" method="post" action="#" data-validate>
+        <div class="c-alert c-alert--error c-error-summary" tabindex="-1" aria-labelledby="al-sum-title"><svg class="c-icon c-icon--lg" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm0-160q17 0 28.5-11.5T520-480v-160q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640v160q0 17 11.5 28.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg><div class="c-alert__body"><p class="c-alert__title" id="al-sum-title">入力内容を確認してください</p><ul class="c-error-summary__list"></ul></div></div>
+        <div class="c-form__section">
+        <div class="c-formset">
+          <div class="c-formset__head"><label class="c-label" for="al-user">ユーザー名またはメールアドレス</label><span class="c-req c-req--required">必須</span></div>
+          <div class="c-formset__control"><div class="c-field"><input class="c-field__input" id="al-user" name="username" type="text" autocomplete="username" required></div></div>
+        </div>
+        <div class="c-formset">
+          <div class="c-formset__head"><label class="c-label" for="al-pass">パスワード</label><span class="c-req c-req--required">必須</span></div>
+          <div class="c-formset__control"><div class="c-field"><input class="c-field__input" id="al-pass" name="password" type="password" autocomplete="current-password" required></div></div>
+        </div>
+        <fieldset class="c-formset">
+          <legend class="c-formset__head"><span class="c-label">ログイン状態</span><span class="c-req c-req--optional">任意</span></legend>
+          <div class="c-formset__control"><label class="c-choice"><input class="c-choice__input" type="checkbox" name="rememberme" value="1"><span class="c-choice__mark"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg></span><span class="c-choice__text">ログイン状態を保持する</span></label></div>
+        </fieldset>
+        </div>
+        <div class="c-form__actions"><button class="c-button c-button--block" type="submit">ログインする</button></div>
+      </form>
+    </div>
+    <p class="a-login__foot"><a class="c-link" href="#">項目Bへ戻る</a></p>
+  </div>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;a-login&quot; style=&quot;min-block-size: 0&quot;&gt;
+  &lt;div class=&quot;a-login__inner&quot;&gt;
+    &lt;div class=&quot;a-login__head&quot;&gt;
+      &lt;a class=&quot;a-login__brand&quot; href=&quot;#&quot; aria-disabled=&quot;true&quot;&gt;&lt;img src=&quot;assets/placeholder.svg&quot; alt=&quot;ダミー画像&quot; width=&quot;119&quot; height=&quot;63&quot;&gt;&lt;/a&gt;
+      &lt;h1 class=&quot;a-login__title&quot;&gt;項目Aにログイン&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;a-login__card&quot;&gt;
+      &lt;form class=&quot;c-form&quot; method=&quot;post&quot; action=&quot;#&quot; data-validate&gt;
+        &lt;div class=&quot;c-alert c-alert--error c-error-summary&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;al-sum-title&quot;&gt;&lt;svg class=&quot;c-icon c-icon--lg&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/error_fill1.svg の path --&gt;&lt;/svg&gt;&lt;div class=&quot;c-alert__body&quot;&gt;&lt;p class=&quot;c-alert__title&quot; id=&quot;al-sum-title&quot;&gt;入力内容を確認してください&lt;/p&gt;&lt;ul class=&quot;c-error-summary__list&quot;&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;c-form__section&quot;&gt;
+        &lt;div class=&quot;c-formset&quot;&gt;
+          &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;al-user&quot;&gt;ユーザー名またはメールアドレス&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+          &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-field&quot;&gt;&lt;input class=&quot;c-field__input&quot; id=&quot;al-user&quot; name=&quot;username&quot; type=&quot;text&quot; autocomplete=&quot;username&quot; required&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;c-formset&quot;&gt;
+          &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;al-pass&quot;&gt;パスワード&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+          &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-field&quot;&gt;&lt;input class=&quot;c-field__input&quot; id=&quot;al-pass&quot; name=&quot;password&quot; type=&quot;password&quot; autocomplete=&quot;current-password&quot; required&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;fieldset class=&quot;c-formset&quot;&gt;
+          &lt;legend class=&quot;c-formset__head&quot;&gt;&lt;span class=&quot;c-label&quot;&gt;ログイン状態&lt;/span&gt;&lt;span class=&quot;c-req c-req--optional&quot;&gt;任意&lt;/span&gt;&lt;/legend&gt;
+          &lt;div class=&quot;c-formset__control&quot;&gt;&lt;label class=&quot;c-choice&quot;&gt;&lt;input class=&quot;c-choice__input&quot; type=&quot;checkbox&quot; name=&quot;rememberme&quot; value=&quot;1&quot;&gt;&lt;span class=&quot;c-choice__mark&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/check.svg の path --&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class=&quot;c-choice__text&quot;&gt;ログイン状態を保持する&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;
+        &lt;/fieldset&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;c-form__actions&quot;&gt;&lt;button class=&quot;c-button c-button--block&quot; type=&quot;submit&quot;&gt;ログインする&lt;/button&gt;&lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;p class=&quot;a-login__foot&quot;&gt;&lt;a class=&quot;c-link&quot; href=&quot;#&quot;&gt;項目Bへ戻る&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></div>
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>.a-login { min-block-size: 100vh; display: grid; place-items: center; background: var(--bg); }
+.a-login__inner { max-inline-size: var(--admin-login-w); }   /* 400px */
+.a-login__card { padding: var(--p-8); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }</code></pre></details></div>
+<ul class="ds-list"><li>見出しは管理画面の決まりどおりゴシック（<code>a-login__title</code>）</li><li>主ボタンは「ログインする」の1つだけ。カードの幅いっぱい（<code>c-button--block</code>）</li><li>ログインできなかったなどの知らせは、カードの中の先頭に <code>c-alert</code> で出す</li><li>620px 以下はカードの余白を 24px に詰める</li><li>項目は <code>c-form__section</code> で包む（項目どうし 24px）。<code>c-form</code> の直下に並べると、まとまりどうしの 48px になる</li></ul>
+</section>
+
+<section class="ds-section" id="a-form">
+  <h3><code>a-form</code> — フォームの器</h3>
+<p class="ds-classes">クラス：<code>a-form</code></p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<form class="a-form c-form" method="post" action="/admin/items/1/save" data-validate>
+  <div class="c-form__section">
+  <div class="c-formset">
+    <div class="c-formset__head"><label class="c-label" for="f-title">タイトル</label><span class="c-req c-req--required">必須</span></div>
+    <div class="c-formset__control"><div class="c-field"><input class="c-field__input" id="f-title" name="title" type="text" required></div></div>
+  </div>
+  <div class="c-formset">
+    <div class="c-formset__head"><label class="c-label" for="f-date">公開日時</label><span class="c-req c-req--required">必須</span></div>
+    <p class="c-formset__help" id="f-date-help">未来の日時にすると、その時刻まで公開されません（公開予約）。</p>
+    <div class="c-formset__control"><div class="c-field"><input class="c-field__input" id="f-date" name="date" type="datetime-local" required aria-describedby="f-date-help"></div></div>
+  </div>
+  <fieldset class="c-formset">
+    <legend class="c-formset__head"><span class="c-label">トップページへの表示</span><span class="c-req c-req--optional">任意</span></legend>
+    <div class="c-formset__control"><label class="c-choice"><input class="c-choice__input" type="checkbox" name="show_on_top" value="1"><span class="c-choice__mark"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg></span><span class="c-choice__text">トップページにも表示する</span></label></div>
+  </fieldset>
+  </div>
+  <div class="c-form__actions">
+    <button class="c-button c-button--secondary c-button--outline" type="submit" name="draft" value="1">下書き保存</button>
+    <button class="c-button" type="submit">公開する</button>
+  </div>
+</form>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;form class=&quot;a-form c-form&quot; method=&quot;post&quot; action=&quot;/admin/items/1/save&quot; data-validate&gt;
+  &lt;div class=&quot;c-form__section&quot;&gt;
+  &lt;div class=&quot;c-formset&quot;&gt;
+    &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;f-title&quot;&gt;タイトル&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-field&quot;&gt;&lt;input class=&quot;c-field__input&quot; id=&quot;f-title&quot; name=&quot;title&quot; type=&quot;text&quot; required&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-formset&quot;&gt;
+    &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;f-date&quot;&gt;公開日時&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+    &lt;p class=&quot;c-formset__help&quot; id=&quot;f-date-help&quot;&gt;未来の日時にすると、その時刻まで公開されません（公開予約）。&lt;/p&gt;
+    &lt;div class=&quot;c-formset__control&quot;&gt;&lt;div class=&quot;c-field&quot;&gt;&lt;input class=&quot;c-field__input&quot; id=&quot;f-date&quot; name=&quot;date&quot; type=&quot;datetime-local&quot; required aria-describedby=&quot;f-date-help&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;fieldset class=&quot;c-formset&quot;&gt;
+    &lt;legend class=&quot;c-formset__head&quot;&gt;&lt;span class=&quot;c-label&quot;&gt;トップページへの表示&lt;/span&gt;&lt;span class=&quot;c-req c-req--optional&quot;&gt;任意&lt;/span&gt;&lt;/legend&gt;
+    &lt;div class=&quot;c-formset__control&quot;&gt;&lt;label class=&quot;c-choice&quot;&gt;&lt;input class=&quot;c-choice__input&quot; type=&quot;checkbox&quot; name=&quot;show_on_top&quot; value=&quot;1&quot;&gt;&lt;span class=&quot;c-choice__mark&quot;&gt;&lt;svg class=&quot;c-icon c-icon--sm&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/check.svg の path --&gt;&lt;/svg&gt;&lt;/span&gt;&lt;span class=&quot;c-choice__text&quot;&gt;トップページにも表示する&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-form__actions&quot;&gt;
+    &lt;button class=&quot;c-button c-button--secondary c-button--outline&quot; type=&quot;submit&quot; name=&quot;draft&quot; value=&quot;1&quot;&gt;下書き保存&lt;/button&gt;
+    &lt;button class=&quot;c-button&quot; type=&quot;submit&quot;&gt;公開する&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre></details></div>
+
+<p><code>a-form</code> は管理画面のフォームの幅（<code>max-width: 880px</code>）だけを持つ。中の項目は共通部品のラベルセット（<code>c-formset</code>）・入力欄（<code>c-field</code>）・チェックボックス（<code>c-choice</code>）を使い、<code>c-form</code> と <code>data-validate</code> で検証も公開サイトと同じに動く。</p>
+<ul class="ds-list"><li><strong>余白</strong>：項目は <code>c-form__section</code> で包む（項目どうし 24px）。項目とボタン（<code>c-form__actions</code>）の間は <code>c-form</code> の 48px。<code>c-formset</code> を <code>c-form</code> の直下に並べない（項目どうしが 48px になる）</li><li>ラベルと入力欄の間は 8px（<code>c-formset__control</code> が持つ）。入力欄・選択肢・編集ツールは必ず <code>c-formset__control</code> で包む</li></ul>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>label と入力欄を for / id でつなぐ</li><li>必須は「必須」の文字で示す</li><li>エラー（c-formset__error）は aria-describedby で入力欄とつなぐ（data-validate のフォームなら JS がつなぐ）</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="ラベルと入力欄">
+  <h3>ラベルと入力欄 — 共通部品を使う</h3>
+<p>管理画面専用のラベル・入力欄（<code>a-label</code>・<code>a-input</code>・<code>a-textarea</code>・<code>a-hint</code>・<code>a-check</code>・<code>a-req</code>）は持たない。公開サイトと同じ共通部品を使う（<a href="form.html">ラベル・入力欄</a>・<a href="choice.html">チェック・ラジオ・スイッチ</a>）。</p>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>もの</th><th>使う部品</th></tr></thead><tbody><tr><td>ラベル・必須／任意・補足説明</td><td><code>c-formset</code>（<code>c-label</code>・<code>c-req</code>・<code>c-formset__help</code>）</td></tr><tr><td>1行の入力欄（日時も）</td><td><code>c-field</code> ＋ <code>c-field__input</code></td></tr><tr><td>複数行</td><td><code>c-textarea-box</code> ＋ <code>c-textarea</code></td></tr><tr><td>チェックボックス</td><td><code>c-choice</code></td></tr><tr><td>エラー</td><td><code>c-formset__error</code>（<code>data-validate</code> のフォームなら JS が出す）</td></tr></tbody></table></div>
+<ul class="ds-list"><li>入力欄の文字は 16px（iOS Safari は16px未満の入力欄にフォーカスすると画面を拡大する）。高さはボタンと同じ 48px。どちらも共通部品が持っている</li><li><code>outline: none</code> にしない（フォーカスの枠は共通部品が出す）</li></ul>
+<h4>ラベルをプレースホルダーで代替しない（例外あり）</h4>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>例</th><th>判断</th></tr></thead><tbody><tr><td>一覧の行の中で名前を直す入力欄（例：分類名）</td><td><strong>許容</strong>（行の中の入力欄・文脈から自明）</td></tr><tr><td>記事編集のタイトル・公開日時</td><td><strong>ラベルを置く</strong>（必須項目で、入力後も確かめたい）</td></tr><tr><td>設定画面の URL の入力欄</td><td><strong>ラベルを置く</strong>（形式の説明が要る）</td></tr></tbody></table></div>
+<p>詳しくは <a href="rules-prohibitions.html">禁止パターン</a>。</p>
+</section>
+
+<section class="ds-section" id="admin-button">
+  <h3>ボタン — 共通部品の <code>c-button</code> を使う</h3>
+<p class="ds-classes">クラス：<code>c-button</code>（<a href="button.html">ボタン</a>）</p>
+<p>管理画面専用のボタン（<code>a-button</code>）は持たない。公開サイトと同じ角型の <code>c-button</code> を使う（複数の場所で使う部品は共通部品に置く決まり）。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<a class="c-button c-button--secondary c-button--outline" href="#">一覧へ戻る</a>
+<button class="c-button" type="submit">公開する</button>
+<button class="c-button c-button--negative c-button--outline" type="submit">削除する</button>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;a class=&quot;c-button c-button--secondary c-button--outline&quot; href=&quot;#&quot;&gt;一覧へ戻る&lt;/a&gt;
+&lt;button class=&quot;c-button&quot; type=&quot;submit&quot;&gt;公開する&lt;/button&gt;
+&lt;button class=&quot;c-button c-button--negative c-button--outline&quot; type=&quot;submit&quot;&gt;削除する&lt;/button&gt;</code></pre></details></div>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>使うとき</th><th>クラス</th></tr></thead><tbody><tr><td><strong>その画面の主操作。1画面に1つ</strong></td><td><code>c-button</code>（<code>--primary-solid</code> の塗り・白文字 5.38:1）</td></tr><tr><td>副操作・戻る</td><td><code>c-button c-button--secondary c-button--outline</code></td></tr><tr><td>削除など戻せない操作</td><td><code>c-button c-button--negative c-button--outline</code>（確認ダイアログの実行ボタンは <code>c-button--negative</code> の塗り）</td></tr></tbody></table></div>
+<ul class="ds-list"><li>フォームの下のボタンの並びは共通部品の <code>c-form__actions</code>（右寄せ。スマホでは横幅いっぱいのボタンを縦に並べる）。管理画面専用の並び（<code>a-actions</code>）は持たない</li><li>ラベルは折り返させない（<code>c-button</code> は <code>white-space: nowrap</code>）</li><li>押せないボタンは <code>disabled</code>（リンクなら <code>aria-disabled="true"</code>）。見た目は <code>c-button</code> が持っている</li></ul>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>押せないボタンは disabled（リンクなら aria-disabled）</li><li>削除は色だけでなく文字（「削除する」）で分かるようにする</li></ul></div></div>
+</section>
+
+
+<section class="ds-section ds-section--group" id="admin-editor">
+  <h2>本文の編集ツール</h2>
+<div class="ds-intro">
+<p>記事本文をワープロと同じ形で編集する画面（WYSIWYG）。編集部分には Tiptap（ProseMirror）を使う。</p>
+</div>
+</section>
+
+<section class="ds-section" id="マークアップ">
+  <h3>マークアップ</h3>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-formset">
+  <div class="c-formset__head"><label class="c-label" for="f-body">本文</label><span class="c-req c-req--required">必須</span></div>
+  <div class="c-formset__control">
+    <div class="a-editor">
+      <div class="a-editor__toolbar">
+        <button class="a-editor__button" type="button">見出し</button>
+        <button class="a-editor__button is-active" type="button">太字</button>
+        <button class="a-editor__button" type="button">リンク</button>
+      </div>
+      <div class="a-editor__content"><!-- ProseMirror がここに入る --></div>
+    </div>
+  </div>
+</div>
+
+<!-- 読み込めなかったときの受け皿 -->
+<div class="c-textarea-box"><textarea class="c-textarea" id="f-body" name="body" required aria-label="本文">ダミーテキストA</textarea></div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-formset&quot;&gt;
+  &lt;div class=&quot;c-formset__head&quot;&gt;&lt;label class=&quot;c-label&quot; for=&quot;f-body&quot;&gt;本文&lt;/label&gt;&lt;span class=&quot;c-req c-req--required&quot;&gt;必須&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;c-formset__control&quot;&gt;
+    &lt;div class=&quot;a-editor&quot;&gt;
+      &lt;div class=&quot;a-editor__toolbar&quot;&gt;
+        &lt;button class=&quot;a-editor__button&quot; type=&quot;button&quot;&gt;見出し&lt;/button&gt;
+        &lt;button class=&quot;a-editor__button is-active&quot; type=&quot;button&quot;&gt;太字&lt;/button&gt;
+        &lt;button class=&quot;a-editor__button&quot; type=&quot;button&quot;&gt;リンク&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;a-editor__content&quot;&gt;&lt;!-- ProseMirror がここに入る --&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 読み込めなかったときの受け皿 --&gt;
+&lt;div class=&quot;c-textarea-box&quot;&gt;&lt;textarea class=&quot;c-textarea&quot; id=&quot;f-body&quot; name=&quot;body&quot; required aria-label=&quot;本文&quot;&gt;ダミーテキストA&lt;/textarea&gt;&lt;/div&gt;</code></pre></details></div>
+
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>.a-editor { background: var(--panel); border: 1px solid var(--ink-soft); border-radius: var(--radius-sm); }</code></pre></details></div>
+<ul class="ds-list"><li><strong>ラベルとの間</strong>：<code>a-editor</code> は <code>c-formset__control</code> で包む（ラベルとの間 8px。ほかの入力欄と同じ）。包まないと 4px になる。読み込めなかったときは包みごと隠す</li><li><strong>誤り（本文が空など）</strong>：本文欄（ProseMirror の要素）に <code>aria-invalid="true"</code> と <code>aria-describedby</code>（エラーの文の id）を付けると、編集ツールの枠が入力欄（<code>c-field</code>）と同じ赤になる。隠した受け皿の textarea だけに付けても、読み上げにも見た目にも伝わらない</li><li><strong>元に戻す・やり直す</strong>：ボタンにしない。キーボードの Cmd/Ctrl+Z・Cmd/Ctrl+Shift+Z（Ctrl+Y）だけで使う</li><li><strong>ボタンの文字は変えない</strong>：選んでいるもの（画像など）によってボタンの文字を変えない。同じ画面で同じ部品に別の文言が出ると戸惑うため。たとえば画像を選んでいるときの「画像」は、押すと画像の説明を直す動きにする</li><li><strong>620px 以下</strong>：ツールバーは1段にし、入りきらないボタンは横にずらして見る（折り返すと3段になり、本文を書く場所が狭くなる）</li></ul>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>ボタンの名前は見える文字（aria-label は付けない）。ツールバーは role="toolbar" と aria-label（例：本文の書式）</li><li>太字・見出しなど、押すと書式が付く・外れるボタンは状態を aria-pressed で伝える</li><li>ダイアログを開くボタン（リンク・画像）は aria-haspopup="dialog"。aria-pressed は付けない（「押されています」と読まれるため）。いま効いている見た目は is-active で出してよい</li><li>本文欄のフォーカスは、編集ツール全体の 3px の枠で示す</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="a-editor__toolbar">
+  <h3><code>a-editor__toolbar</code> — ツールバー</h3>
+<p class="ds-classes">クラス：<code>a-editor__toolbar</code></p>
+<p>本文が長いとツールバーが画面外へ流れ、見出しやリンクを付けられなくなる。 編集中は常に手が届くよう、<strong>画面上部に貼り付ける</strong>。</p>
+<h4>⚠️ 親（<code>a-editor</code>）に <code>overflow</code> を付けない</h4>
+<p>付けると <code>sticky</code> が効かなくなる。</p>
+</section>
+
+<section class="ds-section" id="a-editor__button">
+  <h3><code>a-editor__button</code> — ツールバーのボタン</h3>
+<p class="ds-classes">クラス：<code>a-editor__button</code></p>
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>.a-editor__button { font-family: inherit; font-size: var(--font-sm); }   /* 抜粋。全体は css/admin.css */
+.a-editor__button.is-active { background: var(--bg-soft); }</code></pre></details></div>
+
+<h4>⚠️ <code>font-family</code> / <code>font-size</code> を必ず指定する</h4>
+<p>指定しないと <code>&lt;button&gt;</code> は<strong>ブラウザ既定の13.3px</strong>になる。</p>
+<p>ツールバーは項目数が多いので、本文16pxではなく <strong>14px</strong> を使う。</p>
+<p>いま効いている書式は <code>is-active</code> で示す（背景 <code>--bg-soft</code>）。</p>
+</section>
+
+<section class="ds-section" id="a-editor__content">
+  <h3><code>a-editor__content</code> — 編集領域</h3>
+<p class="ds-classes">クラス：<code>a-editor__content</code></p>
+<p><code>min-height: 260px</code> / <code>padding: 16px</code>。中の <code>.ProseMirror</code> は <code>outline: none</code>。</p>
+<h4>箇条書きは CSS で点と番号を出している</h4>
+<p><code>css/base.css</code> の <code>ul, ol { list-style: none }</code> で<strong>全部消している</strong>ため、 指定が無いと<strong>点も番号も出ず、ただの段落に見える</strong>。</p>
+
+<div class="ds-example"><p class="ds-example__title">CSS</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>.a-editor__content ul &gt; li::before { /* ピンクの丸。--blush */ }
+.a-editor__content ol { counter-reset: okalc-ol; }   /* 番号は CSS カウンタ */</code></pre></details></div>
+
+<p>点はサービス案内の <code>.c-list</code> と同じピンクの丸に揃える。 <strong><code>list-style</code> を戻さない</strong>（上のリセットと食い違う）。</p>
+<p>公開側も同じ手当てが要る（<code>.c-post__body</code> / <code>.c-faq__a</code>）。 → <a href="site-listing.html">一覧・記事・よくある質問</a></p>
+<h4><code>.ProseMirror</code> は改名できない</h4>
+<p>第三者ライブラリ由来のクラス名。検査（<code>check_rules.py</code>）の対象外（接頭辞が付いていないので調べない）。 <strong>接頭辞の規則の唯一の例外。</strong></p>
+</section>
+
+<section class="ds-section ds-section--group" id="admin-feedback">
+  <h2>知らせとダイアログ</h2>
+<div class="ds-intro">
+<p>操作の結果を伝えるもの。</p>
+</div>
+</section>
+
+<section class="ds-section" id="どれを使うか">
+  <h3>どれを使うか</h3>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th>伝えたいこと</th><th>使うもの</th><th>消え方</th></tr></thead><tbody><tr><td>「保存しました」など、<strong>済んだこと</strong></td><td><code>c-toast</code>（<code>OkaToast</code>）</td><td>数秒で自分で消える</td></tr><tr><td>画面を開いたときに一度だけ出す知らせ</td><td><code>c-alert</code></td><td>画面を移ると消える</td></tr><tr><td><strong>これから行う操作の確認</strong>（削除など）</td><td><code>c-modal</code>（<code>OkaDialog</code>）</td><td>利用者が答えるまで残る</td></tr></tbody></table></div>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>成功は role="status"、失敗は role="alert"</li><li>エラーは自動で消さず、閉じるボタンで消す（js/components.js）</li><li>操作に失敗したとき（削除できなかったなど）は、トーストで短く知らせ、理由と次の操作は見出しの下の c-alert--error に残す。そのアラートには role を付けない（2回読まれないように）</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="admin-toast">
+  <h3>結果の知らせ — 共通部品の <code>c-toast</code> を使う</h3>
+<p class="ds-classes">クラス：<code>c-toast</code>（<a href="feedback.html#toast">通知・読み込み</a>）・JS：<code>OKALC.toast</code> ／ <code>OkaToast.show</code></p>
+<p>管理画面専用のトースト（<code>a-toast</code>）は持たない。公開サイトと同じ <code>c-toast</code> を、<strong>画面の下中央</strong>に出す。成功は5秒（<code>--toast-duration</code>）で消え、エラーは閉じるボタンで消す。マウス・フォーカスが乗っている間と、タブが裏にある間は時間を数えない。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-toast c-toast--success" role="status"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg><span class="c-toast__text">保存しました</span><button class="c-toast__close" type="button" aria-label="閉じる"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-421.35 319.83-261.17Q307.15-248.5 291-249t-28.83-13.17q-12.67-12.68-12.67-29.33t12.67-29.33L421.35-480 261.17-640.17Q248.5-652.85 249-669.5t13.17-29.33q12.68-12.67 29.33-12.67t29.33 12.67L480-538.65l160.17-160.18q12.68-12.67 29.33-12.67t29.33 12.67q12.67 12.68 12.67 29.33t-12.67 29.33L538.65-480l160.18 160.17Q711.5-307.15 711.5-291t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-421.35Z"/></svg></button></div>
+<div class="c-toast c-toast--error" role="alert"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg><span class="c-toast__text">操作を受け付けられませんでした</span><button class="c-toast__close" type="button" aria-label="閉じる"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-421.35 319.83-261.17Q307.15-248.5 291-249t-28.83-13.17q-12.67-12.68-12.67-29.33t12.67-29.33L421.35-480 261.17-640.17Q248.5-652.85 249-669.5t13.17-29.33q12.68-12.67 29.33-12.67t29.33 12.67L480-538.65l160.17-160.18q12.68-12.67 29.33-12.67t29.33 12.67q12.67 12.68 12.67 29.33t-12.67 29.33L538.65-480l160.18 160.17Q711.5-307.15 711.5-291t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-421.35Z"/></svg></button></div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-toast c-toast--success&quot; role=&quot;status&quot;&gt;&lt;svg class=&quot;c-icon c-icon--md&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/check_circle_fill1.svg の path --&gt;&lt;/svg&gt;&lt;span class=&quot;c-toast__text&quot;&gt;保存しました&lt;/span&gt;&lt;button class=&quot;c-toast__close&quot; type=&quot;button&quot; aria-label=&quot;閉じる&quot;&gt;&lt;svg class=&quot;c-icon c-icon--md&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/close.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/div&gt;
+&lt;div class=&quot;c-toast c-toast--error&quot; role=&quot;alert&quot;&gt;&lt;svg class=&quot;c-icon c-icon--md&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/error_fill1.svg の path --&gt;&lt;/svg&gt;&lt;span class=&quot;c-toast__text&quot;&gt;操作を受け付けられませんでした&lt;/span&gt;&lt;button class=&quot;c-toast__close&quot; type=&quot;button&quot; aria-label=&quot;閉じる&quot;&gt;&lt;svg class=&quot;c-icon c-icon--md&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/20/close.svg の path --&gt;&lt;/svg&gt;&lt;/button&gt;&lt;/div&gt;</code></pre></details></div>
+<p>出し方は2つ。</p>
+<ul class="ds-list"><li><strong>ページを開いた時点で出す</strong>（保存して一覧に戻ったときなど）：サーバーが <code>.c-toast-region</code> の中に <code>.c-toast</code> を書き出す。閉じるボタンと時間で消す動きは JS が付ける。JS が動かなくても文字は読める</li><li><strong>あとから出す</strong>：<code>OKALC.toast('保存しました', { type: 'success', icon })</code>。管理画面の <code>OkaToast.show('保存しました', { error: false })</code> も同じものを出す</li></ul>
+<div class="ds-example"><p class="ds-example__title">HTML（サーバーが書き出す）</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-toast-region&quot;&gt;   &lt;!-- 読み上げはトーストの role（status / alert）で行う --&gt;
+  &lt;div class=&quot;c-toast c-toast--success&quot; role=&quot;status&quot;&gt;
+    &lt;!-- アイコン（icons/20/check_circle_fill1.svg の中身を c-icon の svg で） --&gt;
+    &lt;span class=&quot;c-toast__text&quot;&gt;保存しました&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></div>
+<h4>⚠️ 本文の流れの中に戻さない</h4>
+<p>結果表示が<strong>次の操作まで残り続け、見出しと表を押し下げる</strong>。</p>
+<h4><code>role</code> の使い分け</h4>
+<div class="ds-table-wrap"><table class="ds-table"><thead><tr><th></th><th><code>role</code></th></tr></thead><tbody><tr><td>成功・進行の知らせ</td><td><code>status</code></td></tr><tr><td>失敗の知らせ</td><td><code>alert</code></td></tr></tbody></table></div>
+
+</section>
+
+<section class="ds-section" id="admin-alert">
+  <h3>画面上部に残す知らせ — 共通部品の <code>c-alert</code> を使う</h3>
+<p class="ds-classes">クラス：<code>c-alert</code>（<a href="feedback.html">通知・読み込み</a>）</p>
+<p>管理画面専用の知らせ（<code>a-flash</code>）は持たない。画面を開いたときに一度だけ出す知らせは、共通部品の <code>c-alert</code> を画面の上（見出しの下）に置く。完了は <code>c-alert--success</code>（<code>role="status"</code>）、エラーは <code>c-alert--error</code>（<code>role="alert"</code>）。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-alert c-alert--success" role="status">
+  <svg class="c-icon c-icon--lg" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m424-408-86-86q-11-11-28-11t-28 11q-11 11-11 28t11 28l114 114q12 12 28 12t28-12l226-226q11-11 11-28t-11-28q-11-11-28-11t-28 11L424-408Zm56 328q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+  <div class="c-alert__body"><p class="c-alert__title">下書きとして保存しました</p></div>
+</div>
+<div class="c-alert c-alert--error" role="alert">
+  <svg class="c-icon c-icon--lg" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm0-160q17 0 28.5-11.5T520-480v-160q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640v160q0 17 11.5 28.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+  <div class="c-alert__body"><p class="c-alert__title">保存できませんでした</p><p class="c-alert__text">タイトルを入れてください。</p></div>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-alert c-alert--success&quot; role=&quot;status&quot;&gt;
+  &lt;svg class=&quot;c-icon c-icon--lg&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/check_circle_fill1.svg の path --&gt;&lt;/svg&gt;
+  &lt;div class=&quot;c-alert__body&quot;&gt;&lt;p class=&quot;c-alert__title&quot;&gt;下書きとして保存しました&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;c-alert c-alert--error&quot; role=&quot;alert&quot;&gt;
+  &lt;svg class=&quot;c-icon c-icon--lg&quot; viewBox=&quot;0 -960 960 960&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;!-- icons/error_fill1.svg の path --&gt;&lt;/svg&gt;
+  &lt;div class=&quot;c-alert__body&quot;&gt;&lt;p class=&quot;c-alert__title&quot;&gt;保存できませんでした&lt;/p&gt;&lt;p class=&quot;c-alert__text&quot;&gt;タイトルを入れてください。&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></details></div>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>エラーは文字色だけでなく文言で伝える</li><li>ページを開いた直後に出すエラーは、先頭に置いて最初に読まれるようにする</li></ul></div></div>
+</section>
+
+<section class="ds-section" id="admin-dialog">
+  <h3>確認・入力・お知らせ — 共通部品の <code>c-modal</code> を使う</h3>
+<p class="ds-classes">クラス：<code>c-modal</code>（<a href="overlay.html">モーダル・ツールチップ</a>）・JS：<code>js/admin.js</code> の <code>OkaDialog</code></p>
+<p>管理画面専用のダイアログ（<code>a-dialog</code>）は持たない。見た目は共通部品の <code>c-modal</code>。管理画面では <code>js/admin.js</code> の <code>OkaDialog</code> が <code>&lt;dialog class="c-modal"&gt;</code> を作り、<code>showModal()</code> で出す（背面を操作できない・Esc で閉じる・フォーカスを閉じ込めるのはブラウザが行う）。タイトルの書体は管理画面の見出しの決まりどおりゴシック。</p>
+<div class="ds-example"><p class="ds-example__title">見本</p><div class="ds-example__preview">
+<div class="c-modal-backdrop c-modal-backdrop--inline">
+  <div class="c-modal" role="dialog" aria-labelledby="ad-title" aria-describedby="ad-desc">
+    <div class="c-modal__head"><h2 class="c-modal__title" id="ad-title">「ダミーテキストA」を削除しますか？</h2></div>
+    <p id="ad-desc">この操作は元に戻せません。</p>
+    <div class="c-modal__foot">
+      <button class="c-button c-button--secondary c-button--outline" type="button">やめる</button>
+      <button class="c-button c-button--negative" type="button">削除する</button>
+    </div>
+  </div>
+</div>
+</div><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;div class=&quot;c-modal-backdrop c-modal-backdrop--inline&quot;&gt;
+  &lt;div class=&quot;c-modal&quot; role=&quot;dialog&quot; aria-labelledby=&quot;ad-title&quot; aria-describedby=&quot;ad-desc&quot;&gt;
+    &lt;div class=&quot;c-modal__head&quot;&gt;&lt;h2 class=&quot;c-modal__title&quot; id=&quot;ad-title&quot;&gt;「ダミーテキストA」を削除しますか？&lt;/h2&gt;&lt;/div&gt;
+    &lt;p id=&quot;ad-desc&quot;&gt;この操作は元に戻せません。&lt;/p&gt;
+    &lt;div class=&quot;c-modal__foot&quot;&gt;
+      &lt;button class=&quot;c-button c-button--secondary c-button--outline&quot; type=&quot;button&quot;&gt;やめる&lt;/button&gt;
+      &lt;button class=&quot;c-button c-button--negative&quot; type=&quot;button&quot;&gt;削除する&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></details></div>
+
+<p>呼び出し側は、フォームに属性を書くだけでよい（送信の前に確認を出す）。JS から出すときは <code>OkaDialog.confirm({ title, message, submit, danger })</code>・<code>OkaDialog.ask({ title, fields, submit })</code>（<code>fields</code> の各項目は <code>{ name, label, required, value, help, example }</code>。必須でない項目には「任意」のタグが付く。入力例は <code>example</code> に「例：」で始めて書き、補足 <code>help</code> と分ける）・<code>OkaDialog.notice({ title, message })</code>。</p>
+
+<div class="ds-example"><p class="ds-example__title">HTML</p><details class="ds-code"><summary class="ds-code__summary"><svg class="c-icon c-icon--md ds-code__chevron" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.8-342.74q-8.16 0-15.65-3.1-7.5-3.09-13.22-8.81L261.51-544.07Q248.5-557.09 249-573.74q.5-16.65 13.17-29.33 12.68-12.67 29.33-12.67t29.33 12.67L480-442.89l160.17-160.18q12.68-12.67 29.33-12.17t29.33 13.17q12.67 12.68 12.67 29.33t-13.01 29.61L509.07-354.65q-6.12 5.72-13.62 8.81-7.49 3.1-15.65 3.1Z"/></svg>コードを表示</summary><span class="c-tooltip-wrap ds-code__tool"><button class="c-button c-button--sm c-button--secondary c-button--ghost ds-code__copy" type="button"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"/></svg>コードをコピー</button><span class="c-tooltip c-tooltip--done" role="status" aria-live="polite"><svg class="c-icon c-icon--sm" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"/></svg>コピーしました</span></span><pre><code>&lt;form method=&quot;post&quot; action=&quot;/admin/items/1/delete&quot;
+      data-confirm-title=&quot;「ダミーテキストA」を削除しますか？&quot;
+      data-confirm=&quot;この操作は元に戻せません。&quot;
+      data-confirm-ok=&quot;削除する&quot;&gt;</code></pre></details></div>
+
+<h4>⚠️ <code>confirm()</code> に戻さない</h4>
+<p>ブラウザ既定のダイアログは文言も見た目も制御できない。</p>
+<h4>狭い画面</h4>
+<p><code>≤620px</code> ではボタンを縦に積む（上が「やめる」、下が実行。フォームと同じ順で、見た目の順と Tab の順がそろう）。指で押せる大きさを保つため。公開サイトのモーダルも同じ。</p>
+<div class="ds-guide"><div class="ds-guide__col ds-guide__col--a11y"><h4><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Zm-.28-83q129.04 0 219.09-90.04 90.04-90.05 90.04-219.09 0-129.04-90.04-219.09-90.05-90.04-219.09-90.04-129.04 0-219.09 90.04-90.04 90.05-90.04 219.09 0 129.04 90.04 219.09 90.05 90.04 219.09 90.04ZM480-480Z"/></svg>アクセシビリティ</h4><ul><li>dialog 要素の showModal() を使う（背景を操作できない・Esc で閉じる）</li><li>見出しと aria-labelledby、本文と aria-describedby でつなぐ（js/admin.js）</li><li>ボタンは動詞</li></ul></div></div>
+</section>
+
+
+  </main>
+</div>
+<template id="tpl-icon-close"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M480-421.35 319.83-261.17Q307.15-248.5 291-249t-28.83-13.17q-12.67-12.68-12.67-29.33t12.67-29.33L421.35-480 261.17-640.17Q248.5-652.85 249-669.5t13.17-29.33q12.68-12.67 29.33-12.67t29.33 12.67L480-538.65l160.17-160.18q12.68-12.67 29.33-12.67t29.33 12.67q12.67 12.68 12.67 29.33t-12.67 29.33L538.65-480l160.18 160.17Q711.5-307.15 711.5-291t-12.67 28.83q-12.68 12.67-29.33 12.67t-29.33-12.67L480-421.35Z"/></svg></template>
+<template id="tpl-icon-success"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="m428.28-446.37-53.78-52.78q-12.43-12.44-28.35-12.44-15.91 0-28.35 12.44-12.43 12.43-12.31 28.85.12 16.41 12.55 28.84l81.18 81.18q12.76 12.67 29.11 12.67 16.34 0 29.02-12.67L640.76-543.7q12.44-12.43 12.44-28.72 0-16.3-12.44-28.73-12.43-12.44-28.35-12.44-15.91 0-28.34 12.44L428.28-446.37ZM480-87.87q-80.91 0-152.34-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-125Q87.87-399.09 87.87-480q0-81.91 30.62-152.84 30.62-70.94 84.17-124.5 53.56-53.55 125-84.17 71.43-30.62 152.34-30.62 81.91 0 152.84 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.5 30.62 70.93 30.62 152.84 0 80.91-30.62 152.34-30.62 71.44-84.17 125-53.56 53.55-124.5 84.17Q561.91-87.87 480-87.87Z"/></svg></template>
+<template id="tpl-icon-error"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.73-279.87q18.14 0 30.67-12.27 12.53-12.26 12.53-30.4 0-18.13-12.26-30.79-12.27-12.65-30.4-12.65-18.14 0-30.67 12.44-12.53 12.44-12.53 30.58 0 18.13 12.26 30.61 12.27 12.48 30.4 12.48Zm.06-151.65q17.36 0 29.54-12.03 12.17-12.02 12.17-29.47v-162.5q0-17.45-11.96-29.48-11.97-12.02-29.33-12.02T450.67-665q-12.17 12.03-12.17 29.48v162.5q0 17.45 11.96 29.47 11.97 12.03 29.33 12.03Zm.49 343.65q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<template id="tpl-icon-info"><svg class="c-icon c-icon--md" viewBox="0 -960 960 960" aria-hidden="true" focusable="false"><path d="M479.79-284.41q16.73 0 28.27-11.38 11.53-11.39 11.53-28.21v-164.41q0-16.83-11.32-28.21Q496.95-528 480.21-528q-16.73 0-28.27 11.38-11.53 11.38-11.53 28.21V-324q0 16.82 11.32 28.21 11.32 11.38 28.06 11.38Zm0-310.81q17.24 0 29.12-11.66 11.87-11.67 11.87-28.91 0-17.24-11.66-29.12-11.67-11.87-28.91-11.87-17.24 0-29.12 11.66-11.87 11.67-11.87 28.91 0 17.24 11.66 29.12 11.67 11.87 28.91 11.87Zm.49 507.35q-81.19 0-152.62-30.62-71.44-30.62-125-84.17-53.55-53.56-84.17-124.95Q87.87-399 87.87-480.46q0-81.45 30.62-152.38 30.62-70.94 84.17-124.5 53.56-53.55 124.95-84.17 71.39-30.62 152.85-30.62 81.45 0 152.38 30.62 70.94 30.62 124.5 84.17 53.55 53.56 84.17 124.72 30.62 71.16 30.62 152.34 0 81.19-30.62 152.62-30.62 71.44-84.17 125-53.56 53.55-124.72 84.17-71.16 30.62-152.34 30.62Z"/></svg></template>
+<script src="../js/components.js?v=247fb91f"></script>
+<script src="assets/site.js?v=247fb91f"></script>
+</body>
+</html>
